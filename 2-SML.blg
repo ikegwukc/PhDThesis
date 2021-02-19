@@ -1,0 +1,75 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: 2-SML.aux
+The style file: plainnat.bst
+Illegal, another \bibdata command---line 114 of file 2-SML.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+Database file #1: thesisbib.bib
+A bad cross reference---entry "kotthoff_auto_2019"
+refers to entry "automl", which doesn't exist
+A bad cross reference---entry "komer_hyperopt_2019"
+refers to entry "automl", which doesn't exist
+A bad cross reference---entry "feurer_auto_2018"
+refers to entry "automl", which doesn't exist
+A bad cross reference---entry "Backus59"
+refers to entry "conf/ifip/1959", which doesn't exist
+Warning--I didn't find a database entry for "automl"
+Warning--I didn't find a database entry for "conf/ifip/1959"
+Warning--empty booktitle in pedros:fewUsefulThings
+Warning--can't use both volume and number fields in pedros:fewUsefulThings
+Warning--empty booktitle in feurer_auto_2018
+Warning--empty year in feurer_auto_2018
+Warning--empty year in feurer_auto_2018
+Warning--can't use both author and editor fields in frank2005weka
+Warning--empty journal in SML
+Warning--empty booktitle in komer_hyperopt_2019
+Warning--empty year in komer_hyperopt_2019
+Warning--empty year in komer_hyperopt_2019
+Warning--empty booktitle in kotthoff_auto_2019
+Warning--empty year in kotthoff_auto_2019
+Warning--empty year in kotthoff_auto_2019
+Warning--empty booktitle in Monahan
+You've used 14 entries,
+            2773 wiz_defined-function locations,
+            696 strings with 7824 characters,
+and the built_in function-call counts, 7882 in all, are:
+= -- 682
+> -- 509
+< -- 15
++ -- 173
+- -- 159
+* -- 626
+:= -- 1181
+add.period$ -- 52
+call.type$ -- 14
+change.case$ -- 94
+chr.to.int$ -- 14
+cite$ -- 42
+duplicate$ -- 356
+empty$ -- 595
+format.name$ -- 177
+if$ -- 1685
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 14
+newline$ -- 86
+num.names$ -- 56
+pop$ -- 234
+preamble$ -- 1
+purify$ -- 81
+quote$ -- 0
+skip$ -- 288
+stack$ -- 0
+substring$ -- 242
+swap$ -- 76
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 149
+warning$ -- 14
+while$ -- 60
+width$ -- 0
+write$ -- 197
+(There were 5 error messages)

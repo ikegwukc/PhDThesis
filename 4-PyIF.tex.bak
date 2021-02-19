@@ -1,0 +1,211 @@
+\chapter{Estimating Information Transfer on Large Data} \label{Chapter:PyIF}
+\blfootnote{
+	This chapter contains material from the following publication: 
+	\nobibliography{thesisbib}
+	\begin{itemize}
+		\item\bibentry{PyIF}
+	\end{itemize}
+}
+
+\section{Introduction}
+
+Transfer entropy (TE) is an information measure that quantifies information transfer between processes evolving in time (see Chapter \ref{sec:InformationTheory}). Transfer entropy has a plethora of potential applications in  canonical systems, neuroscience, social media, and financial markets. Prior work with respect to financial applications have typically used long windows in their research. For example \cite{Kantz} measured information transfer between two financial time series the DAX stock index and the Dow Jones to determine to what extent one index determined the behavior of another. The data used by \cite{Kantz} sampled data every minute between May 2000 and June 2001; after cleaning the data 63,867 observations were used in this study. More recently \cite{Sandoval} used daily price data from 2003 to 2012 to detect causal relationships between 197 largest firms (globally) with Transfer Entropy.
+
+Given the assumption in Chapter \ref{IFinFM} that information is reflected in price and in an efficient market changes rapidly (if not instantaneously) then smaller frequencies of observations (or long time windows) such as monthly, daily, hourly, or by the minute may be insufficient in capturing the price change process.  A reason for this is not being able to capture the entire price change process between long windows, ergo shorter windows are needed. However shorter time windows will have finer resolution of data which requires more observations in a dataset.  %To illustrate this I provide an example of the amount observations that  increase given the time scale in figure \ref{fig:FreqObs}. 
+
+In figure \ref{fig:FreqObs} consider that we are looking at a univariate dataset for 30 days.  If the frequency of observations (time windows) in a 30 day period are daily then there's  30 observations in the dataset.  If the time windows are hourly we can expect 720 observations  in a 30 day period and if the time window between observations occurs on a minute level then we have 43,200 observations.  If we continue this  down to the 1 second level then there are 2,592,000 observations in a 30 day window.  We find that existing open source implementations are not suited to estimate information flow for datasets with large observations.  Given the need to examine information transfers on finer resolutions of data we propose an open source software implementation to estimate TE on large datasets.
+
+\section{PyIF}
+
+PyIF \footnote{PyIF can freely be downloaded from: \url{https://github.com/lcdm-uiuc/PyIF}} is our proposed software implementation  to estimate bivariate TE on large data and is open sourced. PyIF currently only supports using the Kraskov estimator (see section \ref{intro:Kraskov}) to estimate TE.  PyIF utilizes recent advancements in hardware to parallelize \& optimize operations across CPUs and Cuda compatible GPUs \cite{CUDA}.  In particular we focus our efforts on the parallelization \& optimization across operations to obtain \(n_x\)  \& \(n_y\) in eq. \ref{KraskovEquation} faster.
+
+% more here on how we do this?
+
+PyIF is a python only implementation which utilizes 5 well-known and actively supported python libraries: SciPy (see \cite{scipy}),  NumPy (see \cite{numpy}), scikit-learn (see \cite{scikit-learn}),  nose (see \cite{nose}), and numba (see \cite{numba}).  SciPy is an open source Python library used for a variety of STEM applications.  NumPy  is a part of SciPy's ecosystem and is an open source package that provides convenient ways to perform matrix manipulations and useful linear algebra capabilities.  Scikit-learn is a popular open source library for machine learning and nose is another open source library that is useful for testing code to ensure that it will produce the correct outcome.  Lastly, numba is a python compiler that can compile Python code for execution on multicore CPUs and CUDA-capable GPUs.
+
+PyIF's  interface requires you to supply \(X\) and \(Y\), two numpy arrays with \(N\)x1 dimensions. Optional arguments can be passed in such as \(k\) which controls the number of neighbors used in KD-tree queries, \(embedding\) which controls how many lagged periods are used to estimate transfer entropy and a boolean argument \(GPU\) can be used to specify if you want to use a CUDA compatible GPU for transfer entropy estimation.  Lastly another boolean argument \(safetyCheck\) can be used to check for duplicates rows in your dataset. This boolean argument is there to help prevent a more subtle error that can occur when multiple data points in a bivariate dataset have identical coordinates. This can lead to several points that have an identical distance to a query point during k nearest neighbors search which violates assumptions of the Kraskov estimator. A solution that is used in practice and that we recommend is to add a small amount of noise to your dataset to avoid this error.
+
+\section{Comparative Analysis} \label{PyIF:CA}
+
+We compare PyIF's ability to estimate Transfer Entropy against existing implementations with respect to computational performance. We present all of the data and code used to estimate TE for all implementations \footnote{The data and code can freely be downloaded from: \\  \url{https://github.com/lcdm-uiuc/Publications/tree/master/2020\_Ikegwu\_Traguer\_McMullin\_Brunner}}. Each implementation in this comparative analysis estimates TE on four simulated bivariate datasets of different sizes. The estimated TE values are roughly the same for each implementation and we forgo comparing the actual values since this is random simulated data. We make the assumption that there is relatively little to no information transfer between the random processes. We run each of the implementations (excluding Transfer Entropy Toolbox)  on nano, a cluster of eight SuperMicro servers with Intel Haswell/Broadwell CPUs and NVIDIA Tesla P100/V100 GPUs hosted by the National Center of Super Computing Applications at the University of Illinois at Urbana-Champaign. We used one node which contains two E5-2620 v3 Intel Xeon CPU's and 2 NVIDIA P100 GPUs with 3584 cores.  We refer to this as the first analysis.
+
+We conduct the same analysis on different hardware to compare PyIF to Transfer Entropy toolbox because of MATLAB licensing issues with the National Center of Super Computing Applications. We use an Engineering Workstation with an Intel Xeon Processor E5-2680 v4  hosted by Engineering IT shared services at the University of Illinois at Urbana-Champaign. We use a single CPU core and up to 16GB of RAM to estimate TE with Transfer Entropy toolbox and PyIF. This workstation does not offer CUDA compatiable GPUs to use for either PyIF or Transfer Entropy Toolbox so we forgo comparing the GPU implementations. This workstation has a CPU time limit of 60 minutes meaning that if any process uses 100\% of a CPU core for more than 60 minutes the process is terminated. We refer to this as the second analysis.
+
+\subsection{IDTxl}
+The first implementation that we compare PyIF to is the Information Dynamics Toolkit xl (IDTxl). IDTxl is an open source Python toolbox for network inference (see \cite{IDTxl}). Currently IDTxl relies on NumPy,  SciPy, CFFI (which is another open source library that provides a C interface for Python code) (see \cite{cffi}),  H5py which is a Python package that is used to interface with HDF5 binary data format (see \cite{hdf5}),  JPype (see \cite{jpype}) which is a Python module that provides a Java interface for Python code, and Java jdk which is a developer kit to develop Java applications and applets.  IDTxl has additional functionality besides estimating TE however we only use IDTxl's capability to estimate TE on a bi-variate dataset.
+
+
+\subsection{TransEnt}
+TransEnt is a R package that estimates transfer entropy (see \cite{TransEnt}). Currently TransEnt relies on Rcpp which acts as a interface to C++ from R. TransEnt also relies on  a C++ library called Appromixate Nearest Neigbors (ANN) (see \cite{ANN}) which performs exact and approximate nearest neighbor searches. Currently the package has been removed from CRAN, however this software can be used and installed from \cite{TransEnt}'s github repo \footnote{\cite{TransEnt}'s Github Repo: \url{https://github.com/Healthcast/TransEnt}}.
+
+\subsection{RTransferEntropy}
+RTransferEntropy is a R package that estimates transfer entropy between two time series \cite{RTransferEntropy}. Currently the RTransferEntropy package relies on Rcpp, and the future package which supports performing computations in parallel to decrease the wall time. We include both the parallel implementation of RTransferEntropy and the default implementation for completeness in the results.
+
+\subsection{Transfer Entropy Toolbox}
+
+Transfer Entropy Toolbox  is an open source MATLAB toolbox for transfer entropy estimation (see \cite{TransferEntropyToolbox}). This code's dependencies include: the Statistics \& Machine Learning toolbox  which provides functions to analyze and model data; the FieldTrip toolbox which is used for EEG, iEEG, MEG, and NIRS analysis; the parallel computing toolbox that performs parallel computations of multicore CPUs and GPUs; the signal processing toolbox that provides functions to analyze, preprocess, and extract features from sampled signals; the TSTOOL toolbox which is a toolbox for nonlinear time series analysis. TSTOOL no longer exists and cannot be download from it's official homepage \footnote{\url{http://www.dpi.physik.uni-goettingen.de/tstool/}}. Nevertheless, the developers of Transfer Entropy toolbox include pre-compiled mex files of TSTOOL that will work with this implementation. At the time of writing this paper Transfer Entropy toolbox has not been updated since the year 2017.
+
+\subsection{Data}
+
+We create four bivariate datasets for this comparative analysis. Each dataset contains two time series with randomly generated values between 0 and 1. The first dataset contains 1000 observations, the second dataset contains 10,000 observations, the third dataset contains 100,000 observations, and the fourth dataset contains 1,000,000 observations.  We used the seed number  \(23\) for the pseudo-random number generator for reproducibility. We will refer to the first dataset, second dataset, third dataset, and fourth dataset as the micro dataset, small dataset, medium dataset, and the large dataset respectively.
+
+
+\section{Results}
+
+We report the results for Analysis 1 in Tables \ref{tab:MicroResults1},  \ref{tab:SmallResults1}, \ref{tab:MediumResults1}, and \ref{tab:LargeResults1}.  Each table contains the wall time to estimate TE using the variety of implementations on the different data sets described in the section \ref{PyIF:CA}.  The higher the wall time the longer it took for the specific implementation to estimate TE.  The number in the relative performance  column indicates how many times faster (or slower) PyIF (CPU) is to a particular implementation.  After estimating TE using all of the implementations outlined in the comparative analysis section we found that PyIF scales better on larger data.  
+
+Excluding the TransEnt implementation, the CPU implementation of PyIF (or PyIF (CPU)) takes less time to estimate TransferEntropy than all other implementations. The R package TransEnt has a better performance in terms of speed than PyIF (CPU) for the micro dataset and the small dataset. However PyIF (CPU) is able to estimate transfer entropy in less time than all other implementations for the medium dataset and large dataset. PyIF (GPU) outperforms PyIF (CPU) for the small, medium and large datasets. Figure \ref{TE-walltime} visualizes this explanation. We suspect that the optimizations performed by Numba contribute to PyIF having a larger wall time than TransEnt on the micro and small datasets.
+
+The results for Analysis 2 are in Table ~\ref{DataTable-MATLAB}.  Although the Transfer Entropy Toolbox exceeds the CPU time limit for the large dataset, the results show that PyIF is able to scale better than Transfer Entropy Toolbox for the other three datasets. PyIF's wall times are less than Transfer Entropy toolbox's wall times excluding the Micro Dataset.  Figure \ref{TE-walltime2} visualizes this explanation.
+
+
+\section{Conclusion}
+
+An important issue is addressed regarding large datasets with respect to estimating bi-variate TE We introduce a fast solution to estimate TE with a small amount of dependencies. On large data our implementation PyIF is up to 1072 times faster utilizing GPUs and up to 181 times faster utilizing CPUs than existing implementations that estimate bi-variate TE.  PyIF is also open sourced and publicly available on github for anyone to use.  For future work we plan to improve the existing code base to increase the computational performance of PyIF even further. In addition to this we plan to implement additional estimators outlined in section  \ref{intro:estimateTE} to estimate bi-variate TE. This boost in computational performance will enable researchers to estimate bi-variate TE much faster for a variety of research applications. 
+
+%\section*{Acknowledgments}
+%This work was partially funded by the Graduate College Fellowship program at the University of Illinois. This work utilizes resources provided by the Innovative Systems Laboratory at the National Center for Supercomputing Applications at the University of Illinois at Urbana-Champaign. Lastly,  we would like to thank Alice Perng for helpful work in the second Analysis.
+\clearpage
+\section{Figures and Tables}
+
+\section{Figures}
+
+%\begin{figure}
+ % \centerline{\includegraphics{figures/PyIF/FreqObs.png}}
+  %\caption{This figure shows the amount of observations for 30 days based on the frequency of observations.}
+  %\label{fig:FreqObs}
+%\end{figure}
+
+\begin{sidewaysfigure}[htb!]
+  \centerline{\includegraphics[scale=0.45]{figures/PyIF/FreqObs.png}}
+  \caption{This figure shows the amount of observations for 30 days based on the frequency of observations.}
+  \label{fig:FreqObs}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[htb!]
+  \centerline{\includegraphics[scale=0.8]{figures/PyIF/WallTime-TE.png}}
+  \caption{This figure shows the natural log time( in seconds) to estimate Transfer Entropy for each implementation (excluding Transfer Entropy Toolbox) for each dataset used in this study. }
+  \label{TE-walltime}
+\end{sidewaysfigure}
+
+
+\begin{sidewaysfigure}[htb!]
+  \centerline{\includegraphics[scale=0.8]{figures/PyIF/WallTime-TE2.png}}
+  \caption{This figure shows the natural log time( in seconds) to estimate Transfer Entropy between PyIF and Transfer Entropy Toolbox on an Engineering Workstation as described in the section Comparative Analysis. Transfer Entropy Toolbox exceeded the maximum allowable CPU runtime for the Large Dataset. }
+  \label{TE-walltime2}
+\end{sidewaysfigure}
+
+\clearpage
+\section{Tables}
+
+\begin{table}[htb!]
+\centering
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Implementation}     & \textbf{Wall Time (in seconds)} & \textbf{Relative Performance to PyIF (CPU)} \\ \hline
+IDTxl                       & 10.98                           & 4.28                                        \\ \hline
+TransEnt                    & 0.656                           & 0.25                                        \\ \hline
+RTransferEntropy            & 12.492                          & 4.87                                        \\ \hline
+RTransferEntropy (Parallel) & 2.876                           & 1.12                                        \\ \hline
+PyIF (CPU)                  & 2.564                           & 1                                           \\ \hline
+PyIF (GPU)                  & 3.282                           & 1.28                \\ \hline                       
+\end{tabular}
+}
+\caption{Micro Data results for the first analysis.}
+\label{tab:MicroResults1}
+\end{table}
+
+\begin{table}[htb!]
+\centering
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{|c|c|c|} 
+\hline
+\textbf{Implementation}     & \textbf{Wall Time (in seconds)} & \textbf{Relative Performance to PyIF (CPU)} \\ \hline
+IDTxl                       & 100.23                          & 31.94                                       \\ \hline
+TransEnt                    & 0.968                           & 0.308                                       \\ \hline
+RTransferEntropy            & 102.228                         & 32.57                                       \\ \hline
+RTransferEntropy (Parallel) & 15.703                          & 5                                           \\ \hline
+PyIF (CPU)                  & 3.138                           & 1                                           \\ \hline
+PyIF (GPU)                  & 1.98                            & 0.63                                       \\ \hline
+\end{tabular}
+}
+\caption{Small Data results for the first analysis.}
+\label{tab:SmallResults1}
+\end{table}
+
+\begin{table}[htb!]
+\centering
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Implementation}     & \textbf{Wall Time (in seconds)} & \textbf{Relative Performance to PyIF (CPU)} \\
+IDTxl                       & 1070.749                        & 152.89                                      \\ \hline
+TransEnt                    & 21.708                          & 3.03                                        \\ \hline
+RTransferEntropy            & 1036.661                        & 152                                         \\ \hline
+RTransferEntropy (Parallel) & 127.281                         & 18.66                                       \\ \hline
+PyIF (CPU)                  & 6.82                            & 1                                           \\ \hline
+PyIF (GPU)                  & 3.996                           & 0.58                      \\ \hline                 
+\end{tabular}
+}
+\caption{Medium Data results for the first analysis.}
+\label{tab:MediumResults1}
+\end{table}
+
+\begin{table}[htb!]
+\centering
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Implementation}     & \textbf{Wall Time (in seconds)} & \textbf{Relative Performance to PyIF (CPU)} \\ \hline
+IDTxl                       & 43150.129                       & 181.97                                      \\ \hline
+TransEnt                    & 1585.942                        & 6.68                                        \\ \hline
+RTransferEntropy            & 10592.77                        & 44.67                                       \\ \hline
+RTransferEntropy (Parallel) & 1188.636                        & 5.01                                        \\ \hline
+PyIF (CPU)                  & 237.122                         & 1                                           \\ \hline
+PyIF (GPU)                  & 40.231                          & 0.16                                    \\ \hline   
+\end{tabular}
+}
+\caption{Large Data results for the first analysis.}
+\label{tab:LargeResults1}
+\end{table}
+
+
+
+% ake seperate table
+\begin{table}[htb!]
+\centering
+\resizebox{\columnwidth}{!}{
+		\begin{tabular}{ |c|c|c|  }
+			\hline
+			Implementation & Wall Time (in seconds) &  Relative Performance to PyIF (CPU) \\
+ 			\hline
+			 \multicolumn{3}{|c|}{Micro Dataset Results (1000 Obs.)} \\
+ 			\hline
+ 			PyIF (CPU)   & 16.049 & 1.00\\ \hline
+ 			Transfer Entropy Toolbox & 2.5012 & 0.15 \\ \hline
+ 			\multicolumn{3}{|c|}{Small Dataset Results (10,000 Obs.)} \\
+ 			PyIF (CPU)   & 4.989 & 1.00\\ \hline
+			 Transfer Entropy Toolbox & 21.6880 & 4.347 \\ \hline
+ 			\multicolumn{3}{|c|}{Medium Dataset Results (100,000 Obs.)} \\
+ 			\hline
+ 			PyIF (CPU)   & 20.915 & 1.00\\ \hline
+			Transfer Entropy Toolbox & 616.8712 & 29.49 \\ \hline
+ 			\multicolumn{3}{|c|}{Large Dataset Results (1,00,000 Obs.)} \\
+ 			\hline
+ 			PyIF (CPU)   & 1455.725 & 1.00\\ \hline
+			 Transfer Entropy Toolbox & $>$ 3600 & $>$ 2.47\\ 
+			 \hline
+			 
+
+		\end{tabular}
+	}
+		\caption{Results for the second analysis.}
+		%\caption{The wall time and relative performance to PyIF (CPU) to estimate Transfer Entropy between PyIF and Transfer Entropy Toolbox on an Engineering Workstation machine as described in the section Comparative Analysis.}
+	\label{DataTable-MATLAB}
+	
+\end{table}
+
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{thesisbib}

@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Ikegwu} et~al.(2020){Ikegwu}, {Trauger}, {McMullin}, and
+  {Brunner}]{PyIF}
+K.~M. {Ikegwu}, J.~{Trauger}, J.~{McMullin}, and R.~J. {Brunner}.
+\newblock Pyif: A fast and light weight implementation to estimate bivariate
+  transfer entropy for big data.
+\newblock In \emph{2020 SoutheastCon}, pages 1--6, 2020.
+\newblock \doi{10.1109/SoutheastCon44009.2020.9249650}.
+
+\end{thebibliography}

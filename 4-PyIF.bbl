@@ -1,0 +1,142 @@
+\begin{thebibliography}{16}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Arya and Mount(1998)]{ANN}
+S.~Arya and D.~Mount.
+\newblock Ann: library for approximate nearest neighbor searching.
+\newblock 1998.
+
+\bibitem[Collette(2013)]{hdf5}
+Andrew Collette.
+\newblock \emph{Python and HDF5}.
+\newblock O'Reilly, 2013.
+
+\bibitem[Harris et~al.(2020)Harris, Millman, van~der Walt, Gommers, Virtanen,
+  Cournapeau, Wieser, Taylor, Berg, Smith, Kern, Picus, Hoyer, van Kerkwijk,
+  Brett, Haldane, Fernández~del Río, Wiebe, Peterson, Gérard-Marchant,
+  Sheppard, Reddy, Weckesser, Abbasi, Gohlke, and Oliphant]{numpy}
+Charles~R. Harris, K.~Jarrod Millman, Stéfan~J van~der Walt, Ralf Gommers,
+  Pauli Virtanen, David Cournapeau, Eric Wieser, Julian Taylor, Sebastian Berg,
+  Nathaniel~J. Smith, Robert Kern, Matti Picus, Stephan Hoyer, Marten~H. van
+  Kerkwijk, Matthew Brett, Allan Haldane, Jaime Fernández~del Río, Mark
+  Wiebe, Pearu Peterson, Pierre Gérard-Marchant, Kevin Sheppard, Tyler Reddy,
+  Warren Weckesser, Hameer Abbasi, Christoph Gohlke, and Travis~E. Oliphant.
+\newblock Array programming with {NumPy}.
+\newblock \emph{Nature}, 585:\penalty0 357–362, 2020.
+\newblock \doi{10.1038/s41586-020-2649-2}.
+
+\bibitem[{Ikegwu} et~al.(2020){Ikegwu}, {Trauger}, {McMullin}, and
+  {Brunner}]{PyIF}
+K.~M. {Ikegwu}, J.~{Trauger}, J.~{McMullin}, and R.~J. {Brunner}.
+\newblock Pyif: A fast and light weight implementation to estimate bivariate
+  transfer entropy for big data.
+\newblock In \emph{2020 SoutheastCon}, pages 1--6, 2020.
+\newblock \doi{10.1109/SoutheastCon44009.2020.9249650}.
+
+\bibitem[Lam et~al.(2015)Lam, Pitrou, and Seibert]{numba}
+Siu~Kwan Lam, Antoine Pitrou, and Stanley Seibert.
+\newblock Numba: A llvm-based python jit compiler.
+\newblock In \emph{Proceedings of the Second Workshop on the LLVM Compiler
+  Infrastructure in HPC}, pages 1--6, 2015.
+
+\bibitem[Lindner et~al.(2011)Lindner, Vicente, Priesemann, and
+  Wibral]{TransferEntropyToolbox}
+Michael Lindner, Raul Vicente, Viola Priesemann, and Michael Wibral.
+\newblock Trentool: A matlab open source toolbox to analyse information flow in
+  time series data with transfer entropy.
+\newblock \emph{BMC Neuroscience}, 12\penalty0 (1), 01 2011.
+\newblock \doi{10.1186/1471-2202-12-119}.
+\newblock URL
+  \url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3287134\&tool=pmcentrez\&rendertype=abstract}.
+\newblock Citations 56.
+
+\bibitem[Marschinski and Kantz(2002)]{Kantz}
+R.~Marschinski and H.~Kantz.
+\newblock Analysing the information flow between financial time series.
+\newblock \emph{The European Physical Journal B - Condensed Matter and Complex
+  Systems}, 30:\penalty0 275--281, 2002.
+
+\bibitem[Menard and Nell(2018)]{jpype}
+Steve Menard and Luis Nell.
+\newblock "jpype documentation".
+\newblock 2018.
+\newblock URL \url{https://jpype.readthedocs.io/en/latest/}.
+
+\bibitem[Mount et~al.(2015)Mount, Torbati, and Lawyer.]{TransEnt}
+ANN Library:~David Mount, Sunil Arya. Transfer Entropy Packge:
+  Ghazaleh~Haratinezhad Torbati, and Glenn Lawyer.
+\newblock \emph{TransferEntropy: The Transfer Entropy Package}, 2015.
+\newblock URL \url{https://CRAN.R-project.org/package=TransferEntropy}.
+\newblock R package version 1.5.
+
+\bibitem[Pedregosa et~al.(2011)Pedregosa, Varoquaux, Gramfort, Michel, Thirion,
+  Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos,
+  Cournapeau, Brucher, Perrot, and Duchesnay]{scikit-learn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
+  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay.
+\newblock Scikit-learn: Machine learning in {P}ython.
+\newblock \emph{Journal of Machine Learning Research}, 12:\penalty0 2825--2830,
+  2011.
+
+\bibitem[Pellerin(2021)]{nose}
+Jason Pellerin.
+\newblock “nose.
+\newblock 2021.
+\newblock URL \url{https://nose.readthedocs.io/en/latest/}.
+
+\bibitem[Rigo and Fijalkowski(2018)]{cffi}
+Armin Rigo and Maciej Fijalkowski.
+\newblock "cffi documentation".
+\newblock 2018.
+\newblock URL \url{https://cffi.readthedocs.io/en/latest/}.
+
+\bibitem[Sandoval(2014)]{Sandoval}
+L.~Sandoval.
+\newblock Structure of a global network of financial companies based on
+  transfer entropy.
+\newblock \emph{Entropy}, 16:\penalty0 4443--4482, 2014.
+
+\bibitem[Simon et~al.(2019)Simon, Thomas, {Franziska J.}, and {David
+  J.}]{RTransferEntropy}
+Behrendt Simon, Dimpfl Thomas, Peter {Franziska J.}, and Zimmermann {David J.}
+\newblock Rtransferentropy — quantifying information flow between different
+  time series using effective transfer entropy.
+\newblock \emph{SoftwareX}, 10\penalty0 (100265):\penalty0 1--9, 2019.
+\newblock URL \url{https://doi.org/10.1016/j.softx.2019.100265}.
+
+\bibitem[Virtanen et~al.(2020)Virtanen, Gommers, Oliphant, Haberland, Reddy,
+  Cournapeau, Burovski, Peterson, Weckesser, Bright, {van der Walt}, Brett,
+  Wilson, Millman, Mayorov, Nelson, Jones, Kern, Larson, Carey, Polat, Feng,
+  Moore, {VanderPlas}, Laxalde, Perktold, Cimrman, Henriksen, Quintero, Harris,
+  Archibald, Ribeiro, Pedregosa, {van Mulbregt}, and {SciPy 1.0
+  Contributors}]{scipy}
+Pauli Virtanen, Ralf Gommers, Travis~E. Oliphant, Matt Haberland, Tyler Reddy,
+  David Cournapeau, Evgeni Burovski, Pearu Peterson, Warren Weckesser, Jonathan
+  Bright, St{\'e}fan~J. {van der Walt}, Matthew Brett, Joshua Wilson, K.~Jarrod
+  Millman, Nikolay Mayorov, Andrew R.~J. Nelson, Eric Jones, Robert Kern, Eric
+  Larson, C~J Carey, {\.I}lhan Polat, Yu~Feng, Eric~W. Moore, Jake
+  {VanderPlas}, Denis Laxalde, Josef Perktold, Robert Cimrman, Ian Henriksen,
+  E.~A. Quintero, Charles~R. Harris, Anne~M. Archibald, Ant{\^o}nio~H. Ribeiro,
+  Fabian Pedregosa, Paul {van Mulbregt}, and {SciPy 1.0 Contributors}.
+\newblock {{SciPy} 1.0: Fundamental Algorithms for Scientific Computing in
+  Python}.
+\newblock \emph{Nature Methods}, 17:\penalty0 261--272, 2020.
+\newblock \doi{10.1038/s41592-019-0686-2}.
+
+\bibitem[Wollstadt et~al.(2019)Wollstadt, Lizier, Vicente, Finn,
+  Martinez-Zarzuela, Mediano, Novelli, and Wibral]{IDTxl}
+Patricia Wollstadt, Joseph~T. Lizier, Raul Vicente, Conor Finn, Mario
+  Martinez-Zarzuela, Pedro Mediano, Leonardo Novelli, and Michael Wibral.
+\newblock Idtxl: The information dynamics toolkit xl: a python package for the
+  efficient analysis of multivariate information dynamics in networks.
+\newblock \emph{Journal of Open Source Software}, 4\penalty0 (34):\penalty0
+  1081, 2019.
+\newblock \doi{10.21105/joss.01081}.
+\newblock URL \url{https://doi.org/10.21105/joss.01081}.
+
+\end{thebibliography}

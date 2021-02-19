@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: 4-PyIF.aux
+The style file: plainnat.bst
+Illegal, another \bibdata command---line 79 of file 4-PyIF.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+Database file #1: thesisbib.bib
+Warning--I didn't find a database entry for "CUDA"
+Warning--empty booktitle in ANN
+Warning--empty journal in jpype
+Warning--empty journal in nose
+Warning--empty journal in cffi
+You've used 16 entries,
+            2773 wiz_defined-function locations,
+            704 strings with 9142 characters,
+and the built_in function-call counts, 10892 in all, are:
+= -- 861
+> -- 1068
+< -- 9
++ -- 358
+- -- 342
+* -- 1023
+:= -- 1789
+add.period$ -- 61
+call.type$ -- 16
+change.case$ -- 160
+chr.to.int$ -- 16
+cite$ -- 36
+duplicate$ -- 340
+empty$ -- 594
+format.name$ -- 366
+if$ -- 2170
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 16
+newline$ -- 101
+num.names$ -- 64
+pop$ -- 316
+preamble$ -- 1
+purify$ -- 146
+quote$ -- 0
+skip$ -- 328
+stack$ -- 0
+substring$ -- 212
+swap$ -- 27
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 171
+warning$ -- 4
+while$ -- 62
+width$ -- 0
+write$ -- 231
+(There was 1 error message)

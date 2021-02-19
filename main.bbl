@@ -1,0 +1,338 @@
+\begin{thebibliography}{44}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Anand et~al.(2019)Anand, Brunner, Ikegwu, and Sougiannis]{ABIS}
+Vic Anand, Robert Brunner, Kelechi Ikegwu, and Theodore Sougiannis.
+\newblock Predicting profitability using machine learning.
+\newblock 2019.
+\newblock URL \url{http://dx.doi.org/10.2139/ssrn.3466478}.
+
+\bibitem[Arya and Mount(1998)]{ANN}
+S.~Arya and D.~Mount.
+\newblock Ann: library for approximate nearest neighbor searching.
+\newblock 1998.
+
+\bibitem[Backus(1959)]{Backus59}
+John~W. Backus.
+\newblock The syntax and semantics of the proposed international algebraic
+  language of the zurich acm-gamm conference.
+\newblock In \emph{IFIP Congress}, pages 125--131. Butterworths, London, 1959.
+
+\bibitem[{Bakshi} and {Bakshi}(2018)]{ML-UseCase1}
+K.~{Bakshi} and K.~{Bakshi}.
+\newblock Considerations for artificial intelligence and machine learning:
+  Approaches and use cases.
+\newblock In \emph{2018 IEEE Aerospace Conference}, pages 1--9, 2018.
+\newblock \doi{10.1109/AERO.2018.8396488}.
+
+\bibitem[Ball and Brown(1968)]{BB68}
+Ray Ball and P~Brown.
+\newblock Empirical evaluation of accounting income numbers.
+\newblock \emph{Journal of Accounting Research}, 6\penalty0 (2):\penalty0
+  159--178, 1968.
+
+\bibitem[Bradshaw et~al.(2012)Bradshaw, Drake, Myers, and Myers]{Bradshaw}
+Mark~T. Bradshaw, Michael~S. Drake, James~N. Myers, and Linda~A. Myers.
+\newblock A re-examination of analysts’ superiority over time-series
+  forecasts of annual earnings.
+\newblock \emph{Review of Accounting Studies}, 2012.
+\newblock URL \url{https://doi.org/10.1007/s11142-012-9185-8}.
+
+\bibitem[Breiman et~al.(1984)Breiman, Friedman, Olshen, and Stone]{CART}
+L.~Breiman, J.~H. Friedman, R.~A. Olshen, and C.~J. Stone.
+\newblock \emph{Classification and Regression Trees}.
+\newblock Wadsworth and Brooks, Monterey, CA, 1984.
+
+\bibitem[Campbell et~al.(1997)Campbell, Lo, and MacKinlay]{Campbell1997}
+John~Y. Campbell, Andrew~W. Lo, and A.Craig MacKinlay.
+\newblock \emph{The Econometrics of Financial Markets}.
+\newblock Princeton University Press, 1997.
+\newblock ISBN 9780691043012.
+\newblock URL \url{http://www.jstor.org/stable/j.ctt7skm5}.
+
+\bibitem[Cerqueira et~al.(2019)Cerqueira, Torgo, and
+  Mozetic]{cerqueira2019evaluating}
+Vitor Cerqueira, Luis Torgo, and Igor Mozetic.
+\newblock Evaluating time series forecasting models: An empirical study on
+  performance estimation methods, 2019.
+
+\bibitem[Choudhury et~al.(2021)Choudhury, Allen, and Endres]{ABIS:ML:EX3}
+Prithwiraj Choudhury, Ryan~T. Allen, and Michael~G. Endres.
+\newblock Machine learning for pattern discovery in management research.
+\newblock \emph{Strategic Management Journal}, 42\penalty0 (1):\penalty0
+  30--57, 2021.
+\newblock \doi{https://doi.org/10.1002/smj.3215}.
+\newblock URL \url{https://onlinelibrary.wiley.com/doi/abs/10.1002/smj.3215}.
+
+\bibitem[Collette(2013)]{hdf5}
+Andrew Collette.
+\newblock \emph{Python and HDF5}.
+\newblock O'Reilly, 2013.
+
+\bibitem[Domingos(2012)]{pedros:fewUsefulThings}
+Pedro Domingos.
+\newblock A few useful things to know about machine learning.
+\newblock volume~55, pages 78--87, New York, NY, USA, October 2012. ACM.
+\newblock \doi{10.1145/2347736.2347755}.
+\newblock URL \url{http://doi.acm.org/10.1145/2347736.2347755}.
+
+\bibitem[Feurer et~al.()Feurer, Klein, Eggensperger, Springenberg, Blum, and
+  Hutter]{feurer_auto_2018}
+Matthias Feurer, Aaron Klein, Katharina Eggensperger, Jost~Tobias Springenberg,
+  Manuel Blum, and Frank Hutter.
+\newblock Auto-sklearn: Efficient and robust automated machine learning.
+\newblock pages 123--143.
+
+\bibitem[Frank et~al.(2005)Frank, Hall, Holmes, Kirkby, Pfahringer, and
+  Witten]{frank2005weka}
+E.~Frank, M.~A. Hall, G.~Holmes, R.~Kirkby, B.~Pfahringer, and I.~H. Witten.
+\newblock \emph{{Weka: A machine learning workbench for data mining.}}, pages
+  1305--1314.
+\newblock Springer, Berlin, 2005.
+\newblock URL \url{http://researchcommons.waikato.ac.nz/handle/10289/1497}.
+
+\bibitem[Hang and Banks(2019)]{ABIS:ML:EX2}
+Weiqiang Hang and Timothy Banks.
+\newblock Machine learning applied to pack classification.
+\newblock \emph{International Journal of Market Research}, 61\penalty0
+  (6):\penalty0 601--620, 2019.
+\newblock \doi{10.1177/1470785319841217}.
+
+\bibitem[Harris et~al.(2020)Harris, Millman, van~der Walt, Gommers, Virtanen,
+  Cournapeau, Wieser, Taylor, Berg, Smith, Kern, Picus, Hoyer, van Kerkwijk,
+  Brett, Haldane, Fernández~del Río, Wiebe, Peterson, Gérard-Marchant,
+  Sheppard, Reddy, Weckesser, Abbasi, Gohlke, and Oliphant]{numpy}
+Charles~R. Harris, K.~Jarrod Millman, Stéfan~J van~der Walt, Ralf Gommers,
+  Pauli Virtanen, David Cournapeau, Eric Wieser, Julian Taylor, Sebastian Berg,
+  Nathaniel~J. Smith, Robert Kern, Matti Picus, Stephan Hoyer, Marten~H. van
+  Kerkwijk, Matthew Brett, Allan Haldane, Jaime Fernández~del Río, Mark
+  Wiebe, Pearu Peterson, Pierre Gérard-Marchant, Kevin Sheppard, Tyler Reddy,
+  Warren Weckesser, Hameer Abbasi, Christoph Gohlke, and Travis~E. Oliphant.
+\newblock Array programming with {NumPy}.
+\newblock \emph{Nature}, 585:\penalty0 357–362, 2020.
+\newblock \doi{10.1038/s41586-020-2649-2}.
+
+\bibitem[Hou et~al.(2012)Hou, {van Dijk}, and Zhang]{HOU2012504}
+Kewei Hou, Mathijs~A. {van Dijk}, and Yinglei Zhang.
+\newblock The implied cost of capital: A new approach.
+\newblock \emph{Journal of Accounting and Economics}, 53\penalty0 (3):\penalty0
+  504 -- 526, 2012.
+\newblock ISSN 0165-4101.
+\newblock \doi{https://doi.org/10.1016/j.jacceco.2011.12.001}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0165410111000966}.
+
+\bibitem[{Ikegwu} et~al.(2020){Ikegwu}, {Trauger}, {McMullin}, and
+  {Brunner}]{PyIF}
+K.~M. {Ikegwu}, J.~{Trauger}, J.~{McMullin}, and R.~J. {Brunner}.
+\newblock Pyif: A fast and light weight implementation to estimate bivariate
+  transfer entropy for big data.
+\newblock In \emph{2020 SoutheastCon}, pages 1--6, 2020.
+\newblock \doi{10.1109/SoutheastCon44009.2020.9249650}.
+
+\bibitem[Ikegwu et~al.(2017)Ikegwu, Hao, Asthana, and Brunner]{SML}
+Kelechi Ikegwu, Micheal Hao, Nerraj Asthana, and Robert Brunner.
+\newblock Standard machine learning language: A language agnostic framework for
+  streamlining the development of machine learning pipelines.
+\newblock 2017.
+\newblock URL
+  \url{https://github.com/lcdm-uiuc/Publications/blob/master/2017_Kelechi_Mike_Brunner/main.pdf}.
+
+\bibitem[James et~al.(2014)James, Witten, Hastie, and Tibshirani]{ISL}
+Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani.
+\newblock \emph{An Introduction to Statistical Learning: With Applications in
+  R}.
+\newblock Springer Publishing Company, Incorporated, 2014.
+\newblock ISBN 1461471370.
+
+\bibitem[Komer et~al.()Komer, Bergstra, and Eliasmith]{komer_hyperopt_2019}
+Brent Komer, James Bergstra, and Chris Eliasmith.
+\newblock Hyperopt-sklearn.
+\newblock pages 105--121.
+
+\bibitem[Koning and Smith(2017)]{koning2017decision}
+M.~Koning and C.~Smith.
+\newblock \emph{Decision Trees and Random Forests: A Visual Introduction for
+  Beginners}.
+\newblock Amazon Digital Services LLC - Kdp Print Us, 2017.
+\newblock ISBN 9781549893759.
+\newblock URL \url{https://books.google.com/books?id=Hi\_CtAEACAAJ}.
+
+\bibitem[Kotthoff et~al.()Kotthoff, Thornton, Hoos, Hutter, and
+  Leyton-Brown]{kotthoff_auto_2019}
+Lars Kotthoff, Chris Thornton, Holger~H. Hoos, Frank Hutter, and Kevin
+  Leyton-Brown.
+\newblock Auto-weka: Automatic model selection and hyperparameter optimization
+  in weka.
+\newblock pages 89--103.
+
+\bibitem[Lam et~al.(2015)Lam, Pitrou, and Seibert]{numba}
+Siu~Kwan Lam, Antoine Pitrou, and Stanley Seibert.
+\newblock Numba: A llvm-based python jit compiler.
+\newblock In \emph{Proceedings of the Second Workshop on the LLVM Compiler
+  Infrastructure in HPC}, pages 1--6, 2015.
+
+\bibitem[Lichman(2013)]{Lichman:2013}
+M.~Lichman.
+\newblock {UCI} machine learning repository, 2013.
+\newblock URL \url{http://archive.ics.uci.edu/ml}.
+
+\bibitem[Lindner et~al.(2011)Lindner, Vicente, Priesemann, and
+  Wibral]{TransferEntropyToolbox}
+Michael Lindner, Raul Vicente, Viola Priesemann, and Michael Wibral.
+\newblock Trentool: A matlab open source toolbox to analyse information flow in
+  time series data with transfer entropy.
+\newblock \emph{BMC Neuroscience}, 12\penalty0 (1), 01 2011.
+\newblock \doi{10.1186/1471-2202-12-119}.
+\newblock URL
+  \url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3287134\&tool=pmcentrez\&rendertype=abstract}.
+\newblock Citations 56.
+
+\bibitem[Marschinski and Kantz(2002)]{Kantz}
+R.~Marschinski and H.~Kantz.
+\newblock Analysing the information flow between financial time series.
+\newblock \emph{The European Physical Journal B - Condensed Matter and Complex
+  Systems}, 30:\penalty0 275--281, 2002.
+
+\bibitem[Menard and Nell(2018)]{jpype}
+Steve Menard and Luis Nell.
+\newblock "jpype documentation".
+\newblock 2018.
+\newblock URL \url{https://jpype.readthedocs.io/en/latest/}.
+
+\bibitem[Monahan(2018)]{Monahan}
+S.~Monahan.
+\newblock Financial statement analysis and earnings forecasting.
+\newblock 2018.
+
+\bibitem[Mount et~al.(2015)Mount, Torbati, and Lawyer.]{TransEnt}
+ANN Library:~David Mount, Sunil Arya. Transfer Entropy Packge:
+  Ghazaleh~Haratinezhad Torbati, and Glenn Lawyer.
+\newblock \emph{TransferEntropy: The Transfer Entropy Package}, 2015.
+\newblock URL \url{https://CRAN.R-project.org/package=TransferEntropy}.
+\newblock R package version 1.5.
+
+\bibitem[Olson et~al.(2016)Olson, Bartley, Urbanowicz, and Moore]{TPOT}
+Randal~S. Olson, Nathan Bartley, Ryan~J. Urbanowicz, and Jason~H. Moore.
+\newblock Evaluation of a tree-based pipeline optimization tool for automating
+  data science.
+\newblock \emph{CoRR}, abs/1603.06212, 2016.
+\newblock URL \url{http://arxiv.org/abs/1603.06212}.
+
+\bibitem[Ou and Penman(1989)]{OU1989295}
+Jane~A. Ou and Stephen~H. Penman.
+\newblock Financial statement analysis and the prediction of stock returns.
+\newblock \emph{Journal of Accounting and Economics}, 11\penalty0 (4):\penalty0
+  295 -- 329, 1989.
+\newblock ISSN 0165-4101.
+\newblock \doi{https://doi.org/10.1016/0165-4101(89)90017-7}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/0165410189900177}.
+
+\bibitem[Pedregosa et~al.(2011)Pedregosa, Varoquaux, Gramfort, Michel, Thirion,
+  Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos,
+  Cournapeau, Brucher, Perrot, and Duchesnay]{scikit-learn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
+  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay.
+\newblock Scikit-learn: Machine learning in {P}ython.
+\newblock \emph{Journal of Machine Learning Research}, 12:\penalty0 2825--2830,
+  2011.
+
+\bibitem[Pellerin(2021)]{nose}
+Jason Pellerin.
+\newblock “nose.
+\newblock 2021.
+\newblock URL \url{https://nose.readthedocs.io/en/latest/}.
+
+\bibitem[Rigo and Fijalkowski(2018)]{cffi}
+Armin Rigo and Maciej Fijalkowski.
+\newblock "cffi documentation".
+\newblock 2018.
+\newblock URL \url{https://cffi.readthedocs.io/en/latest/}.
+
+\bibitem[Rizzolo and Roth(2010)]{RizzoloRo10}
+N.~Rizzolo and D.~Roth.
+\newblock Learning based java for rapid development of nlp systems.
+\newblock In \emph{LREC}, Valletta, Malta, 5 2010.
+\newblock URL \url{http://cogcomp.cs.illinois.edu/papers/RizzoloRo10.pdf}.
+
+\bibitem[Roth(2005)]{Roth05}
+D.~Roth.
+\newblock Learning based programming.
+\newblock \emph{Innovations in Machine Learning: Theory and Applications},
+  2005.
+\newblock URL \url{http://cogcomp.cs.illinois.edu/papers/Roth05.pdf}.
+
+\bibitem[Sandoval(2014)]{Sandoval}
+L.~Sandoval.
+\newblock Structure of a global network of financial companies based on
+  transfer entropy.
+\newblock \emph{Entropy}, 16:\penalty0 4443--4482, 2014.
+
+\bibitem[Sarsam et~al.(2020)Sarsam, Al-Samarraie, Alzahrani, and
+  Wright]{ABIS:ML:EX1}
+Samer~Muthana Sarsam, Hosam Al-Samarraie, Ahmed~Ibrahim Alzahrani, and Bianca
+  Wright.
+\newblock Sarcasm detection using machine learning algorithms in twitter: A
+  systematic review.
+\newblock \emph{International Journal of Market Research}, 62\penalty0
+  (5):\penalty0 578--598, 2020.
+\newblock \doi{10.1177/1470785320921779}.
+
+\bibitem[Simon et~al.(2019)Simon, Thomas, {Franziska J.}, and {David
+  J.}]{RTransferEntropy}
+Behrendt Simon, Dimpfl Thomas, Peter {Franziska J.}, and Zimmermann {David J.}
+\newblock Rtransferentropy — quantifying information flow between different
+  time series using effective transfer entropy.
+\newblock \emph{SoftwareX}, 10\penalty0 (100265):\penalty0 1--9, 2019.
+\newblock URL \url{https://doi.org/10.1016/j.softx.2019.100265}.
+
+\bibitem[Spiceland et~al.(2018)Spiceland, Sepe, and Nelson.]{IntAccBook}
+J.~David Spiceland, James~F. Sepe, and Mark Nelson.
+\newblock ntermediate accounting.
+\newblock chapter~1. McGraw-Hill Education, 2018.
+
+\bibitem[Virtanen et~al.(2020)Virtanen, Gommers, Oliphant, Haberland, Reddy,
+  Cournapeau, Burovski, Peterson, Weckesser, Bright, {van der Walt}, Brett,
+  Wilson, Millman, Mayorov, Nelson, Jones, Kern, Larson, Carey, Polat, Feng,
+  Moore, {VanderPlas}, Laxalde, Perktold, Cimrman, Henriksen, Quintero, Harris,
+  Archibald, Ribeiro, Pedregosa, {van Mulbregt}, and {SciPy 1.0
+  Contributors}]{scipy}
+Pauli Virtanen, Ralf Gommers, Travis~E. Oliphant, Matt Haberland, Tyler Reddy,
+  David Cournapeau, Evgeni Burovski, Pearu Peterson, Warren Weckesser, Jonathan
+  Bright, St{\'e}fan~J. {van der Walt}, Matthew Brett, Joshua Wilson, K.~Jarrod
+  Millman, Nikolay Mayorov, Andrew R.~J. Nelson, Eric Jones, Robert Kern, Eric
+  Larson, C~J Carey, {\.I}lhan Polat, Yu~Feng, Eric~W. Moore, Jake
+  {VanderPlas}, Denis Laxalde, Josef Perktold, Robert Cimrman, Ian Henriksen,
+  E.~A. Quintero, Charles~R. Harris, Anne~M. Archibald, Ant{\^o}nio~H. Ribeiro,
+  Fabian Pedregosa, Paul {van Mulbregt}, and {SciPy 1.0 Contributors}.
+\newblock {{SciPy} 1.0: Fundamental Algorithms for Scientific Computing in
+  Python}.
+\newblock \emph{Nature Methods}, 17:\penalty0 261--272, 2020.
+\newblock \doi{10.1038/s41592-019-0686-2}.
+
+\bibitem[Wollstadt et~al.(2019)Wollstadt, Lizier, Vicente, Finn,
+  Martinez-Zarzuela, Mediano, Novelli, and Wibral]{IDTxl}
+Patricia Wollstadt, Joseph~T. Lizier, Raul Vicente, Conor Finn, Mario
+  Martinez-Zarzuela, Pedro Mediano, Leonardo Novelli, and Michael Wibral.
+\newblock Idtxl: The information dynamics toolkit xl: a python package for the
+  efficient analysis of multivariate information dynamics in networks.
+\newblock \emph{Journal of Open Source Software}, 4\penalty0 (34):\penalty0
+  1081, 2019.
+\newblock \doi{10.21105/joss.01081}.
+\newblock URL \url{https://doi.org/10.21105/joss.01081}.
+
+\bibitem[Yang(2020)]{ABIS:ML:EX4}
+Ying Yang.
+\newblock Research on the optimization of the supplier intelligent management
+  system for cross-border e-commerce platforms based on machine learning.
+\newblock \emph{Information Systems \& e-Business Management}, 18\penalty0
+  (4):\penalty0 851 -- 870, 2020.
+\newblock ISSN 16179846.
+
+\end{thebibliography}

@@ -1,0 +1,221 @@
+%%
+%% This is file `thesis-ex.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% uiucthesis2014.dtx  (with options: `example')
+%% 
+\def\fileversion{v2.25b} \def\filedate{2017/05/02}
+%% Package and Class "uiucthesis2014" for use with LaTeX2e.
+\documentclass[12pt,edeposit,fullpage]{uiucthesis2014}
+
+% references at the end of each chapter
+\usepackage[round,sectionbib]{natbib}
+\usepackage{chapterbib}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bibentry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{rotating}
+\usepackage{listings}
+\usepackage{fancyvrb}
+
+\usepackage{adjustbox}
+
+
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+
+\usepackage{listings} % code in snippets
+\usepackage{color} % color syntax
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\usepackage[T1]{fontenc}
+
+
+\usepackage[titletoc]{appendix}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+ frame=single,	   
+  breaklines=true,                 % automatic line breaking only at whitespace
+    numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,
+  numberstyle=\color{mygray},
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+    showspaces=false,
+  showstringspaces=false,
+  upquote=true,
+}
+%  literate={``}{\textquotedblleft}1,  %set right quote mark
+ % deletestring=[b]",  % del left quote mark
+  
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+
+\def\aap{{A\&A}}
+\def\AaA{{A\&A}}
+\def\AJ{{AJ}}
+\def\aj{{AJ}}
+\def\ApJ{{ApJ}}
+\def\apj{{ApJ}}
+\def\apjl{{ApJL}}
+\def\ApJL{{ApJL}}
+\def\ApJSupp{{ApJS}}
+\def\MN{{MNRAS}}
+\def\mnras{{MNRAS}}
+\def\mnrasl{{MNRAS Letters}}
+\def\pasp{{PASP}}
+\def\jcap{JCAP}
+\def\pasj{{PASJ}}
+\def\nat{Nature}
+\def\ARAA{{ARA\&A}}
+\def\apjs{{ApJS}}
+\def\araa{{ARA\&A}}
+\def\apss{{Ap\&SS}}
+\def\cjaa{{ChJAA}}
+\def\aaps{{A\&AS}}
+
+\newcommand{\eg}{{e.g., }}
+\newcommand{\ie}{{i.e., }}
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+% put figure on a new page
+\renewcommand{\floatpagefraction}{0.1}
+
+\newsavebox{\FVerbBox}
+\newenvironment{FVerbatim}
+ {\VerbatimEnvironment
+  \begin{center}
+  \begin{lrbox}{\FVerbBox}
+  \begin{BVerbatim}}
+ {\end{BVerbatim}
+  \end{lrbox}
+  \fbox{\usebox{\FVerbBox}}
+  \end{center}}
+
+
+\nocopyrightpage
+
+\begin{document}
+
+\title{Applications of Machine Learning for Financial Accounting}
+\author{Kelechi M. Ikegwu}
+\department{Informatics}
+\phdthesis
+\advisor{Robert J.\ Brunner}
+\degreeyear{2021}
+\committee{
+    Professor Robert J.\ Brunner, Chair, Director of Research\\
+    Professor Theodore Sougiannis\\
+    Assistant Professor Jeff McMullin\\
+    Assistant Professor Joseph Yun}
+\maketitle
+
+\frontmatter
+
+%% Create an abstract that can also be used for the ProQuest abstract.
+%% Note that ProQuest truncates their abstracts at 350 words.
+\begin{abstract}
+
+foo.
+%Accurate star-galaxy classification has many important applications in modern precision cosmology. However, a vast number of faint sources that are detected in the current and next-generation ground-based surveys may be challenged by poor star-galaxy classification. Thus, we explore a variety of machine learning approaches to improve star-galaxy classification in ground-based photometric surveys. In Chapter~\ref{chapter2}, we present a meta-classification framework that combines existing star-galaxy classifiers, and demonstrate that our Bayesian combination technique improves the overall performance over any individual classification method. In Chapter~\ref{chapter3}, we show that a deep learning algorithm called convolutional neural networks is able to produce accurate and well-calibrated classifications by learning directly from the pixel values of photometric images. In Chapter~\ref{chapter4}, we study another deep learning technique called generative adversarial networks in a semi-supervised setting, and demonstrate that our semi-supervised method produces competitive classifications using only a small amount of labeled examples.
+
+\end{abstract}
+
+%% Create a dedication in italics with no heading, centered vertically
+%% on the page.
+%\begin{dedication}
+%To Father and Mother.
+%\end{dedication}
+
+%% Create an Acknowledgements page, many departments require you to
+%% include funding support in this.
+\chapter*{Acknowledgments}
+
+First and foremost, I would like to thank my advisor, Robert Brunner, for his guidance, patience,  and support during my graduate studies at University of Illinois at Urbana-Champaign.
+I also wish to thank my committee members, Theodore Sougiannis, Jeff McMullin, and Joseph Yun, for their help and support.
+I am also grateful to Matias Carrasco Kind, William Biscarri, Samantha Thrush,and ....
+
+\begin{flushright}
+--- Kelechi Moise Ikegwu
+\end{flushright}
+
+\vspace{10mm}
+
+This work was supported in part by foo
+
+This work was partially funded by the Graduate College Fellowship program at the University of Illinois. This work utilizes resources provided by the Innovative Systems Laboratory at the National Center for Supercomputing Applications at the University of Illinois at Urbana-Champaign.
+
+%% The thesis format requires the Table of Contents to come
+%% before any other major sections, all of these sections after
+%% the Table of Contents must be listed therein (i.e., use \chapter,
+%% not \chapter*).  Common sections to have between the Table of
+%% Contents and the main text are:
+%%
+%% List of Tables
+%% List of Figures
+%% List Symbols and/or Abbreviations
+%% etc.
+
+\tableofcontents
+%\listoftables
+%\listoffigures
+
+
+    
+
+%% Create a List of Abbreviations. The left column
+%% is 1 inch wide and left-justified
+%\chapter{List of Abbreviations}
+%
+%\begin{symbollist*}
+%\item[CA] Caffeine Addict.
+%\item[CD] Coffee Drinker.
+%\end{symbollist*}
+
+%% Create a List of Symbols. The left column
+%% is 0.7 inch wide and centered
+%\chapter{List of Symbols}
+%
+%\begin{symbollist}[0.7in]
+%\item[$\tau$] Time taken to drink one cup of coffee.
+%\item[$\mu$g] Micrograms (of caffeine, generally).
+%\end{symbollist}
+
+\mainmatter
+
+\include{1-introduction}
+\include{2-SML}
+\include{3-PredProfitML}
+\include{4-PyIF}
+\include{6-PredPriceChangeIfMl}
+
+\appendix
+\input{Appendix.tex}
+
+\backmatter
+
+%\bibliographystyle{plainnat}
+%\bibliography{thesisbib}
+
+\end{document}
+\endinput
+%%

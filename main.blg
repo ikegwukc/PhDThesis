@@ -1,0 +1,151 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: 1-introduction.aux
+White space in argument---line 29 of file 1-introduction.aux
+ : \citation{Baginiski
+ :                     1987}
+I'm skipping whatever remains of this command
+The style file: plainnat.bst
+A level-1 auxiliary file: 2-SML.aux
+Illegal, another \bibdata command---line 3 of file 2-SML.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+Illegal, another \bibstyle command---line 113 of file 2-SML.aux
+ : \bibstyle
+ :          {plainnat}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 114 of file 2-SML.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: 3-PredProfitML.aux
+Illegal, another \bibdata command---line 3 of file 3-PredProfitML.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+Illegal, another \bibstyle command---line 130 of file 3-PredProfitML.aux
+ : \bibstyle
+ :          {plainnat}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 131 of file 3-PredProfitML.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: 4-PyIF.aux
+Illegal, another \bibdata command---line 3 of file 4-PyIF.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+Illegal, another \bibstyle command---line 78 of file 4-PyIF.aux
+ : \bibstyle
+ :          {plainnat}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 79 of file 4-PyIF.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: 6-PredPriceChangeIfMl.aux
+Illegal, another \bibstyle command---line 45 of file 6-PredPriceChangeIfMl.aux
+ : \bibstyle
+ :          {plainnat}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 46 of file 6-PredPriceChangeIfMl.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+Database file #1: thesisbib.bib
+A bad cross reference---entry "kotthoff_auto_2019"
+refers to entry "automl", which doesn't exist
+A bad cross reference---entry "komer_hyperopt_2019"
+refers to entry "automl", which doesn't exist
+A bad cross reference---entry "feurer_auto_2018"
+refers to entry "automl", which doesn't exist
+A bad cross reference---entry "Backus59"
+refers to entry "conf/ifip/1959", which doesn't exist
+Warning--I didn't find a database entry for "ISL:C1"
+Warning--I didn't find a database entry for "ISL:Chapter5"
+Warning--I didn't find a database entry for "Foster1981"
+Warning--I didn't find a database entry for "InfoTheoryApplications"
+Warning--I didn't find a database entry for "IntroToTransferEntropy"
+Warning--I didn't find a database entry for "IntroToTransferEntropy2"
+Warning--I didn't find a database entry for "MIdiffTE"
+Warning--I didn't find a database entry for "TEBook"
+Warning--I didn't find a database entry for "b359"
+Warning--I didn't find a database entry for "kraskovEstimator"
+Warning--I didn't find a database entry for "EstimatingTE"
+Warning--I didn't find a database entry for "KDE"
+Warning--I didn't find a database entry for "JeffTE"
+Warning--I didn't find a database entry for "CUDA"
+Warning--I didn't find a database entry for ""
+Warning--I didn't find a database entry for "automl"
+Warning--I didn't find a database entry for "conf/ifip/1959"
+Name 2 in "Spiceland, J. David and James F. Sepe, and Mark Nelson." has a comma at the end for entry IntAccBook
+while executing---line 1347 of file plainnat.bst
+Warning--empty journal in ABIS
+Warning--empty booktitle in ANN
+Warning--empty booktitle in pedros:fewUsefulThings
+Warning--can't use both volume and number fields in pedros:fewUsefulThings
+Warning--empty booktitle in feurer_auto_2018
+Warning--empty year in feurer_auto_2018
+Warning--empty year in feurer_auto_2018
+Warning--can't use both author and editor fields in frank2005weka
+Warning--empty journal in SML
+Warning--empty booktitle in komer_hyperopt_2019
+Warning--empty year in komer_hyperopt_2019
+Warning--empty year in komer_hyperopt_2019
+Warning--empty booktitle in kotthoff_auto_2019
+Warning--empty year in kotthoff_auto_2019
+Warning--empty year in kotthoff_auto_2019
+Warning--empty journal in jpype
+Warning--empty booktitle in Monahan
+Warning--empty journal in nose
+Warning--empty journal in cffi
+Name 2 in "Spiceland, J. David and James F. Sepe, and Mark Nelson." has a comma at the end for entry IntAccBook
+while executing---line 1429 of file plainnat.bst
+Name 2 in "Spiceland, J. David and James F. Sepe, and Mark Nelson." has a comma at the end for entry IntAccBook
+while executing---line 1429 of file plainnat.bst
+Warning--empty booktitle in IntAccBook
+You've used 44 entries,
+            2773 wiz_defined-function locations,
+            931 strings with 15123 characters,
+and the built_in function-call counts, 24580 in all, are:
+= -- 2072
+> -- 1869
+< -- 30
++ -- 629
+- -- 585
+* -- 2127
+:= -- 3874
+add.period$ -- 173
+call.type$ -- 44
+change.case$ -- 320
+chr.to.int$ -- 44
+cite$ -- 108
+duplicate$ -- 982
+empty$ -- 1699
+format.name$ -- 649
+if$ -- 5093
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 47
+newline$ -- 266
+num.names$ -- 176
+pop$ -- 682
+preamble$ -- 1
+purify$ -- 283
+quote$ -- 0
+skip$ -- 815
+stack$ -- 0
+substring$ -- 610
+swap$ -- 116
+text.length$ -- 11
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 454
+warning$ -- 20
+while$ -- 169
+width$ -- 0
+write$ -- 630
+(There were 19 error messages)
