@@ -1,4 +1,4 @@
-\begin{thebibliography}{44}
+\begin{thebibliography}{48}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -10,6 +10,10 @@ Vic Anand, Robert Brunner, Kelechi Ikegwu, and Theodore Sougiannis.
 \newblock Predicting profitability using machine learning.
 \newblock 2019.
 \newblock URL \url{http://dx.doi.org/10.2139/ssrn.3466478}.
+
+\bibitem[Anderson and McMullin(2018)]{JeffTE}
+Matthew Anderson and Jeff McMullin.
+\newblock Detecting information flows in markets, Nov 2018.
 
 \bibitem[Arya and Mount(1998)]{ANN}
 S.~Arya and D.~Mount.
@@ -149,6 +153,16 @@ Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani.
 \newblock Springer Publishing Company, Incorporated, 2014.
 \newblock ISBN 1461471370.
 
+\bibitem[Khan et~al.(2007)Khan, Bandyopadhyay, Ganguly, Saigal, Erickson,
+  Protopopescu, and Ostrouchov]{EstimatingTE}
+Shiraj Khan, Sharba Bandyopadhyay, Auroop Ganguly, Sunil Saigal, David
+  Erickson, Vladimir Protopopescu, and George Ostrouchov.
+\newblock Relative performance of mutual information estimation methods for
+  quantifying the dependence among short and noisy data.
+\newblock \emph{Physical review. E, Statistical, nonlinear, and soft matter
+  physics}, 76:\penalty0 026209, 09 2007.
+\newblock \doi{10.1103/PhysRevE.76.026209}.
+
 \bibitem[Komer et~al.()Komer, Bergstra, and Eliasmith]{komer_hyperopt_2019}
 Brent Komer, James Bergstra, and Chris Eliasmith.
 \newblock Hyperopt-sklearn.
@@ -169,6 +183,13 @@ Lars Kotthoff, Chris Thornton, Holger~H. Hoos, Frank Hutter, and Kevin
 \newblock Auto-weka: Automatic model selection and hyperparameter optimization
   in weka.
 \newblock pages 89--103.
+
+\bibitem[Kraskov et~al.(2004)Kraskov, St\"ogbauer, and
+  Grassberger]{kraskovEstimator}
+Alexander Kraskov, Harald St\"ogbauer, and Peter Grassberger.
+\newblock Estimating mutual information.
+\newblock \emph{Phys. Rev. E}, 69:\penalty0 066138, Jun 2004.
+\newblock \doi{10.1103/PhysRevE.69.066138}.
 
 \bibitem[Lam et~al.(2015)Lam, Pitrou, and Seibert]{numba}
 Siu~Kwan Lam, Antoine Pitrou, and Stanley Seibert.
@@ -215,6 +236,11 @@ ANN Library:~David Mount, Sunil Arya. Transfer Entropy Packge:
 \newblock \emph{TransferEntropy: The Transfer Entropy Package}, 2015.
 \newblock URL \url{https://CRAN.R-project.org/package=TransferEntropy}.
 \newblock R package version 1.5.
+
+\bibitem[NVIDIA et~al.(2020)NVIDIA, Vingelmann, and Fitzek]{CUDA}
+NVIDIA, Péter Vingelmann, and Frank~H.P. Fitzek.
+\newblock Cuda, release: 10.2.89, 2020.
+\newblock URL \url{https://developer.nvidia.com/cuda-toolkit}.
 
 \bibitem[Olson et~al.(2016)Olson, Bartley, Urbanowicz, and Moore]{TPOT}
 Randal~S. Olson, Nathan Bartley, Ryan~J. Urbanowicz, and Jason~H. Moore.

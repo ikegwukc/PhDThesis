@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  10 FEB 2021 08:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  11 MAR 2021 16:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -571,6 +571,9 @@ Package natbib Warning: Citation `ABIS:ML:EX4' multiply defined.
 
 ) (./4-PyIF.aux
 
+Package natbib Warning: Citation `JeffTE' multiply defined.
+
+
 Package natbib Warning: Citation `ANN' multiply defined.
 
 
@@ -581,6 +584,12 @@ Package natbib Warning: Citation `numpy' multiply defined.
 
 
 Package natbib Warning: Citation `PyIF' multiply defined.
+
+
+Package natbib Warning: Citation `EstimatingTE' multiply defined.
+
+
+Package natbib Warning: Citation `kraskovEstimator' multiply defined.
 
 
 Package natbib Warning: Citation `numba' multiply defined.
@@ -596,6 +605,9 @@ Package natbib Warning: Citation `jpype' multiply defined.
 
 
 Package natbib Warning: Citation `TransEnt' multiply defined.
+
+
+Package natbib Warning: Citation `CUDA' multiply defined.
 
 
 Package natbib Warning: Citation `scikit-learn' multiply defined.
@@ -618,7 +630,7 @@ Package natbib Warning: Citation `scipy' multiply defined.
 
 Package natbib Warning: Citation `IDTxl' multiply defined.
 
-) (./6-PredPriceChangeIfMl.aux))
+) (./5-EarningsAnnouncementsInfoTransfers.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
@@ -727,11 +739,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ] (./main.toc
 [4
 
-] [5])
+])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [6]
+ [5]
 \openout2 = `1-introduction.aux'.
 
  (./1-introduction.tex
@@ -807,104 +819,62 @@ Package natbib Warning: Citation `TEBook' on page 10 undefined on input line 15
 Package natbib Warning: Citation `b359' on page 10 undefined on input line 159.
 
 
-
-Package natbib Warning: Citation `kraskovEstimator' on page 10 undefined on inp
-ut line 164.
-
-
-Package natbib Warning: Citation `EstimatingTE' on page 10 undefined on input l
-ine 175.
-
-[10]
-
-Package natbib Warning: Citation `KDE' on page 11 undefined on input line 178.
-
-
-Overfull \hbox (16.46179pt too wide) in paragraph at lines 184--185
-\T1/cmr/m/n/12 where $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )$
- \T1/cmr/m/n/12 and $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 y[]\OT1/cmr/m/n/12 )$ 
-\T1/cmr/m/n/12 are the es-ti-mated marginal prob-a-bil-ity den-sity func-tions 
-and $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; y[]\OT1/cmr/m/n/12 )$
- []
-
-
-Package natbib Warning: Citation `KDE' on page 11 undefined on input line 190.
-
-
-Package natbib Warning: Citation `kraskovEstimator' on page 11 undefined on inp
-ut line 194.
-
-[11] [12]
-
-Package natbib Warning: Citation `JeffTE' on page 13 undefined on input line 23
-5.
-
-
-Package natbib Warning: Citation `JeffTE' on page 13 undefined on input line 23
-5.
-
-[13]
-<figures/Intro/ExampleNetwork.pdf, id=582, 845.1575pt x 597.23125pt>
+<figures/Intro/ExampleNetwork.pdf, id=506, 845.1575pt x 597.23125pt>
 File: figures/Intro/ExampleNetwork.pdf Graphic file (type pdf)
 <use figures/Intro/ExampleNetwork.pdf>
-Package pdftex.def Info: figures/Intro/ExampleNetwork.pdf  used on input line 2
-44.
+Package pdftex.def Info: figures/Intro/ExampleNetwork.pdf  used on input line 1
+80.
 (pdftex.def)             Requested size: 469.0pt x 331.4308pt.
-<figures/Intro/ExampleNetworkDirected.pdf, id=583, 845.1575pt x 597.23125pt>
+[10]
+<figures/Intro/ExampleNetworkDirected.pdf, id=514, 845.1575pt x 597.23125pt>
 File: figures/Intro/ExampleNetworkDirected.pdf Graphic file (type pdf)
 <use figures/Intro/ExampleNetworkDirected.pdf>
 Package pdftex.def Info: figures/Intro/ExampleNetworkDirected.pdf  used on inpu
-t line 255.
+t line 191.
 (pdftex.def)             Requested size: 469.0pt x 331.4308pt.
-<figures/Intro/ExampleNetworkDirectedWeighted.pdf, id=586, 845.1575pt x 597.231
+<figures/Intro/ExampleNetworkDirectedWeighted.pdf, id=517, 845.1575pt x 597.231
 25pt>
 File: figures/Intro/ExampleNetworkDirectedWeighted.pdf Graphic file (type pdf)
 <use figures/Intro/ExampleNetworkDirectedWeighted.pdf>
 Package pdftex.def Info: figures/Intro/ExampleNetworkDirectedWeighted.pdf  used
- on input line 267.
+ on input line 203.
 (pdftex.def)             Requested size: 469.0pt x 331.4308pt.
-<figures/Intro/ExampleNetworkDegree.pdf, id=589, 845.1575pt x 597.23125pt>
+<figures/Intro/ExampleNetworkDegree.pdf, id=520, 845.1575pt x 597.23125pt>
 File: figures/Intro/ExampleNetworkDegree.pdf Graphic file (type pdf)
 <use figures/Intro/ExampleNetworkDegree.pdf>
 Package pdftex.def Info: figures/Intro/ExampleNetworkDegree.pdf  used on input 
-line 276.
+line 212.
 (pdftex.def)             Requested size: 469.0pt x 331.4308pt.
-<figures/ppt/TrainTestSplit.png, id=592, 963.6pt x 542.025pt>
+<figures/ppt/TrainTestSplit.png, id=523, 963.6pt x 542.025pt>
 File: figures/ppt/TrainTestSplit.png Graphic file (type png)
 <use figures/ppt/TrainTestSplit.png>
-Package pdftex.def Info: figures/ppt/TrainTestSplit.png  used on input line 316
+Package pdftex.def Info: figures/ppt/TrainTestSplit.png  used on input line 252
 .
 (pdftex.def)             Requested size: 469.0pt x 263.8081pt.
-<figures/ppt/KFoldValidation.png, id=593, 963.6pt x 542.025pt>
+<figures/ppt/KFoldValidation.png, id=524, 963.6pt x 542.025pt>
 File: figures/ppt/KFoldValidation.png Graphic file (type png)
 <use figures/ppt/KFoldValidation.png>
-Package pdftex.def Info: figures/ppt/KFoldValidation.png  used on input line 32
-8.
+Package pdftex.def Info: figures/ppt/KFoldValidation.png  used on input line 26
+4.
 (pdftex.def)             Requested size: 469.0pt x 263.8081pt.
-<figures/ppt/KFoldValidationExplain.png, id=596, 963.6pt x 542.025pt>
+<figures/ppt/KFoldValidationExplain.png, id=527, 963.6pt x 542.025pt>
 File: figures/ppt/KFoldValidationExplain.png Graphic file (type png)
 <use figures/ppt/KFoldValidationExplain.png>
 Package pdftex.def Info: figures/ppt/KFoldValidationExplain.png  used on input 
-line 338.
+line 274.
 (pdftex.def)             Requested size: 469.0pt x 263.8081pt.
-<figures/ppt/DecisionTree.png, id=599, 963.6pt x 542.025pt>
+<figures/ppt/DecisionTree.png, id=530, 963.6pt x 542.025pt>
 File: figures/ppt/DecisionTree.png Graphic file (type png)
 <use figures/ppt/DecisionTree.png>
-Package pdftex.def Info: figures/ppt/DecisionTree.png  used on input line 351.
+Package pdftex.def Info: figures/ppt/DecisionTree.png  used on input line 287.
 (pdftex.def)             Requested size: 469.0pt x 263.8081pt.
- [14
-
- <./figures/Intro/ExampleNetwork.pdf, page is rotated 90 degrees>]
-[15] [16 <./figures/Intro/ExampleNetworkDirected.pdf, page is rotated 90 degree
-s>] [17 <./figures/Intro/ExampleNetworkDirectedWeighted.pdf, page is rotated 90
- degrees>] [18 <./figures/Intro/ExampleNetworkDegree.pdf, page is rotated 90 de
-grees>] [19 <./figures/ppt/TrainTestSplit.png>] [20 <./figures/ppt/KFoldValidat
-ion.png>] [21 <./figures/ppt/KFoldValidationExplain.png>] [22 <./figures/ppt/De
-cisionTree.png>] (./1-introduction.bbl
-
-Package natbib Warning: Empty `thebibliography' environment on input line 8.
-
-)) [23
+ [11 <./figures/Intro/ExampleNetwork.pdf, page is rotated 90 degrees>]
+[12] [13 <./figures/Intro/ExampleNetworkDirected.pdf, page is rotated 90 degree
+s>] [14 <./figures/Intro/ExampleNetworkDirectedWeighted.pdf, page is rotated 90
+ degrees>] [15 <./figures/Intro/ExampleNetworkDegree.pdf, page is rotated 90 de
+grees>] [16 <./figures/ppt/TrainTestSplit.png>] [17 <./figures/ppt/KFoldValidat
+ion.png>] [18 <./figures/ppt/KFoldValidationExplain.png>] [19 <./figures/ppt/De
+cisionTree.png>] (./1-introduction.bbl)) [20
 
 ]
 \openout2 = `2-SML.aux'.
@@ -922,25 +892,25 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
  (/usr/local/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-[24
+[21
 
 
 
 
-] [25] [26]
+] [22] [23]
 Overfull \hbox (24.27266pt too wide) in paragraph at lines 70--71
 \OML/cmm/m/it/12 READ$ \T1/cmr/m/n/12 fol-lowed by an $\OML/cmm/m/it/12 Arugmen
 t$ \T1/cmr/m/n/12 that spec-i-fies the path to the dataset. Next an $\OML/cmm/m
 /it/12 OptionValueList$
  []
 
-[27] [28] [29] [30]
+[24] [25] [26] [27]
 Underfull \hbox (badness 10000) in paragraph at lines 119--119
 [][][]\T1/cmr/m/n/10 For a de-tailed doc-u-men-ta-tion de-scrib-ing this code v
 isit: https://github.com/lcdm-
  []
 
-[31]
+[28]
 Underfull \hbox (badness 10000) in paragraph at lines 122--122
 [][][]\T1/cmr/m/n/10 For a de-tailed doc-u-men-ta-tion de-scrib-ing this code v
 isit: https://github.com/lcdm-
@@ -952,8 +922,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--122
 AD-SPLIT-REGRESS-PLOT.ipynb
  []
 
-[32] [33] [34]
-<figures/SML/architecture.png, id=854, 868.4445pt x 463.7325pt>
+[29] [30] [31]
+<figures/SML/architecture.png, id=786, 868.4445pt x 463.7325pt>
 File: figures/SML/architecture.png Graphic file (type png)
 <use figures/SML/architecture.png>
 Package pdftex.def Info: figures/SML/architecture.png  used on input line 143.
@@ -962,12 +932,12 @@ Package pdftex.def Info: figures/SML/architecture.png  used on input line 143.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/SML/connector.png, id=856, 963.6pt x 542.025pt>
+<figures/SML/connector.png, id=788, 963.6pt x 542.025pt>
 File: figures/SML/connector.png Graphic file (type png)
 <use figures/SML/connector.png>
 Package pdftex.def Info: figures/SML/connector.png  used on input line 150.
 (pdftex.def)             Requested size: 643.20255pt x 361.80675pt.
-<figures/SML/sml-web-site.png, id=857, 1925.1925pt x 670.505pt>
+<figures/SML/sml-web-site.png, id=789, 1925.1925pt x 670.505pt>
 File: figures/SML/sml-web-site.png Graphic file (type png)
 <use figures/SML/sml-web-site.png>
 Package pdftex.def Info: figures/SML/sml-web-site.png  used on input line 157.
@@ -975,69 +945,69 @@ Package pdftex.def Info: figures/SML/sml-web-site.png  used on input line 157.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/SML/iris_results.png, id=858, 1444.39626pt x 697.60625pt>
+<figures/SML/iris_results.png, id=790, 1444.39626pt x 697.60625pt>
 File: figures/SML/iris_results.png Graphic file (type png)
 <use figures/SML/iris_results.png>
 Package pdftex.def Info: figures/SML/iris_results.png  used on input line 165.
 (pdftex.def)             Requested size: 643.20255pt x 310.65201pt.
 
-LaTeX Warning: Reference `fig:SML:IrisQuery' on page 35 undefined on input line
+LaTeX Warning: Reference `fig:SML:IrisQuery' on page 32 undefined on input line
  167.
 
 
-LaTeX Warning: Reference `fig:Manual:IrisCode' on page 35 undefined on input li
+LaTeX Warning: Reference `fig:Manual:IrisCode' on page 32 undefined on input li
 ne 167.
 
 
-LaTeX Warning: Reference `fig:SML:IrisQuery' on page 35 undefined on input line
+LaTeX Warning: Reference `fig:SML:IrisQuery' on page 32 undefined on input line
  167.
 
 
-LaTeX Warning: Reference `fig:Manual:IrisCode' on page 35 undefined on input li
+LaTeX Warning: Reference `fig:Manual:IrisCode' on page 32 undefined on input li
 ne 167.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/SML/auto-mpg-results.png, id=859, 1591.9475pt x 377.41pt>
+<figures/SML/auto-mpg-results.png, id=791, 1591.9475pt x 377.41pt>
 File: figures/SML/auto-mpg-results.png Graphic file (type png)
 <use figures/SML/auto-mpg-results.png>
 Package pdftex.def Info: figures/SML/auto-mpg-results.png  used on input line 1
 72.
 (pdftex.def)             Requested size: 643.20255pt x 152.4874pt.
 
-LaTeX Warning: Reference `fig:SML:AutoMPGQuery' on page 35 undefined on input l
+LaTeX Warning: Reference `fig:SML:AutoMPGQuery' on page 32 undefined on input l
 ine 174.
 
 
-LaTeX Warning: Reference `fig:SML:AutoMPGQuery' on page 35 undefined on input l
+LaTeX Warning: Reference `fig:SML:AutoMPGQuery' on page 32 undefined on input l
 ine 174.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[35
+[32
 
-] [36 <./figures/SML/architecture.png>] [37 <./figures/SML/connector.png>]
-[38 <./figures/SML/sml-web-site.png>] [39 <./figures/SML/iris_results.png>]
-[40 <./figures/SML/auto-mpg-results.png>]
+] [33 <./figures/SML/architecture.png>] [34 <./figures/SML/connector.png>]
+[35 <./figures/SML/sml-web-site.png>] [36 <./figures/SML/iris_results.png>]
+[37 <./figures/SML/auto-mpg-results.png>]
 (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 182.
- [41
+ [38
 
 ]
-[42] [43] (./2-SML.bblpdfTeX warning (ext4): destination with the same identifi
+[39] [40] (./2-SML.bblpdfTeX warning (ext4): destination with the same identifi
 er (name{cite.SML@-2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.43 ...17)Ikegwu, Hao, Asthana, and Brunner]{SML}
-                                                   [44
+                                                   [41
 
 
-])) [45]
+])) [42]
 \openout2 = `3-PredProfitML.aux'.
 
 
@@ -1048,14 +1018,14 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 11.74713pt
 (hyperref)                replaced by space on input line 2.
 
-(./3-PredProfitML.bbl) [46
+(./3-PredProfitML.bbl) [43
 
 
 
 
-] [47] [48] [49] [50] [51] [52] [53] [54] [55]
-[56] [57] [58] [59] [60] [61] [62]
-<figures/ABIS/analysis_1-1_ValidationCurveTrees.png, id=1189, 867.24pt x 1156.3
+] [44] [45] [46] [47] [48] [49] [50] [51] [52]
+[53] [54] [55] [56] [57] [58] [59]
+<figures/ABIS/analysis_1-1_ValidationCurveTrees.png, id=1120, 867.24pt x 1156.3
 2pt>
 File: figures/ABIS/analysis_1-1_ValidationCurveTrees.png Graphic file (type png
 )
@@ -1067,7 +1037,7 @@ ed on input line 200.
 
 LaTeX Warning: Float too large for page by 21.13608pt on input line 206.
 
-<figures/ABIS/analysis_1-1_ValidationCurveDepth.png, id=1190, 867.24pt x 1156.3
+<figures/ABIS/analysis_1-1_ValidationCurveDepth.png, id=1121, 867.24pt x 1156.3
 2pt>
 File: figures/ABIS/analysis_1-1_ValidationCurveDepth.png Graphic file (type png
 )
@@ -1078,9 +1048,9 @@ ed on input line 210.
 
 LaTeX Warning: Float too large for page by 21.13608pt on input line 216.
 
-[63
+[60
 
-] [64 <./figures/ABIS/analysis_1-1_ValidationCurveTrees.png>] [65 <./figures/AB
+] [61 <./figures/ABIS/analysis_1-1_ValidationCurveTrees.png>] [62 <./figures/AB
 IS/analysis_1-1_ValidationCurveDepth.png>]
 Overfull \hbox (8.87093pt too wide) in paragraph at lines 226--253
  [][] 
@@ -1148,17 +1118,17 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 695.
 
-[66
+[63
 
-] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80]
-[81] (./3-PredProfitML.bblpdfTeX warning (ext4): destination with the same iden
+] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77]
+[78] (./3-PredProfitML.bblpdfTeX warning (ext4): destination with the same iden
 tifier (name{cite.ABIS@-3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.8 ...and, Brunner, Ikegwu, and Sougiannis]{ABIS}
-                                                   [82
+                                                   [79
 
-])) [83]
+])) [80]
 \openout2 = `4-PyIF.aux'.
 
  (./4-PyIF.tex
@@ -1168,36 +1138,33 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 11.74713pt
 (hyperref)                replaced by space on input line 1.
 
-(./4-PyIF.bbl) [84
+(./4-PyIF.bbl) [81
 
 
 
 
-]
-
-Package natbib Warning: Citation `CUDA' on page 85 undefined on input line 20.
-
-[85]
-Underfull \hbox (badness 10000) in paragraph at lines 30--30
+] [82] [83] [84] [85]
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
 []$\T1/cmtt/m/n/10 https : / / github . com / lcdm-[]uiuc / Publications / tree
  / master / 2020 _ Ikegwu _ Traguer _ McMullin _
  []
 
 [86] [87] [88] [89] [90]
-<figures/PyIF/FreqObs.png, id=1418, 1445.4pt x 867.24pt>
+<figures/PyIF/FreqObs.png, id=1387, 1445.4pt x 867.24pt>
 File: figures/PyIF/FreqObs.png Graphic file (type png)
 <use figures/PyIF/FreqObs.png>
-Package pdftex.def Info: figures/PyIF/FreqObs.png  used on input line 80.
+Package pdftex.def Info: figures/PyIF/FreqObs.png  used on input line 148.
 (pdftex.def)             Requested size: 650.424pt x 390.2544pt.
-<figures/PyIF/WallTime-TE.png, id=1419, 867.24pt x 433.62pt>
+<figures/PyIF/WallTime-TE.png, id=1388, 867.24pt x 433.62pt>
 File: figures/PyIF/WallTime-TE.png Graphic file (type png)
 <use figures/PyIF/WallTime-TE.png>
-Package pdftex.def Info: figures/PyIF/WallTime-TE.png  used on input line 86.
+Package pdftex.def Info: figures/PyIF/WallTime-TE.png  used on input line 154.
 (pdftex.def)             Requested size: 693.79295pt x 346.89647pt.
-<figures/PyIF/WallTime-TE2.png, id=1420, 867.24pt x 433.62pt>
+<figures/PyIF/WallTime-TE2.png, id=1389, 867.24pt x 433.62pt>
 File: figures/PyIF/WallTime-TE2.png Graphic file (type png)
 <use figures/PyIF/WallTime-TE2.png>
-Package pdftex.def Info: figures/PyIF/WallTime-TE2.png  used on input line 93.
+Package pdftex.def Info: figures/PyIF/WallTime-TE2.png  used on input line 161.
+
 (pdftex.def)             Requested size: 693.79295pt x 346.89647pt.
  [91
 
@@ -1209,15 +1176,15 @@ Package pdftex.def Info: figures/PyIF/WallTime-TE2.png  used on input line 93.
 name{cite.PyIF@-4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.33   {Brunner}]{PyIF}
+l.37   {Brunner}]{PyIF}
                        
-Underfull \hbox (badness 2600) in paragraph at lines 48--56
+Underfull \hbox (badness 2600) in paragraph at lines 69--77
 []\T1/cmr/m/n/12 Michael Lind-ner, Raul Vi-cente, Vi-ola Priese-mann, and Micha
 el Wibral.  Tren-
  []
 
 
-Underfull \hbox (badness 1158) in paragraph at lines 48--56
+Underfull \hbox (badness 1158) in paragraph at lines 69--77
 \T1/cmr/m/n/12 tool: A mat-lab open source tool-box to anal-yse in-for-ma-tion 
 flow in time se-ries
  []
@@ -1225,132 +1192,25 @@ flow in time se-ries
 [98
 
 ])) [99]
-\openout2 = `6-PredPriceChangeIfMl.aux'.
+\openout2 = `5-EarningsAnnouncementsInfoTransfers.aux'.
 
- (./6-PredPriceChangeIfMl.tex
+ (./5-EarningsAnnouncementsInfoTransfers.tex
 Chapter 5.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 11.74713pt
 (hyperref)                replaced by space on input line 1.
 
-
-LaTeX Warning: Reference `sec:' on page 100 undefined on input line 9.
-
 [100
 
 
 
 
-] [101]
-Underfull \hbox (badness 10000) in paragraph at lines 33--34
+] (./5-EarningsAnnouncementsInfoTransfers.bbl
 
- []
+Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-[102] [103] [104] [105]
-
-Package caption Warning: \label without proper reference on input line 197.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `tab:WindowLength' on page 106 undefined on input line
- 94.
-
-[106]
-<figures/PredIF/Networks/figures/20180102-1sec-1of3.png, id=1561, 1027.84pt x 1
-027.84pt>
-File: figures/PredIF/Networks/figures/20180102-1sec-1of3.png Graphic file (type
- png)
-<use figures/PredIF/Networks/figures/20180102-1sec-1of3.png>
-Package pdftex.def Info: figures/PredIF/Networks/figures/20180102-1sec-1of3.png
-  used on input line 122.
-(pdftex.def)             Requested size: 616.70876pt x 616.70876pt.
-
-
-LaTeX Warning: Float too large for page by 12.5062pt on input line 125.
-
-<figures/PredIF/Networks/figures/20180102-1sec-2of3.png, id=1562, 1027.84pt x 1
-027.84pt>
-File: figures/PredIF/Networks/figures/20180102-1sec-2of3.png Graphic file (type
- png)
-<use figures/PredIF/Networks/figures/20180102-1sec-2of3.png>
-Package pdftex.def Info: figures/PredIF/Networks/figures/20180102-1sec-2of3.png
-  used on input line 128.
-(pdftex.def)             Requested size: 616.70876pt x 616.70876pt.
-
-LaTeX Warning: Float too large for page by 12.5062pt on input line 131.
-
-<figures/PredIF/Networks/figures/20180102-1sec-3of3.png, id=1563, 1027.84pt x 1
-027.84pt>
-File: figures/PredIF/Networks/figures/20180102-1sec-3of3.png Graphic file (type
- png)
-<use figures/PredIF/Networks/figures/20180102-1sec-3of3.png>
-Package pdftex.def Info: figures/PredIF/Networks/figures/20180102-1sec-3of3.png
-  used on input line 134.
-(pdftex.def)             Requested size: 616.70876pt x 616.70876pt.
-
-LaTeX Warning: Float too large for page by 12.5062pt on input line 137.
-
-<figures/PredIF/130MinDist.png, id=1564, 1084.05pt x 1445.4pt>
-File: figures/PredIF/130MinDist.png Graphic file (type png)
-<use figures/PredIF/130MinDist.png>
-Package pdftex.def Info: figures/PredIF/130MinDist.png  used on input line 140.
-
-(pdftex.def)             Requested size: 455.2979pt x 607.06387pt.
-
-LaTeX Warning: Float too large for page by 2.86131pt on input line 143.
-
-<figures/PredIF/30MinDist.png, id=1565, 1084.05pt x 1445.4pt>
-File: figures/PredIF/30MinDist.png Graphic file (type png)
-<use figures/PredIF/30MinDist.png>
-Package pdftex.def Info: figures/PredIF/30MinDist.png  used on input line 146.
-(pdftex.def)             Requested size: 455.2979pt x 607.06387pt.
-
-LaTeX Warning: Float too large for page by 2.86131pt on input line 149.
-
-<figures/PredIF/130MinDist-InDeg.png, id=1566, 1084.05pt x 1445.4pt>
-File: figures/PredIF/130MinDist-InDeg.png Graphic file (type png)
-<use figures/PredIF/130MinDist-InDeg.png>
-Package pdftex.def Info: figures/PredIF/130MinDist-InDeg.png  used on input lin
-e 152.
-(pdftex.def)             Requested size: 455.2979pt x 607.06387pt.
-
-LaTeX Warning: Float too large for page by 2.86131pt on input line 155.
-
-<figures/PredIF/130MinDist-OutDeg.png, id=1567, 1084.05pt x 1445.4pt>
-File: figures/PredIF/130MinDist-OutDeg.png Graphic file (type png)
-<use figures/PredIF/130MinDist-OutDeg.png>
-Package pdftex.def Info: figures/PredIF/130MinDist-OutDeg.png  used on input li
-ne 158.
-(pdftex.def)             Requested size: 455.2979pt x 607.06387pt.
-
-LaTeX Warning: Float too large for page by 2.86131pt on input line 161.
-
-<figures/PredIF/30MinDist-InDeg.png, id=1568, 1084.05pt x 1445.4pt>
-File: figures/PredIF/30MinDist-InDeg.png Graphic file (type png)
-<use figures/PredIF/30MinDist-InDeg.png>
-Package pdftex.def Info: figures/PredIF/30MinDist-InDeg.png  used on input line
- 164.
-(pdftex.def)             Requested size: 455.2979pt x 607.06387pt.
-
-LaTeX Warning: Float too large for page by 2.86131pt on input line 167.
-
-<figures/PredIF/30MinDist-OutDeg.png, id=1569, 1084.05pt x 1445.4pt>
-File: figures/PredIF/30MinDist-OutDeg.png Graphic file (type png)
-<use figures/PredIF/30MinDist-OutDeg.png>
-Package pdftex.def Info: figures/PredIF/30MinDist-OutDeg.png  used on input lin
-e 170.
-(pdftex.def)             Requested size: 455.2979pt x 607.06387pt.
-
-LaTeX Warning: Float too large for page by 2.86131pt on input line 173.
-
-[107] [108] [109 <./figures/PredIF/Networks/figures/20180102-1sec-1of3.png>]
-[110 <./figures/PredIF/Networks/figures/20180102-1sec-2of3.png>] [111 <./figure
-s/PredIF/Networks/figures/20180102-1sec-3of3.png>] [112 <./figures/PredIF/130Mi
-nDist.png>] [113 <./figures/PredIF/30MinDist.png>] [114 <./figures/PredIF/130Mi
-nDist-InDeg.png>] [115 <./figures/PredIF/130MinDist-OutDeg.png>] [116 <./figure
-s/PredIF/30MinDist-InDeg.png>] [117 <./figures/PredIF/30MinDist-OutDeg.png>]
-(./6-PredPriceChangeIfMl.bbl)) [118
+)) [101
 
 ] (./Appendix.tex
 Appendix A.
@@ -1360,43 +1220,47 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                replaced by space on input line 1.
 
 
-LaTeX Warning: Reference `fig:SML:IrisQuery' on page 119 undefined on input lin
+LaTeX Warning: Reference `fig:SML:IrisQuery' on page 102 undefined on input lin
 e 4.
 
-[119
+[102
 
 
-] [120] [121]
+] [103] [104]
 
-LaTeX Warning: Reference `fig:SML:AutoMPGQuery' on page 122 undefined on input 
+LaTeX Warning: Reference `fig:SML:AutoMPGQuery' on page 105 undefined on input 
 line 85.
 
-[122
+[105
 
-] [123] [124]) [125]
+] [106] [107]) [108]
 
 Package natbib Warning: There were undefined citations.
 
 
 Package natbib Warning: There were multiply defined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 219.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 219.
-(./main.aux (./1-introduction.aux) (./2-SML.aux) (./3-PredProfitML.aux
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 221.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 221.
+(./main.aux (./1-introduction.aux) (./2-SML.aux
 
 Package natbib Warning: Citation(s) may have changed.
 (natbib)                Rerun to get citations correct.
 
-) (./4-PyIF.aux) (./6-PredPriceChangeIfMl.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 219.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 219.
+) (./3-PredProfitML.aux) (./4-PyIF.aux)
+(./5-EarningsAnnouncementsInfoTransfers.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 221.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 221.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: BCD3E1F0C59C9764EA2D9390A5F71AC7;5709.
+(rerunfilecheck)             Checksum: CC92E15E9C6CBB837D7BB7406CA481F9;5039.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 219.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 221.
  )
 (\end occurred inside a group at level 2)
 
@@ -1404,13 +1268,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 219.
 ### simple group (level 1) entered at line 222 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 14151 strings out of 480608
- 213738 string characters out of 5903631
- 812561 words of memory out of 5000000
- 29062 multiletter control sequences out of 15000+600000
- 550364 words of font info for 68 fonts, out of 8000000 for 9000
+ 14025 strings out of 480608
+ 210973 string characters out of 5903631
+ 811362 words of memory out of 5000000
+ 29012 multiletter control sequences out of 15000+600000
+ 549588 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,21n,83p,1323b,2021s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,14n,83p,1323b,2014s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm
 -super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-s
 uper-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
@@ -1423,23 +1287,22 @@ b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
 /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
 usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></us
 r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/
-local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/lo
-cal/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/loca
-l/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/
-texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/te
-xlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texl
-ive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texliv
-e/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/
-2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/20
-20/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2020
-/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2020/t
-exmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2020/tex
-mf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2020/texmf
--dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (131 pages, 7892242 bytes).
+local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/lo
+cal/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/loca
+l/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/
+texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/te
+xlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texl
+ive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texliv
+e/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/
+2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/20
+20/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2020
+/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2020/t
+exmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2020/tex
+mf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on main.pdf (113 pages, 5807307 bytes).
 PDF statistics:
- 2054 PDF objects out of 2073 (max. 8388607)
- 1818 compressed objects within 19 object streams
- 649 named destinations out of 1000 (max. 500000)
- 800 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1860 PDF objects out of 2073 (max. 8388607)
+ 1663 compressed objects within 17 object streams
+ 585 named destinations out of 1000 (max. 500000)
+ 683 words of extra memory for PDF output out of 10000 (max. 10000000)
 

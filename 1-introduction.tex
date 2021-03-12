@@ -163,78 +163,14 @@ T_{Y \rightarrow X} (t) \equiv I(X_t: Y_{t-k} |  X_{t-k})
 
 \noindent Kraskov \cite{kraskovEstimator} shows that transfer entropy can be expressed as the difference between two conditional mutual information computations: 
 
-\begin{equation} 
+\begin{equation}  \label{eq:TE-MI-Diff}
 T_{Y \rightarrow X}(t) = I(X_t | X_{t-k}, Y_{t-k}) -  I(X_t | X_{t-k}) 
  \end{equation} 
 
 The intuition of this definition is that TE measures the amount of information in \(Y_{t-k}\) about \(X_t\) after  considering the information in \(X_{t-k}\) about \(X_t\). Put differently, TE quantifies the reduction in uncertainty about \(X_t\) from knowing \(Y_{t-k}\) after considering the reduction in uncertainty about \(X_t\) from knowing \(X_{t-k}\).
 
 
-\subsection{Estimating Transfer Entropy} \label{intro:estimateTE}
 
-Prior research has developed a few approaches for estimating TE. There's a requirement to specify some or all of the following parameter choices: the time between periods, length of the time series, number of past observations that inform the future observations and the direction of information transfer in the approaches. The correct approach depends on the underlying data. There are many techniques for estimating mutual information. Khan et al. explored the utility of different methods for mutual information estimation \cite{EstimatingTE} and many of the methods  are applicable to estimate TE.
-
-\subsubsection{Kernel Density Estimator}
-Kernel Density Estimators can be used to estimate TE \cite{KDE}. For a bivariate dataset of size n with variables X and Y, Mutual Information can be estimated as:
-
-\begin{equation}
-\hat{I}(X,Y) = \frac{1}{n} \sum_{i=1}^n ln \frac{\hat{p}_{XY}(x_i, y_j)  } {\hat{p}_X(x_i) \hat{p}_Y(y_i)}
-\end{equation}
-
-\noindent where \(\hat{p}_X(x_i)\) and \( \hat{p}_Y(y_i)\) are the estimated marginal probability density functions and  \(\hat{p}_{XY}(x_i, y_j)\) is the joint estimated probability density function. For a multivariate dataset containing: \(x_1, x_2, ..., x_n\) where each \(x\) is in a d-dimensional space, the multivariate kernel density estimator with kernel \(K\) is defined by:
-
-\begin{equation}
-\hat{p}(x) = \frac{1}{nh^d} \sum_i=1^n K(\frac{x-x_i}{h}  ) 
-\end{equation}
-
-\noindent where \(h\) is the smoothing parameter, and in this case, \(K\) is a standard multivariate normal kernel defined by \(K(x)=(2\pi)^{-d/2} e^{\frac{x^Tx}{2} } \). Moon et al. outlined a procedure to estimate Mutual Information using marginal and joint probabilities with Kernel Density Estimators \cite{KDE}.
-
-\subsubsection{Kraskov Estimator} \label{intro:Kraskov}
-
-Transfer Entropy can be estimated using k-nearest neighbors \cite{kraskovEstimator}. Note that entropy can be estimated with:
-
-\begin{equation}\hat{H}(X) = - \frac{1}{n} \sum^n_{i=1} ln \hat{p}(x_i) \end{equation}
-
-\noindent Kraskov et al. expanded this definition to estimate entropy to:
-
-\setlength{\arraycolsep}{0.0em}
-\begin{eqnarray}
-\hat{H}(X) = - \frac{1}{n} \sum^n_{i=1} \psi(n_x(i)) - \frac{1}{k} + \psi(n) + ln (c_{d_x}) + \nonumber\\
- \frac{d_x}{n} \sum^n_{i=1} ln (\epsilon(i))
-\end{eqnarray}
-\setlength{\arraycolsep}{1pt}
-
-%\begin{equation} \hat{H}(X) = - \frac{1}{n} \sum^n_{i=1} \psi(n_x(i)) - \frac{1}{k} + \psi(n) + ln (c_{d_x}) + \frac{d_x}{n} \sum^n_{i=1} ln (\epsilon(i)) \end{equation},
-\noindent where n are the number of data points, k are the nearest neighbors, \(d_x\) is the dimension of x, and \(c_{d_x}\) is the volume of the \(d_x\)-dimensional unit ball. For two random variables X and Y, let \( \frac{\epsilon(i)}{2} \) be the distance between (\(x_i,y_i\)) and it's k\textsuperscript{th} neighbor be denoted by (\(kx_i,ky_i\)). Let \(\frac{\epsilon_x(i)}{2}\) and  \(\frac{\epsilon_y(i)}{2}\) be defined as \( ||x_i-kx_i ||\) and \( ||y_i-y_i || \) respectively. \(n_x(i)\) is the number of points \(x_j\) such that \(||x_i - x_j  || \leq \epsilon_x(i)/2\), \(\psi(x)\) is the digamma function where
-
-\begin{equation}\psi(x) = \Gamma(x)^-1 d\Gamma(x) / dx \end{equation}
-and  \(\Gamma(x)\) is the ordinary gamma function. Lastly \(\psi(1) = -C\) where \(C=0.5772156649\) and is the Euler-Mascheroni constant. To estimate the entropy for the random variable Y, \(Y\) can be substituted into \(\hat{H}(X)\).
-
-Joint entropy between X and Y can then be estimated as:
-\setlength{\arraycolsep}{0.0em}
-\begin{eqnarray}
-\hat{H}(X,Y) = - \psi(k) - \frac{1}{k} + \psi(n) + ln(c_{d_x} c_{d_y})  +  \nonumber\\
-\frac{d_x + d_y}{n} \sum^n_i ln(\epsilon(i)
-\end{eqnarray}
-\setlength{\arraycolsep}{1pt}
-
-%\begin{equation}\hat{H}(X,Y) = - \psi(k) - \frac{1}{k} + \psi(n) + ln(c_{d_x} c_{d_y})  + \frac{d_x + d_y}{n} \sum^n_i ln(\epsilon(i))\end{equation}
-
-\noindent where \(d_y\) is the dimension of \(y\), and \(c_{d_y}\) is the column of the \(d_y\)-dimensional unit ball. Using \(\hat{H}(X), \hat{H}(Y),\) and \(\hat{H(X,Y)}\) mutual information can be estimated as:
-
-\begin{equation}
-\label{KraskovEquation}
-\hat{I}(X,Y) = \psi(k) - \frac{1}{k} - \frac{1}{n}  \sum_{i=1}^n [\psi(n_x(i)) + \psi(n_y(i))] + \psi(n)
-\end{equation}
-
-\noindent where \(n_y(i)\) is the number of points \(y_j\) such that \(|| y_i - y_j || \leq \frac{\epsilon_y(i)}{2} \). This method has been referred to as the Kraskov estimator in literature.
-
-\subsubsection{Additional Estimators}
-Khan et al. also explored the utility of Edgeworth approximation of differential entropy to calculate Mutual Information and adaptive partitioning of the XY plane to estimate the joint probability density, which can be used to estimate mutual information. Ultimately Khan et al. found that a KDE estimator and Kraskov estimator outperform  other methods  with respect to their ability to capture the dependence structure of random processes. %
-
-\cite{JeffTE} examined the properties of the Kraskov estimator between equities and their underlying options and found that incorrect parameter choices lead to smaller TE estimates. \cite{JeffTE} also found that kraskov's method has a downward bias indicating that it underestimates information transfer. Nevertheless, it is relatively insensitive to the parameter selection. 
-
-\clearpage
 \section{Figures and Tables}
 
 
