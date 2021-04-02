@@ -1,37 +1,37 @@
 \chapter{Introduction}
 
 
-The economic goal of a society is to maximize wealth by allocating resources efficiently. Capital markets (such as the stock market) provide a method to help allocate resources efficiently. The prediction and inference of future financial events are often critical to achieve the economic goal. Firm specific information contribute to how resources (i.e labor, capital, and natural resources) are allocated in capital markets. The prediction of a future state for a firm (such as the firm's profitability, financial condition, or revenue growth) is an important factor to contribute to how resources should be allocated.  There are many methods used to predict or inform about the future state of a firm.  
+The economic goal of a society is to maximize wealth by allocating resources efficiently. Capital markets (such as the stock market) provide a method to help allocate resources efficiently. The prediction and inference of future financial events are often critical to achieving the economic goal. Firm-specific information contributes to resource allocation (i.e., labor, capital, and natural resources) in capital markets. The prediction of a future state for a firm (such as its profitability, financial condition, or revenue growth) is an essential factor contributing to resource allocation.  There are many methods used to predict or inform about the future state of a firm.  
 
 
 \section{Machine Learning}
 
-Machine Learning encompasses a vast set of statistical tools for understanding data and making predictions and inference. These tools fall into supervised or unsupervised categories. For data-driven problems typically we have a response variable (or labels)  referred to as \(Y\) and \(p\) independent variables (or features) refereed to as \(X\). If an assumption is made that there is some relationship between \(Y\) and \(X\) the relationship can be expressed as:
+Machine Learning encompasses a vast set of statistical tools for understanding data and making predictions and inferences. These tools fall into supervised or unsupervised categories. For data-driven problems, typically, we have a response variable (or labels)  referred to as \(Y\), and \(p\) independent variables (or features) referred to as \(X\). Given the assumption that there is some relationship between \(Y\) and \(X\) the relationship can be expressed as:
 
 \begin{equation}
 \label{eq:function}
 Y = f(X) + \epsilon
 \end{equation}
 
-\noindent In eq. \ref{eq:function} \(f\) is an unknown function that models the relationship between \(X\) and \(Y\) with  \( \epsilon \) noise.  In most cases it is not possible to perfectly model \(f\) with real-world data and \(f\) is estimated (\(\hat{f}\)). In eq.\ref{eq:function} if \(Y\) is a quantitative variable then regression techniques are used estimate \(f\), however if \(Y\) is a qualitative variable then classification techniques are used.   \(\hat{f}\) is sought for inference where one wants to estimate \(f\) to understand how \(\hat{Y}\) (predicted labels) changes as one adjusts features. \(\hat{f}\) is also sought for prediction where the only concern is the accuracy of predictions for \(Y\). Machine learning provides a variety of approaches to estimate \(f\) for prediction and inference (see \cite{ISL:C1}).
+\noindent In eq. \ref{eq:function} \(f\) is an unknown function that models the relationship between \(X\) and \(Y\) with  \( \epsilon \) noise.  In most cases it is not possible to perfectly model \(f\) with real-world data and \(f\) is estimated (\(\hat{f}\)). In eq.\ref{eq:function} if \(Y\) is a quantitative variable then regression techniques are used estimate \(f\), however if \(Y\) is a qualitative variable then classification techniques are used.   \(\hat{f}\) is sought for inference where one wants to estimate \(f\) to understand how \(\hat{Y}\) (predicted labels) changes as one adjusts features. \(\hat{f}\) is also sought for prediction where the only concern is the accuracy of predictions for \(Y\). Machine learning provides a variety of approaches to estimate \(f\) for prediction and inference (see \cite{ISL}).
 
-Machine learning problems typically fall into either supervised learning, semi-supervised learning, or unsupervised learning. With supervised learning one wants to fit a model on labels using a set of features. Semi-supervised learning consists of an environment with features and some corresponding labels. Typically in this setting one wishes to use the given features and partial labels to determine what the remaining missing labels are. Lastly with unsupervised learning one has features and no associated labels and seeks to find structure between the features. Currently, the research in this book will only utilize supervised learning. 
+Machine learning problems typically fall into either supervised learning, semi-supervised learning, or unsupervised learning. With supervised learning, one wants to fit a model on labels using a set of features. Semi-supervised learning consists of an environment with features and some corresponding labels. Typically, in this setting, one wishes to use the given features and partial labels to determine the remaining missing labels. Lastly, with unsupervised learning, one has features and no associated labels and seeks to find structure between the features.  Currently, the research in this dissertation will only utilize supervised learning. 
 
 \subsection{Supervised Learning} \label{sec:SupervisedLearning}
-In a supervised learning paradigm it is not enough to only have \(\hat{f}\) estimate \(f\) well on a dataset. \(\hat{f}\) is often sought to learn a dataset well enough to generalize well to new data that  \(\hat{f}\) has never seen before. To achieve this goal, a common methodology is to partition the data into a training set and testing set. The training set is used to train the model. The testing data is only used to assess the \(\hat{f}\)'s ability to generalize well to new data. The ratio of data used to train and assess the model is typically determined by the practitioner.  A specific \footnote{There are many error metrics that can be used however, for the sake of brevity MSE is the only error metric that will be discussed. } way to estimate \(\hat{f}\)'s performance is use  an error metric such as mean squared error (MSE) given by  
+In a supervised learning paradigm, it is not enough to only have \(\hat{f}\) estimate \(f\) well on a dataset. \(\hat{f}\) is often sought to learn a dataset well enough to generalize well to new data that  \(\hat{f}\) has not seen before. To find a suitable \(\hat{f}\), a standard methodology is to partition the data into a training set and testing set (see figure \ref{fig:TrainTestSplit}). The training set consists of data to train the model. The testing set consists of data to assess \(\hat{f}\)'s ability to generalize well to new data. The researcher/practitioner typically determines the ratio of data used to train and assess the model.  A specific  \footnote{One can use many error metrics; however, for the sake of brevity MSE is the only error metric discussed.}  way to estimate \(\hat{f}\)'s performance is to use an error metric such as mean squared error (MSE) given by:  
 
 \begin{equation}
 \label{eq:MSE}
 MSE = \frac{1}{n} \sum_{i=1}^n (y_i -\hat{f}(x_i))^2
 \end{equation}
 
-\noindent In eq. \ref{eq:MSE} \(y_i\) and \(x_i\) are the \(i^{th}\) observations of the labels and features respectively. \(\hat{f}(x_i)\) is the prediction of \(\hat{f}\) for the \(i^{th}\) observation and \(y_i\) is the label for the \(i^{th}\) observations. There will be a training MSE indicating the mean error of \(\hat{f}\) learning the training data. Subsequently there is a testing MSE associated with mean error of \(\hat{f}\) on the withheld testing data. A model with a very small testing MSE generalizes well to the withheld data. Often, the training MSE and testing MSE differ where the training MSE  underestimates the MSE for the test MSE \cite{ISL:Chapter5}. To combat this issue there are many approaches that can produce a more accurate MSE of how \(\hat{f}\) will generalize to new data.
+\noindent In eq. \ref{eq:MSE} \(y_i\) and \(x_i\) are the \(i^{th}\) observations of the labels and features respectively. \(\hat{f}(x_i)\) is the prediction of \(\hat{f}\) for the \(i^{th}\) observation and \(y_i\) is the label for the \(i^{th}\) observations. Training MSE indicates the mean error of \(\hat{f}\)'s ability to learn the training data.  Subsequently, there is a testing MSE associated with the mean error of \(\hat{f}\) on withheld testing data. A model with a small testing MSE generalizes well to the withheld data. Often, the training MSE and testing MSE differ where the training MSE underestimates the MSE for the testing MSE (see chapter 5 of \cite{ISL}). Many approaches can produce a more accurate estimate of how well \(\hat{f}\) will generalize to new data.
 
 \subsection{Validation Approaches} \label{sec:validationApproach}
 
-An alternative approach to training and assessing \(\hat{f}\) on training and testing sets respectively is to create a validation dataset by randomly sampling the training dataset. The sampling method is determined by the researcher/practitioner. \(\hat{f}\) is then trained on the training data and the trained model is assessed with validation data. The validation MSE is more indicative of the test MSE. However there are issues with this approach. For example the validation data-set is comprised of randomly sampled data. Given the random data the validation MSE highly variable. To combat this issue cross-validation can be used to  decrease the variability of the validation MSE.
+An alternative approach to training and assessing \(\hat{f}\) on training and testing sets, respectively, is to create a validation dataset by randomly sampling the training dataset.  The researcher/practitioner determines the sampling method.  \(\hat{f}\) trains on the training data, and the trained model assesses its ability to generalize with validation data. The validation MSE is more indicative of the test MSE. However, there are issues with this approach. For example, randomly sampled data is in the validation dataset.  Given that the validation set is composed of random data, the validation MSE can be highly variable. Cross-validation can decrease the variability of the validation MSE.
 
-A common cross-validation technique is \(k\)-fold cross-validation where the training data is split into \(k\) separate folds (see Figure \ref{fig:KFoldValidation}). The first fold is withheld and used as the validation data-set to assess the model's performance. The remaining \(k-1\) folds are used to train the model. For the next iteration the same procedure is followed where the 2nd fold is withheld to serve as the validation data-set to assess the model (see Figure \ref{fig:KFoldValidationExplain}) and the other \(k-1\) folds are used. This process repeats \(k\) times and  produces \(k\) \(MSE\) scores (\(MSE_1, MSE_2, ... , MSE_k\)). The \(k\)-fold CV estimate is  computed by averaging the MSE fold values
+A common cross-validation technique is \(k\)-fold cross-validation where the training data is split into \(k\) separate folds (see figure \ref{fig:KFoldValidation}). The first fold is withheld and used as the validation dataset to assess the model's performance. The remaining \(k-1\) folds train the model. For the next iteration, the same procedure repeats where the 2nd fold serves as the validation dataset to assess the model (see figure \ref{fig:KFoldValidationExplain}) and the other \(k-1\) folds train the model. This process repeats \(k\) times and  produces \(k\) \(MSE\) scores (\(MSE_1, MSE_2, ... , MSE_k\)). Averaging the MSE fold values yields the \(k\)-fold CV estimate:
 
 \begin{equation}
 \label{eq:CV}
@@ -40,7 +40,7 @@ CV = \frac{1}{k} \sum_{i=1}^k MSE_i
 
 \noindent where \(k\) is the number of folds. 
 
-Selecting a large value \(k\) can be computationally expensive as the model must be retrained on \(k\) separate folds. In addition to this, the selection of \(k\) can effect the model's ability to generalize to new data well. Typically with a smaller value of \(k\) you have more bias and a larger value of \(k\) has more variance. For example consider when \(k=3\) and \(k=10\), the training folds will have \(n_{train}\) observations where  \( n_{train}= \frac{(k-1)n}{k}\) and the validation fold will have \(n_{validation}\) observations where \( n_{validation}= \frac{k-(k-1)n}{k}\). When \(k=10\), 90\% of the data is used to train the model and the remaining 10\% is used to assess the model. The model is trained on very similar datasets and the predictions from the model on the cross-validation datasets are highly correlated. This results in a model with high variance. If \(k=3\) 66.7\% of the data is used to train the model and the remaining 33.3\% of the data is used to assess the model. CV averages fewer predictions that are less correlated with each other, since the overlap between the training sets are smaller.  This results in a CV score with lower variance and higher bias. 
+Selecting a large value \(k\) can be computationally expensive as the model must be retrained on \(k\) different folds. In addition to this, the selection of \(k\) can affect the model's ability to generalize to new data well. Typically with a smaller value of \(k\) you have more bias, and a larger value of \(k\) has more variance. For example consider when \(k=3\) and \(k=10\), the training folds will have \(n_{train}\) observations where  \( n_{train}= \frac{(k-1)n}{k}\) and the validation fold will have \(n_{validation}\) observations where \( n_{validation}= \frac{k-(k-1)n}{k}\). When \(k=10\), 90\% of the data is used to train the model, and the remaining 10\% assesses the model. The model trains on very similar datasets, and the predictions from the model on the cross-validation datasets are highly correlated. The high correlated datasets can result in a model with high variance. If \(k=3\) 66.7\% of the data trains the model and the remaining 33.3\% of the data assesses the model, CV averages fewer predictions that are less correlated with each other since the overlap between the training sets are smaller. When \(k=3\) this results in a CV score with lower variance and higher bias. 
 
 % wrap ML up.
 
@@ -48,18 +48,17 @@ Selecting a large value \(k\) can be computationally expensive as the model must
 
 % context to how network science is used in Finanical Markets
 
-A network (or graph) consists of a collection of nodes joined by connections between the nodes (commonly referred to as edges). Networks can be formed from data to offer a representation of the structure of data which subsequently allows many analysis techniques to be performed. Network Theory involves the study of networks as a representation of relationships between nodes. Throughout this section a network will be denoted by \(G\), the number of edges in a network will be denoted by \(m\), and the number of nodes will be denoted by \(n\).  A graph with \(n\) nodes and \(m\) edges is denoted as \(G(n,m)\).
+Network science is the study of networks, and a network (or graph) consists of a collection of nodes joined by connections (commonly referred to as edges).  Networks capture interactions between nodes, and over the years, scientists have discovered that specific patterns of interactions have a significant effect on the network's behavior (see \cite{Networks}.  This field has evolved, and a vast set of tools have developed to analyze,  model,  and understand networks (again, see \cite{Networks}).  Researchers have used networks in financial markets to determine which sectors are related around specific events.  For example,   \cite{Billio2012} and \cite{DieboldYilmaz2014}  found that banks play an essential role in transmitting shocks relative to the remaining set of financial firms,  consistent with banks playing a more central role in systemic risk for the economy around the 2007-2009 financial crisis.  Network science can help us  understand more about the probable future states of firms.
 
-Graphs do not have to specify the direction of an edge. Graphs with this property are referred to as a undirected graph. For example if Node \(A\) and Node \(B\) are connected a undirected graph will not distinguish whether Node ``A" is connected to Node ``B" or vice-versa;  an undirected graph will only retain information about nodes \(A\) and \(B\) having a connection. Figure \ref{fig:ExampleNetwork} shows an example of a undirected graph \(G(7,16)\). The amount of edges a particular node has is referred to as the degree of the node. In Figure \ref{fig:ExampleNetwork}, the node ``FB" has a degree of 6 because it is connected to 6 other nodes.
-Degree is a common metric used in network theory.
+Networks can be formed from data to offer an alternative representation of the data, allowing many analysis techniques. Network Theory involves the study of networks as a representation of relationships between nodes. Throughout this section, \(G\) denotes a network, \(m\) denotes the number of edges in a network, and \(n\) denotes the number of nodes.  A graph with \(n\) nodes and \(m\) edges is denoted as \(G(n,m)\).
 
-It is also possible for a graph to retain additional information about edges. Another source of information are the direction of the edges; graphs that store information about the directions of edges are called directed graphs. For example if Node ``A"  is connected to Node ``B" a directed graph would contain information that Node ``A"  has an edge to Node ``B" but Node ``B" does not have an edge to Node ``A". Figure \ref{fig:ExampleNetworkDirected} shows an example of a directed graph; in Figure \ref{fig:ExampleNetworkDirected} there is an edge from ```JNJ" to ``FB"  however there is no edge from ``FB" to ``JNJ".
+Undirected graphs do not have to specify the direction of an edge.  For example, if Node \(A\) and Node \(B\) are connected, an undirected graph will not distinguish whether Node "A" connects to Node "B" or vice-versa;  an undirected graph will only retain information about nodes \(A\) and \(B\) having a connection. Figure \ref{fig:IntroExampleNetwork} shows an example of a undirected graph \(G(7,16)\). The amount of edges a particular node has is the degree of the node. Figure \ref{fig:IntroExampleNetwork}, the node "FB" has a degree of 6 because it connects to 6 other nodes. Degree is a standard metric used in network theory.
 
-Another source of information that graphs can retain are edge weights and are called weighted networks (or weighted graphs). Instead of having a binary connection to determine whether an edge is present or not it can be useful to measure the strength between connections of nodes.For example if you can have an attribute to determine the strength between nodes such as TE estimates, TE estimates can be used as the weight value of an edge to determine the strength of information flow between nodes. Edge weights are applicable to both directed and undirected graphs ergo it is possible to have a undirected weighted graph or directed weighted graph. Figure \ref{fig:ExampleNetworkDirectedWeighted} contains an example of a directed weighted network. 
+It is also possible for a graph to retain additional information about edges. Another source of information is the direction of the edges; graphs that store information about edges' directions are called directed graphs. For example, consider a directed graph with two nodes (Node "A" and Node "B"). If Node "A"  connects to Node "B" a directed graph would contain information that Node "A"  has an edge to Node ``B" but Node "B" does not have an edge to Node "A".  Figure \ref{fig:ExampleNetworkDirected} shows an example of a directed graph; in figure \ref{fig:ExampleNetworkDirected} there is an edge from "JNJ" to ``FB"  however there is no edge from ``FB" to "JNJ".
 
-Under certain circumstances it is more convenient to express a graph as an adjacency matrix.  For example consider the graph in Figure \ref{fig:ExampleNetwork}, if this were expressed as a table with column and row headers Table \ref{tab:ExampleTable} would be produced. 
+Weighted networks (or weighted graphs) consider edge weights. Instead of having a binary connection to determine whether an edge is present or not, it can measure the strength between nodes' connections. For example, if one has an attribute to determine the strength between nodes, such as a statistic from the data,  it can be used as the weight value of an edge to determine the strength of the connection between nodes.  Edge weights are applicable to both directed and undirected graphs. Ergo it is possible to have an undirected weighted graph or directed weighted graph. Figure \ref{fig:ExampleNetworkDirectedWeighted} contains an example of a directed weighted network. 
 
-However it is mathematically more convenient to express Table \ref{tab:ExampleTable} as an adjacency matrix (see Eq \ref{eq:adjacencyMatrix}).
+Under certain circumstances, it is more convenient to express a graph as an adjacency matrix.  The graph in Figure \ref{fig:IntroExampleNetwork}, is converted to a table with column and row headers table \ref{tab:ExampleTable}. However it is mathematically more convenient to express table \ref{tab:ExampleTable} as an adjacency matrix (see Eq \ref{eq:adjacencyMatrix}).
 
 \begin{gather}
 A =
@@ -79,58 +78,62 @@ A =
 the direction of edges are not taken into account; ergo if node \(i\) and node \(j\) are connected \(A_{ij}\) and \(A_{ji}\) have a value of 1. It is also possible to represent directed graphs by assigning a 1 to a matrix element \(A_{ij}\) where node \(i\) is connected to node \(j\). Lastly you can express the weight of edges in adjacency matrices by assigning non-binary values to matrix elements.
 
 \subsection{Analysis of Networks}
-After forming a network from data, common metrics are often sought to help describe the structure of the network.  The first metric are the degree of nodes where the degree  can be defined in Eq \ref{eq:degree} as the sum of edges for a particular node. In Figure \ref{fig:ExampleNetworkDegree} the node sizes are scaled based on the degree .
+After forming a network from data, common metrics are often sought to help describe the structure of the network.  The first metric are the degree of nodes where the degree  can be defined in eq \ref{eq:degree} as the sum of edges for a particular node. In Figure \ref{fig:ExampleNetworkDegree} the node sizes are scaled based on the degree.
 
 \begin{equation}
     \label{eq:degree}
-    k_i =  \sum_{j=1}^{n}A_{ij}
+    m_i =  \sum_{ij}A_{ij}
 \end{equation}
 
-\noindent where \(A\) is an adjacency matrix. Subsequently you can have degrees for directed networks such as in-degree which counts the amount of edges that are connected to node \(i\) (see Eq \ref{eq:indegree}). Whereas out-degree counts the amount of edges that node \(i\) is connected to (see Eq \ref{eq:outdegree}).
+ \noindent where \(A\) is an adjacency matrix. Subsequently, there are degree measures for directed networks, such as in-degree, which counts the number of edges connected to node \(i\) (see Eq \ref{eq:indegree}). Whereas out-degree counts the amount of edges that node \(i\) is connected to (see Eq \ref{eq:outdegree}).
 
 \begin{equation}
     \label{eq:indegree}
-    k_i^{in} =  \sum_{j=1}^{n}A_{ij}
+    m_i^{in} =  \sum_{j=1}^{n}A_{ij}
 \end{equation}
 
 \begin{equation}
     \label{eq:outdegree}
-    k_i^{out} =  \sum_{i=1}^{n}A_{ij}
+    m_i^{out} =  \sum_{i=1}^{n}A_{ij}
 \end{equation}
 
-\noindent The density of the network provides a numerical value for the portion of potential connections in a network that are actually connected. If all potential connections in a network are present then the density will have a numerical value of 1 and if there are no connections in an undirected network the density will be 0. The maximum number of potential connections in a network is \(n(n-1)/2\).  The degree summed for all nodes is \(m\) (for directed networks the summed in-degree and out-degree for all nodes is \(m\)). The density for a graph can be defined as:
+\noindent The network's density provides a numerical value for the proportion of actual connections out of all potential connections in a network. If all potential connections in a network are present, then the density will have a numerical value of 1, and if there are no connections in an undirected network, the density will be 0. The maximum number of potential connections in a network is \(n(n-1)/2\).  The degree summed for all nodes is \(m\) (for directed networks, the summed in-degree and out-degree for all nodes is \(m\)). The density for a graph is:
 
 \begin{equation}
     \label{eq:density}
-    D_u = \frac{2m}{n (n-1)}
+    D = \frac{2m}{n (n-1)}
 \end{equation}
 
 Centrality is another metric often sought to measure the importance of nodes in networks. Measuring the degree of nodes in relation to other nodes is called degree centrality (see Eq \ref{eq:degreeCentrality}). 
 
 \begin{equation}
     \label{eq:degreeCentrality}
-    C_i^d =  k_i = \sum_{i=1}^{n}A_{ij}
+    C_i^d =  m_i = \sum_{ij}A_{ij}
 \end{equation}
-
 
 
 \section{Information Transfer in Financial Markets} \label{IFinFM}
 % Tailor this section such that I dicuss Information Transfer in  a traditional context first, then explain transfer entropy.
-The price discovery process is important to achieve the economic goal of a society. Information is embedded in price and in an efficient market changes rapidly (if not instantaneously) when new information arrives. In particular how information transfers from one price to another is useful in the price discovery process. For example Apple Inc. announced that their new line of computers (Macs) would use central processing units (CPUs) developed in house and transition away from Intel) CPUs. In ideal settings this information will be reflected in Apple's stock price and Intel's stock price.
 
-In the example above it is probable that additional information can be reflected in Intel's price change at a given moment. However, it is difficult to determine price changes for specific events. The entire set of  information that is reflected in the price change at a given time period is unknown.  Prior studies have examined the price changes over long windows such as days or weeks (see \cite{Foster1981} and \cite{Baginiski 1987}) or shorter windows such as days. These methodologies may have missed much of the price change process given the assumption that information effects the price within seconds.  Given the theory that markets are efficient and reflect information into price within seconds after the information is known, we seek suitable methods to measure information flow in financial markets.
+The price discovery process is also vital to achieve the economic goal of a society.   In particular, how information transfers from one price to another is useful in the price discovery process.  Information is embedded in price, and an efficient market changes rapidly (if not instantaneously) when new information arrives.  For example, Apple Inc. recently announced that their new line of computers (Macs) would use central processing units (CPUs) developed in-house and transition away from Intel CPUs.  This information will reflect in Apple's stock price and Intel's stock price in ideal settings.
+
+In the Apple and Intel example, it is probable that additional information reflects in Intel's price change at a given moment. However, it is difficult to determine price changes for specific events. The entire set of information that reflects in the price change at a given time is unknown.  Prior studies have examined the price changes over long windows such as days or weeks (see \cite{Foster1981} and \cite{Baginiski1987}).  In particular, \cite{Foster1981} measured information transfers from firms that announce earnings and non-announcement firms in the same industry based on short-window price reactions.  Subsequent studies use a similar approach to examine short-window price reactions to firm-level earnings announcements (see \cite{ClinchSinclair1987},   \cite{PownallWaymire1989},  \cite{HanWild1990},  \cite{Wang2014},  and \cite{HannKimZheng2019}).   %The window sizes in the prior works were typically daily.  %These methodologies may have missed much of the price change process given the assumption that information effects the price within seconds.  Given the theory that markets are efficient and reflect information into price within seconds after the information is known,  we seek suitable methods to measure information flow in financial markets.
 
 \subsection{Information Theory } \label{sec:InformationTheory}
-Information theory provides a framework for studying the quantification, storage, and communication of information \cite{InfoTheoryApplications}.  Information theory has the potential to be useful in the price discovery process given that it can offer alternative approach for understanding information in price. In particular it offers alternative methods to understand information transfer between dynamic processes (such as stock prices). In this dissertation, I measure information flow in financial markets with the relatively new measure transfer entropy (see \ref{} and \ref{}). Transfer Entropy (TE) quantifies the reduction in uncertainty in one random process from knowing past realizations of another random process (see \ref{}). For example it is unlikely to predict Intel's closing price tomorrow. However knowing Intel's price today reduces the amount of uncertainty in the prediction for it's price tomorrow. In addition to this, knowing Apple's price today may help further reduce the uncertainty in the future prediction. If Apple's price today helps to further reduce the uncertainty then TE will be positive indicating an information transfer from Apple to Intel. 
+Information theory provides a framework for studying the quantification, storage, and communication of information (see \cite{InfoTheoryApplication}).  Information theory has been useful in the price discovery process (see \cite{Billio2012} or \cite{DieboldYilmaz2014}).  It offers an alternative approach for understanding information in price.   In particular,  it offers alternative methods to understand information transfer between random processes (such as equity prices).  
 
-In 2000, Schreiber \cite{IntroToTransferEntropy} discovered TE and coined the name ``transfer entropy," although Milian Palus \cite{IntroToTransferEntropy2} also independently discovered the concept as well. To define TE, one must begin with the building blocks of information theory \footnote{For simplicity discrete events are used to introduce these concepts.}.  Shannon Information is defined as: 
+In this dissertation,  we measure information transfer in financial markets with the relatively new measure Transfer Entropy (TE)  (see \cite{IntroToTransferEntropy}).  TE allows us to measure information transfers in a broader sense and avoids assumptions of prior works.  We avoid the assumption of links between firms due to a shared characteristic (such as shared industry) or a known event (such as earnings announcements).   TE quantifies the reduction in uncertainty in one random process from knowing past realizations of another random process.  
+
+For example, it is unlikely to predict Intel's closing price tomorrow with no information accurately.  However, knowing Intel's price today reduces uncertainty in the prediction for its price tomorrow.  In addition to this, knowing Apple's price today may help further reduce the uncertainty in Intel's future price predictions.  If Apple's price today reduces the uncertainty further, TE will be positive, indicating an information transfer from Apple to Intel.   The TE value will vary at any given time, given the information incorporated into Apple's and Intel's prices.
+
+\cite{IntroToTransferEntropy} discovered TE and coined the name "transfer entropy," although  \cite{IntroToTransferEntropy2} also independently discovered the concept as well.  To define TE, one must begin with the building blocks of information theory \footnote{For simplicity, we use discrete events to introduce these concepts.}.  Shannon Information is: 
 
 \begin{equation}
 \label{{eq:shannonInfo}}
 h(x) = \log_2 \frac{1}{p(x)}
 \end{equation}
 
-\noindent where \(x\) is an event and \(p(x)\) is probability of \(x\) occurring. This definition implies that values of x with small probabilities contain more information. Consequently values of x that are more probable (or common) contain less information. Entropy is the amount of uncertainty or disorder in a random process.
+\noindent where \(x\) is an event and \(p(x)\) is probability of \(x\) occurring. Shannon's information definition implies that values of x with small probabilities contain more information. Consequently, values of x that are more probable (or common) contain less information. Entropy is the amount of uncertainty or disorder in a random process.
 
 \begin{equation}
 \label{eq:Entropy}
@@ -138,7 +141,7 @@ H(X) =  \frac{1}{n} \sum_{i=1}^n  \log_2 p(x)
 \end{equation}
 
 
-\noindent Entropy is defined in eq. \ref{eq:Entropy} is the weighted average of shannon information.  Conditional entropy is the entropy after conditioning on another process (\(Y\)):
+\noindent In eq. \ref{eq:Entropy} we define entropy as the weighted average of Shannon Information.  Conditional entropy is the entropy after conditioning on another process (\(Y\)):
 
 \begin{equation}
 \label{eq:CondEntropy}
@@ -152,16 +155,17 @@ H(X|Y) = \sum_{y \in \Omega_y} p(y) H(X|y)
 I(X,Y) = H(X) - H(X|Y) = H(Y) - H(Y|X)
 \end{equation}
 
-\noindent In eq. \ref{eq:MutalInformation} consider \(H(X) - H(X|Y)\),  \(H(X)\) computes the entropy of X and \(H(X|Y)\) computes the entropy of X conditioned on Y. The difference between \(H(X)\) and \(H(X|Y)\) captures the shared information between \(X\) and \(Y\). Mutual Information in a directed measure ergo \(I(X,Y) = I(Y,X)\).
+\noindent In eq. \ref{eq:MutalInformation} consider \(H(X) - H(X|Y)\),  \(H(X)\) computes the entropy of X and \(H(X|Y)\) computes the entropy of X conditioned on Y. The difference between \(H(X)\) and \(H(X|Y)\) captures the shared information between \(X\) and \(Y\). Mutual Information is a symmetric measure ergo \(I(X,Y) = I(Y,X)\).
 
-Lagged mutual information \(I(X_t : Y_{t-k})\) can be used as a time-asymmetric measure of information transfer from \(Y\) to \(X\) where \(X\) and \(Y\) are both random processes, \(k\) is a lag period, and \(t\) is the current time period. However, lagged mutual information is unsatisfactory as it does not account for a shared history between the processes \(X\) and \(Y\) \cite{MIdiffTE}. While similar to lagged mutual information, transfer entropy (TE) also considers the dynamics of information and how these dynamics evolves in time \cite{IntroToTransferEntropy}. TE is also an asymmetric measure of information transfer. Ergo, TE computed from process \(A\) to process \(B\) may yield a different result than TE computed from \(B\) to \(A\). The information theoretic framework and these measures have led to a variety of applications in different research areas \cite{InfoTheoryApplications}, \cite{TEBook}.
+Lagged mutual information \(I(X_t : Y_{t-k})\) can be used as a time-asymmetric measure of information transfer from \(Y\) to \(X\) where \(X\) and \(Y\) are both random processes, \(k\) is a lag period, and \(t\) is the current time period. However, lagged mutual information is unsatisfactory as it does not account for a shared history between the processes \(X\) and \(Y\) (see \cite{MIdiffTE}). While similar to lagged mutual information,  TE also considers the dynamics of information and how these dynamics evolve in time (see \cite{IntroToTransferEntropy}).  TE is also an asymmetric measure of information transfer. Ergo, TE computed from process \(A\) to process \(B\) may yield a different result than TE computed from \(B\) to \(A\). The information-theoretic framework and these measures have led to various applications in different research areas (see \cite{TEBook}).
 
-TE considers the shared history between two processes via conditional mutual information. Specifically, TE conditions on the past of \(X_t\) to remove any redundant or shared information between \(X_t\) and its past. This also removes any information in the process \(Y\) about \(X\) at time \(t\) that is in the past of \(X\) \cite{b359}. Transfer entropy \(T\) (where the transfer of information occurs from \(Y\) to \(X\)) can be defined as:
+TE considers the shared history between two processes via conditional mutual information. Specifically, TE conditions on the past of \(X_t\) to remove any redundant or shared information between \(X_t\) and its past. This also removes any information in the process \(Y\) about \(X\) at time \(t\) that is in the past of \(X\) (see \cite{b359}).  Transfer entropy \(T\) (where the transfer of information occurs from \(Y\) to \(X\)) is:
+
 \begin{equation}
 T_{Y \rightarrow X} (t) \equiv I(X_t: Y_{t-k} |  X_{t-k})
 \end{equation}
 
-\noindent Kraskov \cite{kraskovEstimator} shows that transfer entropy can be expressed as the difference between two conditional mutual information computations: 
+\noindent \cite{kraskovEstimator} shows that transfer entropy can be expressed as the difference between two conditional mutual information computations: 
 
 \begin{equation}  \label{eq:TE-MI-Diff}
 T_{Y \rightarrow X}(t) = I(X_t | X_{t-k}, Y_{t-k}) -  I(X_t | X_{t-k}) 
@@ -169,7 +173,7 @@ T_{Y \rightarrow X}(t) = I(X_t | X_{t-k}, Y_{t-k}) -  I(X_t | X_{t-k})
 
 The intuition of this definition is that TE measures the amount of information in \(Y_{t-k}\) about \(X_t\) after  considering the information in \(X_{t-k}\) about \(X_t\). Put differently, TE quantifies the reduction in uncertainty about \(X_t\) from knowing \(Y_{t-k}\) after considering the reduction in uncertainty about \(X_t\) from knowing \(X_{t-k}\).
 
-
+\clearpage
 
 \section{Figures and Tables}
 
@@ -180,9 +184,9 @@ The intuition of this definition is that TE measures the amount of information i
       \includegraphics[width=\textwidth]{figures/Intro/ExampleNetwork.pdf}
 
       \caption{
-      This figure contains an example of an undirected graph with 7 nodes and 16 edges. This graph is formed from randomly selecting stock symbol tickers from a set of tickers and forming connections randomly. The purpose of this data is solely to demonstrate the basics of network theory. The nodes are defined as circles and have ticker symbols overlaid on them. Edges are formed between nodes with lines between them. Since this is an undirected graph there is no directional information ergo no distinction as to whether one node is connected to another or vice-versa. The only information represented from an undirected graph is that they are connected. Lastly the amount of connections a node has is referred to as degree. So the node \(FB\) has 6 edges or a degree of 6.
+      This figure contains an example of an undirected graph with 7 nodes and 16 edges. This graph is formed from randomly selecting stock symbol tickers from a set of tickers and forming connections randomly. The purpose of this data is solely to demonstrate the basics of network theory. The nodes are defined as circles and have ticker symbols overlaid on them. Edges are formed between nodes with lines between them.  Since this is an undirected graph there is no directional information ergo no distinction as to whether one node is connected to another or vice-versa.  The only information represented from an undirected graph is that they are connected.  
       }
-      \label{fig:ExampleNetwork}
+      \label{fig:IntroExampleNetwork}
 
   \end{figure*}
 
@@ -190,7 +194,7 @@ The intuition of this definition is that TE measures the amount of information i
     \centering
      \includegraphics[width=\textwidth]{figures/Intro/ExampleNetworkDirected.pdf}
     \caption{
-This graph is nearly identical to the graph in Figure \ref{fig:ExampleNetwork} except this graph is a directed network. This means that it contains directional information between the nodes. This directional information is communicated based on the position of the arrow in a line. For example, the node \(FB\) has an edge to \(MSFT\) however \(MSFT\) does not have an edge to \(FB\). The directional information allows other metrics to be used such as in-degree (which represents the amount of edges directed toward a node) and out-degree (which represents the amount of edges directed away from a node. In this example \(FB\) has an in-degree of 2, an out-degree of 4 and a degree of 6.
+This graph is nearly identical to the graph in Figure \ref{fig:IntroExampleNetwork} except this graph is a directed network. This means that it contains directional information between the nodes. This directional information is communicated based on the position of the arrow in a line. For example, the node \(FB\) has an edge to \(MSFT\) however \(MSFT\) does not have an edge to \(FB\). The directional information allows other metrics to be used such as in-degree (which represents the amount of edges directed toward a node) and out-degree (which represents the amount of edges directed away from a node. In this example \(FB\) has an in-degree of 2, an out-degree of 4 and a degree of 6.
       }
 	\label{fig:ExampleNetworkDirected}
 \end{figure*}
@@ -216,6 +220,52 @@ This graph is nearly identical to the graph in Figure \ref{fig:ExampleNetwork} e
       \label{fig:ExampleNetworkDegree}
   \end{figure*}
 
+\begin{figure*}[!htb]
+    \centering
+      \centering
+      \includegraphics[width=\textwidth]{figures/ppt/TrainTestSplit.png}
+    \caption{
+      This figure shows how a data set can be partitioned for a supervised machine learning paradigm. The ``data-set" is partitioned into 2 unequal sets with the ``Train Set" having more data assigned to it than the ``Test Set".  The ``Train Set" and ``Test Set" ratios can vary and is typically determined by the practitioner. There are many ways to partition the data for the train and test sets. For example the dataset can be partitioned sequentially from the data, or form partitions based on the data being randomly sampled.
+      }
+\label{fig:TrainTestSplit}
+
+  \end{figure*}
+
+
+\begin{figure*}[!htb]
+    \centering
+      \centering
+      \includegraphics[width=\textwidth]{figures/ppt/KFoldValidation.png}
+    \caption{
+	The "Train Set" here represents the ``Train Set" in Figure \ref{fig:TrainTestSplit}. In this figure the data is split into \(k\) folds. How the \(k\) folds are created can vary. A common technique is to randomly divide the ``Train Set" observations into \(k\) equal folds.
+      }
+     \label{fig:KFoldValidation}
+  \end{figure*}
+
+\begin{figure*}[!htb]
+    \centering
+      \centering
+      \includegraphics[width=\textwidth]{figures/ppt/KFoldValidationExplain.png}
+     
+    
+    \caption{
+	This figure breaks down how \(k\)-Fold Cross Validation works. These folds are created from ``Train Set" in Figure \ref{fig:KFoldValidation}. For the first iteration (where you see 1 underlined), the 1st fold (circle labeled 1) is used to assess the models ability and the remaining folds (squares) are used to train the model. The 2nd iteration follows the same procedure as the 1st except only the 2nd fold is withheld and the other folds are used. This repeats \(k\) times.
+      }
+\label{fig:KFoldValidationExplain}
+  \end{figure*}
+
+
+%\begin{figure*}[!htb]
+%    \centering
+%      \includegraphics[width=\textwidth]{figures/ppt/DecisionTree.png}
+
+%    \caption{
+%	This figure shows an example of a Decision Tree. This is essentially a graph with no cycles.  Each circle represents a node (the label of the node is a letter inside of the node) and the arrows represent directional edges (branches) to another node. Node \(A\) is the root node of this tree and is where the decision begins. Potential outcomes from the root node lead to different states that are represented in nodes \(B\) and \(C\). \(B\) and \(C\) are the children of \(A\).  Nodes \(B\) and \(C\) have children and their children has children. Nodes \(H, I, E, J, K,\) and \(L\) are the leaf nodes of this tree because they have no children.
+%      }
+ %     \label{fig:DecisionTree}
+ % \end{figure*}
+
+\clearpage
 
 \begin{table}[htbp]
 \begin{center}
@@ -246,52 +296,10 @@ This graph is nearly identical to the graph in Figure \ref{fig:ExampleNetwork} e
 \label{tab:ExampleTable}
 \end{table}
 
-\begin{figure*}[!htb]
-    \centering
-      \centering
-      \includegraphics[width=\textwidth]{figures/ppt/TrainTestSplit.png}
-    \caption{
-      This figure shows how a data set can be partitioned for a supervised machine learning paradigm. The ``Data Set" is partitioned into 2 unequal sets with the``Train Set" having more data assigned to it than the ``Test Set". The ``Train Set" and ``Test Set" ratios can vary and is typically determined by the practitioner. There are many ways to partition the data for the train and test sets. For example the dataset can be partitioned sequentially from the data, or form partitions based on the data being randomly sampled.
-      }
-\label{fig:TrainTestSplit}
 
-  \end{figure*}
+%\clearpage
+%\bibliographystyle{plainnat}
+%\bibliography{thesisbib}
 
-
-\begin{figure*}[!htb]
-    \centering
-      \centering
-      \includegraphics[width=\textwidth]{figures/ppt/KFoldValidation.png}
-    \caption{
-	``Train Set" here represents ``Train Set" in Figure \ref{fig:TrainTestSplit}. In this figure the data is split into \(k\) folds. How the \(k\) folds are created can vary. A common technique is to randomly divide the ``Train Set" observations into \(k\) equal folds.
-      }
-     \label{fig:KFoldValidation}
-  \end{figure*}
-
-\begin{figure*}[!htb]
-    \centering
-      \centering
-      \includegraphics[width=\textwidth]{figures/ppt/KFoldValidationExplain.png}
-     
-    
-    \caption{
-	This figure breaks down how \(k\)-Fold Cross Validation works. These folds are created from ``Train Set" in Figure \ref{fig:KFoldValidation}. For the first iteration (where you see 1 underlined), the 1st fold (circle labeled 1) is used to assess the models ability and the remaining folds (squares) are used to train the model. The 2nd iteration follows the same procedure as the 1st except only the 2nd fold is withheld and the other folds are used. This repeats \(k\) times.
-      }
-\label{fig:KFoldValidationExplain}
-  \end{figure*}
-
-
-\begin{figure*}[!htb]
-    \centering
-      \centering
-      \includegraphics[width=\textwidth]{figures/ppt/DecisionTree.png}
-
-    \caption{
-	This figure shows an example of a Decision Tree. This is essentially a graph with no cycles.  Each circle represents a node (the label of the node is a letter inside of the node) and the arrows represent directional edges (branches) to another node. Node \(A\) is the root node of this tree and is where the decision begins. Potential outcomes from the root node lead to different states that are represented in nodes \(B\) and \(C\). \(B\) and \(C\) are the children of \(A\).  Nodes \(B\) and \(C\) have children and their children has children. Nodes \(H, I, E, J, K,\) and \(L\) are the leaf nodes of this tree because they have no children.
-      }
-      \label{fig:DecisionTree}
-  \end{figure*}
-
-\clearpage
 \bibliographystyle{plainnat}
-\bibliography{thesisbib}
+\nobibliography{thesisbib}

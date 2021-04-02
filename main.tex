@@ -25,6 +25,10 @@
 \usepackage{listings}
 \usepackage{fancyvrb}
 
+\usepackage{lscape}
+\usepackage{longtable}
+
+
 \usepackage{adjustbox}
 
 
@@ -64,6 +68,10 @@
 \usepackage{multirow}
 \usepackage[normalem]{ulem}
 \useunder{\uline}{\ul}{}
+
+% First level headings in table of contents
+\setcounter{tocdepth}{1}
+
 
 \def\aap{{A\&A}}
 \def\AaA{{A\&A}}
@@ -112,18 +120,40 @@
   \end{center}}
 
 
+
+\makeatletter
+\newenvironment{breakablealgorithm}
+  {% \begin{breakablealgorithm}
+   \begin{center}
+     \refstepcounter{algorithm}% New algorithm
+     \hrule height.8pt depth0pt \kern2pt% \@fs@pre for \@fs@ruled
+     \renewcommand{\caption}[2][\relax]{% Make a new \caption
+       {\raggedright\textbf{\ALG@name~\thealgorithm} ##2\par}%
+       \ifx\relax##1\relax % #1 is \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}%
+       \else % #1 is not \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}%
+       \fi
+       \kern2pt\hrule\kern2pt
+     }
+  }{% \end{breakablealgorithm}
+     \kern2pt\hrule\relax% \@fs@post for \@fs@ruled
+   \end{center}
+  }
+\makeatother
+
 \nocopyrightpage
 
 \begin{document}
 
-\title{Applications of Machine Learning for Financial Accounting}
-\author{Kelechi M. Ikegwu}
+\title{Machine Learning and Information-Theoretic Approaches for Financial Applications}
+\author{Kelechi Moise Ikegwu}
 \department{Informatics}
 \phdthesis
 \advisor{Robert J.\ Brunner}
 \degreeyear{2021}
 \committee{
-    Professor Robert J.\ Brunner, Chair, Director of Research\\
+    Professor Robert J.\ Brunner,  Chair,  Director of Research\\
     Professor Theodore Sougiannis\\
     Assistant Professor Jeff McMullin\\
     Assistant Professor Joseph Yun}
@@ -135,24 +165,28 @@
 %% Note that ProQuest truncates their abstracts at 350 words.
 \begin{abstract}
 
-foo.
-%Accurate star-galaxy classification has many important applications in modern precision cosmology. However, a vast number of faint sources that are detected in the current and next-generation ground-based surveys may be challenged by poor star-galaxy classification. Thus, we explore a variety of machine learning approaches to improve star-galaxy classification in ground-based photometric surveys. In Chapter~\ref{chapter2}, we present a meta-classification framework that combines existing star-galaxy classifiers, and demonstrate that our Bayesian combination technique improves the overall performance over any individual classification method. In Chapter~\ref{chapter3}, we show that a deep learning algorithm called convolutional neural networks is able to produce accurate and well-calibrated classifications by learning directly from the pixel values of photometric images. In Chapter~\ref{chapter4}, we study another deep learning technique called generative adversarial networks in a semi-supervised setting, and demonstrate that our semi-supervised method produces competitive classifications using only a small amount of labeled examples.
+Firm-specific information contributes to resource allocation in capital markets.  The prediction and inference of future firm-specific information are often critical factors for a prosperous economy.  Machine Learning and Information Theory offer alternative methods to aid in the prediction and inference of future firm-specific information.  Thus we explore approaches from machine learning and information theory to improve existing research areas in finance.  
+
+%Maybe Remove SML?
+In Chapter \ref{Chapter:SML} we introduce an agnostic framework called SML that integrates a query-like language to simplify the development of machine learning pipelines.  We show that SML significantly reduces the code one has to write to develop parts of a machine learning pipeline. In Chapter \ref{Chapter:ABIS} we utilized random forest trees to predict the annual direction of profitability for firms with a minimal amount of information.  We demonstrate that we can out-perform benchmark models typically used in financial accounting research settings.  
+
+Major public firms announce their annual earnings during the first quarter of the year.  The embedding information in these announcements effects the announcing firm and is transferred or incorporated in other firms.  Existing literature in finance and accounting focuses on measuring information transfers as effects stemming from firm-specific information releases.  In Chapter \ref{Chapter:PyIF} we discuss a solution to estimate information transfer via transfer entropy between random processes.  We show that our solution to estimate information transfer scales better than and is up to 1,072 times faster than all open source existing solutions for large datasets.  In Chapter \ref{Chapter:EATE} we present an alternative approach to estimate information transfer between firms centered around earnings announcements.  We show that information transfer between firms is stronger for firms on days with unexpected earnings news.  We also show that communities of firms are not adequately captured by characteristics that are the focus of existing literature.
 
 \end{abstract}
 
 %% Create a dedication in italics with no heading, centered vertically
 %% on the page.
-%\begin{dedication}
-%To Father and Mother.
-%\end{dedication}
+\begin{dedication}
+To my Father,  Mother,  Joshua,  Sandra,  Ezinne,  Natalia,  Khamille,  and Khalil.
+\end{dedication}
 
 %% Create an Acknowledgements page, many departments require you to
 %% include funding support in this.
 \chapter*{Acknowledgments}
 
-First and foremost, I would like to thank my advisor, Robert Brunner, for his guidance, patience,  and support during my graduate studies at University of Illinois at Urbana-Champaign.
-I also wish to thank my committee members, Theodore Sougiannis, Jeff McMullin, and Joseph Yun, for their help and support.
-I am also grateful to Matias Carrasco Kind, William Biscarri, Samantha Thrush,and ....
+First and foremost, I would like to thank my advisor,  Robert Brunner, for his guidance,  patience,  and support during my graduate studies at the University of Illinois at Urbana-Champaign.
+I also wish to thank my committee members, Theodore Sougiannis, Jeff McMullin, and Joseph Yun,  for their help and support.
+I am also grateful to Junhyung Kim, Vincent Reverdy, William Biscarri,  Samantha Thrush,  Matias Carrasco Kind,  Jacob Trauger,  Alice Perng, and Howard Hardiman.
 
 \begin{flushright}
 --- Kelechi Moise Ikegwu
@@ -160,9 +194,7 @@ I am also grateful to Matias Carrasco Kind, William Biscarri, Samantha Thrush,an
 
 \vspace{10mm}
 
-This work was supported in part by foo
-
-This work was partially funded by the Graduate College Fellowship program at the University of Illinois. This work utilizes resources provided by the Innovative Systems Laboratory at the National Center for Supercomputing Applications at the University of Illinois at Urbana-Champaign.
+This work was partially funded by the Graduate College Fellowship program at the University of Illinois.  The work was partially funded by the National GEM Consortium.  This work utilizes resources provided by the Innovative Systems Laboratory at the National Center for Supercomputing Applications at the University of Illinois at Urbana-Champaign.
 
 %% The thesis format requires the Table of Contents to come
 %% before any other major sections, all of these sections after
@@ -208,15 +240,22 @@ This work was partially funded by the Graduate College Fellowship program at the
 \include{4-PyIF}
 \include{5-EarningsAnnouncementsInfoTransfers}
 %\include{6-CommunityDetection}
-%\include{7-Conclusion}
+\include{7-Conclusion}
+
+
+
+
+\chapter*{References}
+\renewcommand{\bibsection}{}
+\bibliographystyle{plainnat}
+\bibliography{thesisbib}
+
 
 \appendix
 \input{Appendix.tex}
+%\include{Appendix}
 
 \backmatter
-
-%\bibliographystyle{plainnat}
-%\bibliography{thesisbib}
 
 \end{document}
 \endinput
