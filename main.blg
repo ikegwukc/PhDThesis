@@ -1,0 +1,168 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: 1-introduction.aux
+The style file: plainnat.bst
+A level-1 auxiliary file: 2-SML.aux
+Illegal, another \bibdata command---line 3 of file 2-SML.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+Illegal, another \bibstyle command---line 91 of file 2-SML.aux
+ : \bibstyle
+ :          {plainnat}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 92 of file 2-SML.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: 3-PredProfitML.aux
+Illegal, another \bibdata command---line 3 of file 3-PredProfitML.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+Illegal, another \bibstyle command---line 68 of file 3-PredProfitML.aux
+ : \bibstyle
+ :          {plainnat}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 69 of file 3-PredProfitML.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: 4-PyIF.aux
+Illegal, another \bibdata command---line 3 of file 4-PyIF.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+Illegal, another \bibstyle command---line 62 of file 4-PyIF.aux
+ : \bibstyle
+ :          {plainnat}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 63 of file 4-PyIF.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: 5-EarningsAnnouncementsInfoTransfers.aux
+Illegal, another \bibdata command---line 3 of file 5-EarningsAnnouncementsInfoTransfers.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+Illegal, another \bibstyle command---line 47 of file 5-EarningsAnnouncementsInfoTransfers.aux
+ : \bibstyle
+ :          {plainnat}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 48 of file 5-EarningsAnnouncementsInfoTransfers.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: 7-Conclusion.aux
+Illegal, another \bibstyle command---line 8 of file 7-Conclusion.aux
+ : \bibstyle
+ :          {plainnat}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 9 of file 7-Conclusion.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+Illegal, another \bibstyle command---line 38 of file main.aux
+ : \bibstyle
+ :          {plainnat}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 39 of file main.aux
+ : \bibdata
+ :         {thesisbib}
+I'm skipping whatever remains of this command
+Database file #1: thesisbib.bib
+Warning--I'm ignoring ABIS's extra "url" field
+--line 387 of file thesisbib.bib
+Repeated entry---line 411 of file thesisbib.bib
+ : @book{ISL
+ :          ,
+I'm skipping whatever remains of this entry
+Warning--entry type for "JeffTE" isn't style-file defined
+--line 612 of file thesisbib.bib
+Repeated entry---line 806 of file thesisbib.bib
+ : @article{Billio2012
+ :                    ,
+I'm skipping whatever remains of this entry
+Warning--entry type for "EA-TE" isn't style-file defined
+--line 868 of file thesisbib.bib
+A bad cross reference---entry "kotthoff_auto_2019"
+refers to entry "automl", which doesn't exist
+A bad cross reference---entry "komer_hyperopt_2019"
+refers to entry "automl", which doesn't exist
+A bad cross reference---entry "feurer_auto_2018"
+refers to entry "automl", which doesn't exist
+A bad cross reference---entry "Backus59"
+refers to entry "conf/ifip/1959", which doesn't exist
+Warning--I didn't find a database entry for "automl"
+Warning--I didn't find a database entry for "conf/ifip/1959"
+Name 2 in "Spiceland, J. David and James F. Sepe, and Mark Nelson." has a comma at the end for entry IntAccBook
+while executing---line 1347 of file plainnat.bst
+Warning--empty booktitle in ANN
+Warning--empty publisher in TEBook
+Warning--empty booktitle in pedros:fewUsefulThings
+Warning--can't use both volume and number fields in pedros:fewUsefulThings
+Warning--empty booktitle in feurer_auto_2018
+Warning--empty year in feurer_auto_2018
+Warning--empty year in feurer_auto_2018
+Warning--can't use both author and editor fields in frank2005weka
+Warning--empty journal in SML
+Warning--empty booktitle in komer_hyperopt_2019
+Warning--empty year in komer_hyperopt_2019
+Warning--empty year in komer_hyperopt_2019
+Warning--empty booktitle in kotthoff_auto_2019
+Warning--empty year in kotthoff_auto_2019
+Warning--empty year in kotthoff_auto_2019
+Warning--empty journal in jpype
+Warning--empty booktitle in Monahan
+Warning--empty journal in nose
+Warning--empty journal in cffi
+Name 2 in "Spiceland, J. David and James F. Sepe, and Mark Nelson." has a comma at the end for entry IntAccBook
+while executing---line 1429 of file plainnat.bst
+Name 2 in "Spiceland, J. David and James F. Sepe, and Mark Nelson." has a comma at the end for entry IntAccBook
+while executing---line 1429 of file plainnat.bst
+Warning--empty booktitle in IntAccBook
+Warning--empty publisher in InfoTheoryApplication
+You've used 70 entries,
+            2773 wiz_defined-function locations,
+            1110 strings with 20828 characters,
+and the built_in function-call counts, 36413 in all, are:
+= -- 3164
+> -- 2520
+< -- 46
++ -- 850
+- -- 780
+* -- 3138
+:= -- 5740
+add.period$ -- 284
+call.type$ -- 70
+change.case$ -- 460
+chr.to.int$ -- 70
+cite$ -- 161
+duplicate$ -- 1492
+empty$ -- 2654
+format.name$ -- 888
+if$ -- 7560
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 72
+newline$ -- 429
+num.names$ -- 280
+pop$ -- 917
+preamble$ -- 1
+purify$ -- 400
+quote$ -- 0
+skip$ -- 1198
+stack$ -- 0
+substring$ -- 1027
+swap$ -- 155
+text.length$ -- 12
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 725
+warning$ -- 21
+while$ -- 269
+width$ -- 0
+write$ -- 1028
+(There were 25 error messages)
