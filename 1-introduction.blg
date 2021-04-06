@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: 1-introduction.aux
+The style file: plainnat.bst
+Database file #1: thesisbib.bib
+Repeated entry---line 411 of file thesisbib.bib
+ : @book{ISL
+ :          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 806 of file thesisbib.bib
+ : @article{Billio2012
+ :                    ,
+I'm skipping whatever remains of this entry
+Warning--empty publisher in TEBook
+Warning--empty publisher in InfoTheoryApplication
+You've used 18 entries,
+            2773 wiz_defined-function locations,
+            748 strings with 9120 characters,
+and the built_in function-call counts, 7881 in all, are:
+= -- 724
+> -- 402
+< -- 13
++ -- 138
+- -- 120
+* -- 654
+:= -- 1260
+add.period$ -- 79
+call.type$ -- 18
+change.case$ -- 90
+chr.to.int$ -- 18
+cite$ -- 38
+duplicate$ -- 360
+empty$ -- 650
+format.name$ -- 150
+if$ -- 1639
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 21
+newline$ -- 123
+num.names$ -- 72
+pop$ -- 153
+preamble$ -- 1
+purify$ -- 76
+quote$ -- 0
+skip$ -- 258
+stack$ -- 0
+substring$ -- 263
+swap$ -- 25
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 178
+warning$ -- 2
+while$ -- 67
+width$ -- 0
+write$ -- 286
+(There were 2 error messages)

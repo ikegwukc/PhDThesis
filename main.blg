@@ -8,11 +8,11 @@ Illegal, another \bibdata command---line 3 of file 2-SML.aux
  : \bibdata
  :         {thesisbib}
 I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 91 of file 2-SML.aux
+Illegal, another \bibstyle command---line 105 of file 2-SML.aux
  : \bibstyle
  :          {plainnat}
 I'm skipping whatever remains of this command
-Illegal, another \bibdata command---line 92 of file 2-SML.aux
+Illegal, another \bibdata command---line 106 of file 2-SML.aux
  : \bibdata
  :         {thesisbib}
 I'm skipping whatever remains of this command
@@ -21,11 +21,11 @@ Illegal, another \bibdata command---line 3 of file 3-PredProfitML.aux
  : \bibdata
  :         {thesisbib}
 I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 68 of file 3-PredProfitML.aux
+Illegal, another \bibstyle command---line 85 of file 3-PredProfitML.aux
  : \bibstyle
  :          {plainnat}
 I'm skipping whatever remains of this command
-Illegal, another \bibdata command---line 69 of file 3-PredProfitML.aux
+Illegal, another \bibdata command---line 86 of file 3-PredProfitML.aux
  : \bibdata
  :         {thesisbib}
 I'm skipping whatever remains of this command
@@ -34,11 +34,11 @@ Illegal, another \bibdata command---line 3 of file 4-PyIF.aux
  : \bibdata
  :         {thesisbib}
 I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 62 of file 4-PyIF.aux
+Illegal, another \bibstyle command---line 82 of file 4-PyIF.aux
  : \bibstyle
  :          {plainnat}
 I'm skipping whatever remains of this command
-Illegal, another \bibdata command---line 63 of file 4-PyIF.aux
+Illegal, another \bibdata command---line 83 of file 4-PyIF.aux
  : \bibdata
  :         {thesisbib}
 I'm skipping whatever remains of this command
@@ -47,11 +47,11 @@ Illegal, another \bibdata command---line 3 of file 5-EarningsAnnouncementsInfoTr
  : \bibdata
  :         {thesisbib}
 I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 47 of file 5-EarningsAnnouncementsInfoTransfers.aux
+Illegal, another \bibstyle command---line 56 of file 5-EarningsAnnouncementsInfoTransfers.aux
  : \bibstyle
  :          {plainnat}
 I'm skipping whatever remains of this command
-Illegal, another \bibdata command---line 48 of file 5-EarningsAnnouncementsInfoTransfers.aux
+Illegal, another \bibdata command---line 57 of file 5-EarningsAnnouncementsInfoTransfers.aux
  : \bibdata
  :         {thesisbib}
 I'm skipping whatever remains of this command
