@@ -39,56 +39,56 @@
 \contentsline {section}{\numberline {3.3}Methods}{43}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Cross Validation for Time Series}{43}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Tree based Machine Learning Methods}{43}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Decision Trees}{43}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.3}Decision Trees}{44}{subsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.3.4}Random Forests}{45}{subsection.3.3.4}%
 \contentsline {section}{\numberline {3.4}Random Forest Implementation to Predict Directional Profitability}{46}{section.3.4}%
 \contentsline {section}{\numberline {3.5}Random Walk Benchmark Models}{46}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Random Walk: Benchmark 1}{47}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}Random Walk: Non-normal Error Term}{48}{subsection.3.5.2}%
 \contentsline {subsection}{\numberline {3.5.3}Random Walk: Benchmark 2}{49}{subsection.3.5.3}%
-\contentsline {section}{\numberline {3.6}Comparative Analyses}{49}{section.3.6}%
+\contentsline {section}{\numberline {3.6}Comparative Analyses}{50}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}Phase 1: Effect of Winsorization}{50}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Phase 2: Effect of Adding Additional Fundamental Information}{50}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.2}Phase 2: Effect of Adding Additional Fundamental Information}{51}{subsection.3.6.2}%
 \contentsline {section}{\numberline {3.7}Results}{51}{section.3.7}%
 \contentsline {subsection}{\numberline {3.7.1}Phase 1 Results and Discussion}{51}{subsection.3.7.1}%
 \contentsline {subsection}{\numberline {3.7.2}Phase 2 Results and Discussion}{53}{subsection.3.7.2}%
-\contentsline {section}{\numberline {3.8}Conclusion and Future Work}{54}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Figures and Tables}{56}{section.3.9}%
+\contentsline {section}{\numberline {3.8}Conclusion and Future Work}{55}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Figures and Tables}{57}{section.3.9}%
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-4}
-\contentsline {chapter}{Chapter\ 4\hskip 1em\relax Information Transfer Estimation on Large Data}{74}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introduction}{74}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Estimating Transfer Entropy}{75}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Kraskov Estimator}{75}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Additional Estimators}{77}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}PyIF}{78}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Comparative Analysis}{79}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}IDTxl}{80}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}TransEnt}{81}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}RTransferEntropy}{81}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Transfer Entropy Toolbox}{81}{subsection.4.4.4}%
-\contentsline {subsection}{\numberline {4.4.5}Data}{82}{subsection.4.4.5}%
-\contentsline {section}{\numberline {4.5}Results}{82}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Conclusion}{83}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Figures and Tables}{84}{section.4.7}%
+\contentsline {chapter}{Chapter\ 4\hskip 1em\relax Information Transfer Estimation on Large Data}{75}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{75}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Estimating Transfer Entropy}{76}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Kraskov Estimator}{76}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Additional Estimators}{78}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}PyIF}{79}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Comparative Analysis}{80}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}IDTxl}{81}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}TransEnt}{82}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}RTransferEntropy}{82}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Transfer Entropy Toolbox}{82}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Data}{83}{subsection.4.4.5}%
+\contentsline {section}{\numberline {4.5}Results}{83}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Conclusion}{84}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Figures and Tables}{85}{section.4.7}%
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-5}
-\contentsline {chapter}{Chapter\ 5\hskip 1em\relax Cross-Firm Information Transfers During Earnings Season: A Network Approach}{90}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Introduction}{90}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Data}{91}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Estimating Dynamic Information Transfer Between Firms}{92}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Algorithmic Process for Estimating Information Transfer Between firms}{93}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Network Creation}{96}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Exploratory Data Analysis}{96}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Earnings Surprise as a Determinant of Dynamic Information Transfers}{98}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Community Detection}{100}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Conclusion}{102}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Figures and Tables}{104}{section.5.8}%
+\contentsline {chapter}{Chapter\ 5\hskip 1em\relax Cross-Firm Information Transfers During Earnings Season: A Network Approach}{91}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introduction}{91}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Data}{92}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Estimating Dynamic Information Transfer Between Firms}{93}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Algorithmic Process for Estimating Information Transfer Between firms}{94}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Network Creation}{97}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Exploratory Data Analysis}{97}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Earnings Surprise as a Determinant of Dynamic Information Transfers}{99}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Community Detection}{101}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Conclusion}{103}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Figures and Tables}{105}{section.5.8}%
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-6}
-\contentsline {chapter}{Chapter\ 6\hskip 1em\relax Conclusion}{119}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Summary and Conclusion}{119}{section.6.1}%
+\contentsline {chapter}{Chapter\ 6\hskip 1em\relax Conclusion}{120}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Summary and Conclusion}{120}{section.6.1}%
 \gdef \the@ipfilectr {}
-\contentsline {chapter}{Appendix\ A\hskip 1em\relax Standard Machine Learning Language Supplemental Code}{128}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Iris Python Code}{128}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Auto-MPG Python Code}{131}{section.A.2}%
+\contentsline {chapter}{Appendix\ A\hskip 1em\relax Standard Machine Learning Language Supplemental Code}{129}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Iris Python Code}{129}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Auto-MPG Python Code}{132}{section.A.2}%
