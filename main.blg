@@ -47,11 +47,11 @@ Illegal, another \bibdata command---line 3 of file 5-EarningsAnnouncementsInfoTr
  : \bibdata
  :         {thesisbib}
 I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 56 of file 5-EarningsAnnouncementsInfoTransfers.aux
+Illegal, another \bibstyle command---line 57 of file 5-EarningsAnnouncementsInfoTransfers.aux
  : \bibstyle
  :          {plainnat}
 I'm skipping whatever remains of this command
-Illegal, another \bibdata command---line 57 of file 5-EarningsAnnouncementsInfoTransfers.aux
+Illegal, another \bibdata command---line 58 of file 5-EarningsAnnouncementsInfoTransfers.aux
  : \bibdata
  :         {thesisbib}
 I'm skipping whatever remains of this command
@@ -95,6 +95,7 @@ A bad cross reference---entry "feurer_auto_2018"
 refers to entry "automl", which doesn't exist
 A bad cross reference---entry "Backus59"
 refers to entry "conf/ifip/1959", which doesn't exist
+Warning--I didn't find a database entry for "b"
 Warning--I didn't find a database entry for "automl"
 Warning--I didn't find a database entry for "conf/ifip/1959"
 Name 2 in "Spiceland, J. David and James F. Sepe, and Mark Nelson." has a comma at the end for entry IntAccBook
