@@ -9,14 +9,14 @@
 
 \section{Introduction}
 
-\RC{I don't get second sentence. Is canonical systems something meant like social media or neuroscience, or do you mean the last three are canonical systems?}
+%\RC{I don't get second sentence. Is canonical systems something meant like social media or neuroscience, or do you mean the last three are canonical systems?}
 
-Transfer entropy (TE) is an information measure that quantifies the transfer of information between processes evolving in time (see Chapter \ref{sec:InformationTheory}). Transfer entropy has many potential applications in canonical systems, neuroscience, social media, and financial markets. Prior TE work concerning financial applications has typically used long windows in their research. For example, \cite{Kantz} measured information transfer between two financial time series (the DAX stock index and the Dow Jones) to determine to what extent one index determined the other's behavior. The data used by \cite{Kantz} sampled data every minute between May 2000 and June 2001; after cleaning the data, 63,867 observations were used in \cite{Kantz}'s study.  More recently \cite{Sandoval} used daily price data from 2003 to 2012 to detect causal relationships between 197 largest firms (globally) with Transfer Entropy.
+Transfer entropy (TE) is an information measure that quantifies the transfer of information between processes evolving in time (see Chapter \ref{sec:InformationTheory}). Transfer entropy has many potential applications in  neuroscience, social media, and financial markets. Prior TE work concerning financial applications has typically used long windows in their research. For example, \cite{Kantz} measured information transfer between two financial time series (the DAX stock index and the Dow Jones) to determine to what extent one index determined the other's behavior. The data used by \cite{Kantz} sampled data every minute between May 2000 and June 2001; after cleaning the data, 63,867 observations were used in \cite{Kantz}'s study.  More recently \cite{Sandoval} used daily price data from 2003 to 2012 to detect causal relationships between 197 largest firms (globally) with Transfer Entropy.
 
 Given the assumption in Chapter \ref{IFinFM} that information is reflected in price and in an efficient market changes rapidly (if not instantaneously), then slower frequencies of observations (or long time windows) such as monthly, daily, hourly, or even by the minute may be insufficient in capturing the price change process.  Given that we may not capture the entire price change process with long time windows between each observation, we examine price change with shorter windows.  However, shorter time windows will have a finer resolution of data, requiring more observations in a dataset. 
-%To illustrate this I provide an example of the amount observations that  increase given the time scale in figure \ref{fig:FreqObs}. 
+%To illustrate this I provide an example of the amount observations that  increase given the time scale in Figure \ref{fig:FreqObs}. 
 
-In figure \ref{fig:FreqObs}, we present the number of observations for a univariate dataset over 30 days for varying frequency size.  If the frequency of observations (time windows) in 30 days is daily,  there are 30 observations in the dataset.  If the time windows are hourly, we can expect 720 observations in 30 days, and if the time window between observations occurs on a minute level, then we have 43,200 observations.  If we continue these calculations down to the 1-second level, then there are 2,592,000 observations in a 30-day window.  Following this trend, we find that existing open-source, TE computation implementations are not suited to estimate information flow for datasets with large numbers of observations.  Given the need to examine information transfers over finer time resolutions, we propose a new, open-source, software implementation to estimate TE for large datasets.
+In Figure \ref{fig:FreqObs}, we present the number of observations for a univariate dataset over 30 days for varying frequency size.  If the frequency of observations (time windows) in 30 days is daily,  there are 30 observations in the dataset.  If the time windows are hourly, we can expect 720 observations in 30 days, and if the time window between observations occurs on a minute level, then we have 43,200 observations.  If we continue these calculations down to the 1-second level, then there are 2,592,000 observations in a 30-day window.  Following this trend, we find that existing open-source, TE computation implementations are not suited to estimate information flow for datasets with large numbers of observations.  Given the need to examine information transfers over finer time resolutions, we propose a new, open-source, software implementation to estimate TE for large datasets.
 
 \section{Estimating Transfer Entropy} \label{intro:estimateTE}
 
@@ -60,7 +60,7 @@ To estimate Joint entropy between X and Y:
 
 %\begin{equation}\hat{H}(X,Y) = - \psi(k) - \frac{1}{k} + \psi(n) + ln(c_{d_x} c_{d_y})  + \frac{d_x + d_y}{n} \sum^n_i ln(\epsilon(i))\end{equation}
 
-\noindent where \(d_y\) is the dimension of \(y\), and \(c_{d_y}\) is the column of the \(d_y\)-dimensional unit ball. Using \(\hat{H}(X), \hat{H}(Y),\) and \(\hat{H(X,Y)}\), mutual information can be estimated as:
+\noindent where \(d_y\) is the dimension of \(y\), and \(c_{d_y}\) is the column of the \(d_y\)-dimensional unit ball. Using \(\hat{H}(X), \hat{H}(Y),\) and \(\hat{H}(X,Y)\), Kraskov shows that mutual information can be estimated as:
 
 \begin{equation}
 \label{KraskovEquation}
@@ -70,15 +70,15 @@ To estimate Joint entropy between X and Y:
 \noindent where \(n_y(i)\) is the number of points \(y_j\) such that \(|| y_i - y_j || \leq \frac{\epsilon_y(i)}{2} \).
 
 %HERE
-The basic idea of mutual information estimation with the Kraskov's estimator is for each observation \(i\) to count the number \(n_x(i)\) (or \(n_y(i)\)) of points less than the distance between \(x_i\) (or \(y_i\)) and the \(k^{th}\) neighbor. The distance or \(\epsilon(i)\) fluctuates for each observation, consequently, \(n_x(i)\) and \(n_y(i)\) fluctuate. The counts are averaged over all observations, which results in mutual information as defined in eq. \ref{KraskovEquation}.
+The basic idea of mutual information estimation with the Kraskov's estimator is for each observation \(i\) to count the number \(n_x(i)\) (or \(n_y(i)\)) of points less than the distance between \(x_i\) (or \(y_i\)) and the \(k^{th}\) neighbor. The distance or \(\epsilon(i)\) fluctuates for each observation, consequently, \(n_x(i)\) and \(n_y(i)\) fluctuate. The counts are averaged over all observations, which results in mutual information as defined in Equation \ref{KraskovEquation}.
 
 
-To estimate TE with Kraskov's estimator, recall from eq. \ref{eq:TE-MI-Diff} that TE is expressed as the difference between two mutual information computations. To estimate TE with eq. \ref{eq:TE-MI-Diff}, the first mutual information is between \(Y\)'s future value, \(Y\)'s lagged values, and the  \(X\)'s lagged values. The second mutual information is the mutual information between X and its lagged values. The difference between the first and second mutual information provide the TE. With an embedding of \(1\), TE can be estimated: 
+To estimate TE with Kraskov's estimator, recall from Equation \ref{eq:TE-MI-Diff} that TE is expressed as the difference between two mutual information computations. To estimate TE with Equation \ref{eq:TE-MI-Diff}, the first mutual information is between \(Y\)'s future value, \(Y\)'s lagged values, and the  \(X\)'s lagged values. The second mutual information is the mutual information between X and its lagged values. The difference between the first and second mutual information provide the TE. With an embedding of \(1\), TE can be estimated: 
 
 \setlength{\arraycolsep}{0.0em}
 \begin{eqnarray}
-TE_{Y \rightarrow X} =  \left[  \psi(k) - \frac{1}{k} - \frac{1}{n}  \sum_{i=1}^n [ \psi(n_{xy}^{(t-1)}(i)) + \psi(n_{xy}^{(t)}(i) ) ] + \psi(n) \right]   -  \nonumber\\
-\left[  \psi(k) - \frac{1}{k} - \frac{1}{n}  \sum_{i=1}^n [ \psi(n_{x}^{(t)}(i)) + \psi(n_{x}^{(t+1)}(i) ) ] + \psi(n) \right]
+TE_{Y \rightarrow X} =  \left[  \psi(k) - \frac{1}{k} - \frac{1}{n}  \sum_{i=1}^n [ \psi(n_{xy}^{(t)}(i)) + \psi(n_{xy}^{(t-1)}(i) ) ] + \psi(n) \right]   -  \nonumber\\
+\left[  \psi(k) - \frac{1}{k} - \frac{1}{n}  \sum_{i=1}^n [ \psi(n_{x}^{(t)}(i)) + \psi(n_{x}^{(t-1)}(i) ) ] + \psi(n) \right]
 \label{eq:TE-EST}
 \end{eqnarray}
 \setlength{\arraycolsep}{1pt}
@@ -91,9 +91,9 @@ TE_{Y \rightarrow X} =  \left[  \psi(k) - \frac{1}{k} - \frac{1}{n}  \sum_{i=1}^
 
 \section{PyIF}
 
-PyIF \footnote{PyIF can freely be downloaded from: \url{https://github.com/lcdm-uiuc/PyIF}} is our proposed, open-source software implementation to estimate bivariate TE on large data.  PyIF currently only supports using the Kraskov estimator to estimate TE.  PyIF utilizes recent advancements in hardware to parallelize \& optimize operations across CPUs and CUDA compatible GPUs (see  \cite{CUDA}).  Given the iterative nature of eq. \ref{eq:TE-EST} it is possible to speed up the estimation by performing computations in parallel. In particular, we focus our efforts on the parallelization \& optimization across operations to obtain \(n_x\)  \& \(n_{xy}\) in eq. \ref{eq:TE-EST} faster.
+PyIF \footnote{PyIF can freely be downloaded from: \url{https://github.com/lcdm-uiuc/PyIF}} is our proposed, open-source software implementation to estimate bivariate TE on large data.  PyIF currently only supports using the Kraskov estimator to estimate TE.  PyIF utilizes recent advancements in hardware to parallelize \& optimize operations across CPUs and CUDA compatible GPUs (see  \cite{CUDA}).  Given the iterative nature of Equation \ref{eq:TE-EST} it is possible to speed up the estimation by performing computations in parallel. In particular, we focus our efforts on the parallelization \& optimization across operations to obtain \(n_x\)  \& \(n_{xy}\) in Equation \ref{eq:TE-EST} faster.
 
-\RC{Define CPU and GPU?}
+%\RC{Define CPU and GPU?}
 
 % more here on how we do this?
 
@@ -135,7 +135,7 @@ We report the results for Analysis 1 in Tables \ref{tab:MicroResults1},  \ref{ta
 
 Excluding the TransEnt implementation, the CPU implementation of PyIF (or PyIF (CPU)) takes less time to estimate TransferEntropy than all other implementations. The R package TransEnt has a better performance in terms of speed than PyIF (CPU) for the micro dataset and the small dataset. However, PyIF (CPU) can estimate transfer entropy in less time then all other implementations for the medium dataset and large dataset. PyIF (GPU) outperforms PyIF (CPU) for the small, medium, and large datasets. Figure \ref{TE-walltime} visualizes this explanation. We suspect that the optimizations performed by Numba contribute to PyIF having a larger wall time than TransEnt on the micro and small datasets.
 
-The results for Analysis 2 are in table ~\ref{DataTable-MATLAB}.  Although the Transfer Entropy Toolbox exceeds the CPU time limit for the large dataset, the results show that PyIF can scale better than Transfer Entropy Toolbox for the other three datasets. PyIF's wall times are less than Transfer Entropy toolbox's wall times, excluding the Micro Dataset.  Figure \ref{TE-walltime2} visualizes this result.
+The results for Analysis 2 are in Table ~\ref{DataTable-MATLAB}.  Although the Transfer Entropy Toolbox exceeds the CPU time limit for the large dataset, the results show that PyIF can scale better than Transfer Entropy Toolbox for the other three datasets. PyIF's wall times are less than Transfer Entropy toolbox's wall times, excluding the Micro Dataset.  Figure \ref{TE-walltime2} visualizes this result.
 
 
 \section{Conclusion}
@@ -170,7 +170,7 @@ We address an important issue regarding large datasets with respect to the estim
 
 \begin{sidewaysfigure}[htb!]
   \centerline{\includegraphics[scale=0.8]{figures/PyIF/WallTime-TE2.png}}
-  \caption{This figure shows the natural log time (in seconds) to estimate Transfer Entropy between PyIF and Transfer Entropy Toolbox on an Engineering Workstation described in the Comparative Analysis section. Transfer Entropy Toolbox exceeded the maximum allowable CPU runtime for the Large Dataset. }
+  \caption{This figure shows the natural log time (in seconds) to estimate Transfer Entropy between PyIF and Transfer Entropy Toolbox on an Engineering Workstation described in the Comparative Analysis section. Transfer Entropy Toolbox exceeded the maximum allowable CPU runtime for the Large Dataset. (1,000,000 observations). }
   \label{TE-walltime2}
 \end{sidewaysfigure}
 

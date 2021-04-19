@@ -10,35 +10,37 @@
 	\end{itemize}
 }
 
-\RC{This first statement should be clarified. Not all countries/people would agree.}
 
-An economic goal of a society is to maximize wealth. In order to maximize wealth, resources such as labor, capital, and natural resources must be allocated efficiently to firms. Capital markets (such as the stock market) allow capital to be efficiently allocated to said firms. Firm profitability can affect society, whether through job growth or loss, the offered services, the provision of goods, or personal gain or loss (see \cite{IntAccBook}).  Predicting the future profitability for firms is an essential endeavor as it is central to the valuation of the firm and the securities they issue (see \cite{Monahan}). 
+%\RC{This first statement should be clarified. Not all countries/people would agree.}
+% Not the goal but a goal.  In  a socialist society, everyone has same amount of wealth ideally.  Why wouldn't they want to maxmize wealth of economic overall?
+
+An economic goal of a society is to maximize wealth.  In order to maximize wealth, resources such as labor, capital, and natural resources must be allocated efficiently to firms. Capital markets (such as the stock market) allow capital to be efficiently allocated to said firms. Firm profitability can affect society, whether through job growth or loss, the offered services, the provision of goods, or personal gain or loss (see \cite{IntAccBook}).  Predicting the future profitability for firms is an essential endeavor as it is central to the valuation of the firm and the securities they issue (see \cite{Monahan}). 
 
 A study by \cite{Bradshaw} provides evidence that analysts' predictions are not superior to random walk predictions, indicating that traditional methods provide little efficacy. \cite{Monahan} conducts a review and discussion on the accounting research related to out-of-sample profitability predictions.  He provides evidence that models in prior works have lower out-of-sample accuracy than random walk models. This provides motivation to seek an alternative method, given the shortcomings of traditional methods.   \cite{ABIS:ML:EX1},  \cite{ABIS:ML:EX2},  \cite{ABIS:ML:EX3},  and \cite{ABIS:ML:EX4} are relatively recent examples that demonstrate the effectiveness of machine learning for prediction and inference in a variety of applications.  Thus, we explore machine learning methods to predict the future profitability of firms.
  
-An approach outlined in \cite{Monahan} is to select five items: the labels (or what to predict), the features (or predictors), a regression model (where the functional form is determined by the researcher),  and the training and testing datasets.  It is easier with a parametric approach to assume the functional form of \(f\) (see \ref{eq:function}) and estimate a set parameters; however,  it is likely that the functional form will not match the true unknown form of \(f\) which would provide poor results.  Given our objective to find the best \(f\) in eq. \ref{eq:function} that predicts \(Y\) reasonably well, we use non-parametric methods.  In addition, we employ cross-validation, described in section \ref{sec:validationApproach}, to avoid overfitting the model.  Lastly, we use machine learning to predict directional changes rather than the magnitude of changes in the firm's profitability. We make this choice to account for working with a smaller dataset.  \cite{BB68} and \cite{OU1989295} have shown that the future directional change of profitability is a useful indicator. 
+An approach outlined in \cite{Monahan} is to select five items: the labels (or what to predict), the features (or predictors), a regression model (where the functional form is determined by the researcher),  and the training and testing datasets.  One can use a parametric approach and assume the functional form of \(f\) (see Equation \ref{eq:function}) and estimate a set parameters; however,  it is likely that the functional form will not match the true unknown form of \(f\) which would provide poor results.  Given our objective to find the best \(f\) in Equation \ref{eq:function} that predicts \(Y\) reasonably well, we use non-parametric methods.  In addition, we employ cross-validation, described in section \ref{sec:validationApproach}, to avoid overfitting the model.  Lastly, we use machine learning to predict directional changes rather than the magnitude of changes in the firm's profitability. We make this choice to account for working with a smaller dataset.  \cite{BB68} and \cite{OU1989295} have shown that the future directional change of profitability is a useful indicator. 
 
 Our stated research objective is to determine if a machine learning model can be constructed to outperform a random walk model.  This chapter will describe the datasets used in this study and the methods used to predict firms' directional change of profitability.  Finally, comparative analyses will be conducted between the proposed model and random walk model, followed by a discussion of results and potential future directions of this research.
 
 \section{Data} \label{sec:ABIS:Data}
 
-We follow the data selection process described in \cite{HOU2012504} in this research. We use all observations from the fiscal years 1963 - 2016 from the Compustat fundamentals annual file. We merge this data set with the CRSP monthly returns file, which includes all securities listed on the NYSE,  Amex,  and Nasdaq markets. The securities selected have share codes 10 or 11, indicating that they are ordinary common shares of US companies and exclude ADR's and REITs. We remove observations if total assets, common equity, dividends, income before extraordinary items,  or accruals are missing, resulting in 194,172 observations.  Given the objective to predict the future direction of profitability for firms, each firm must have at least three observations; the rationale behind this choice is to compute two price changes for a firm. Excluding firms with fewer than four years of observations, the final dataset consists of 166,925 observations. 
+We follow the data selection process described in \cite{HOU2012504} in this research. We use all observations from the fiscal years 1963 - 2016 from the Compustat fundamentals annual file. We merge this data set with the CRSP monthly returns file, which includes all securities listed on the NYSE,  Amex,  and Nasdaq markets. The securities selected have share codes 10 or 11, indicating that they are ordinary common shares of US companies and exclude ADR's and REITs. We remove observations if total assets, common equity, dividends, income before extraordinary items,  or accruals are missing, resulting in 194,172 observations.  Given the objective to predict the future direction of profitability for firms, each firm must have at least three observations; the rationale behind this choice is to compute two price changes for a firm. Excluding firms with fewer than four years of observations, the final dataset consists of 160,653 observations. 
 
-The following variables were retrieved and computed for this research: Return on common equity (ROE),  Return on assets (ROA), return on net operating assets (RNOA), Cash flow from operations (CFO),  and free cash flow (FCF).  Table \ref{tab:CompustatVariables} contains more details about the variables used from Compustat and table \ref{tab:ProfitMeasures} shows how the profitability measures are computed.   
+The following variables were retrieved and computed for this research: Return on common equity (ROE),  Return on assets (ROA), return on net operating assets (RNOA), Cash flow from operations (CFO),  and free cash flow (FCF).  Table \ref{tab:CompustatVariables} contains more details about the variables used from Compustat and Table \ref{tab:ProfitMeasures} shows how the profitability measures are computed.   
 
 %ROE, ROA, RNOA, CFO, and FCF are selected as the labels for separate machine learning models.   To state this differently a machine learning model will use a features to predict  the change in ROE, ROA, RNOA, CFO, or FCF.  Year to year change is computed with each of the labels where +1 represents increase, -1 represents decrease, and 0 represents no change in the profitability measure.  Table \ref{} shows the percentage of profitability measures that increase, decrease, or have no change from year to year. 
 
-Table \ref{tab:CompustatDescribe} provides descriptive statistics on variables retrieved from Compustat. Outliers are present in most variables, and all of them have positively skewed distributions given that the mean is greater than the median. Table \ref{tab:ProfitDescribe} provides the descriptive statistics on profitability measures.  Since the raw variables construct the profitability measures, their values are also extreme.  However, unlike the raw variables, the distributions of the targets are negatively skewed (the mean is smaller than the median).  Table \ref{tab:TargetPercentIncreases} shows the percentage of times the target variables increase in the holdout period (2012-2015).   With the exception of CFO and FCF during 2013,  there are no relatively significant class imbalances for directional changes in profitability measures. 
+Table \ref{tab:CompustatDescribe} provides descriptive statistics on variables retrieved from Compustat. Outliers are present in most variables, and all of them have positively skewed distributions given that the mean is greater than the median. Table \ref{tab:ProfitDescribe} provides the descriptive statistics on profitability measures.  Since the raw variables construct the profitability measures, their values are also extreme.  However, unlike the raw variables, the distributions of the targets are negatively skewed (the mean is smaller than the median).  Table \ref{tab:TargetPercentIncreases} shows the percentage of times the target variables increase in the holdout period or testing data (2012-2015).   With the exception of CFO and FCF during 2013,  there are no relatively significant class imbalances for directional changes in profitability measures. 
 
-Tables \ref{tab:ROECorr},  \ref{tab:ROACorr},  \ref{tab:RNOACorr},  \ref{tab:FCFCorr}, and \ref{tab:CFOCorr} show the Pearson correlations between variables that will serve as the features in the random forest models.  Since correlations of raw variables are extreme due to large outliers, we truncate each variable at 2.5\% on each side of its distribution.  Many of the features in these tables are correlated. Nevertheless, the proposed machine learning method is insensitive to outliers.   Table \ref{tab:AutCorrProfitability} shows the autocorrelations of truncated profitability features.  With the exception of CFO, the second-order autocorrelations are marginally smaller than the first-order autocorrelations for all profitability measures. 
+Tables \ref{tab:ROECorr},  \ref{tab:ROACorr},  \ref{tab:RNOACorr},  \ref{tab:FCFCorr}, and \ref{tab:CFOCorr} show the Pearson correlations between variables that will serve as the features in the random forest models.  Each table shows the correlations between the profitability measure, the mean industry profitability measure, the median industry profitability measure, the standard deviation of the industry profitability measure,  and the profitability measure at time \(t-1\),  and \(t-2\).  Since correlations of raw variables are extreme due to large outliers, we truncate each variable at 2.5\% on each side of its distribution.  Many of the features in these tables are correlated. Nevertheless, the proposed machine learning method performance is insensitive to multicollinearity.   %Table \ref{tab:AutCorrProfitability} shows the autocorrelations of truncated profitability features.  With the exception of CFO, the second-order autocorrelations are marginally smaller than the first-order autocorrelations for all profitability measures. 
 
 \section{Methods}
 
 \subsection{Cross Validation for Time Series} \label{sec:CV-TS}
 
-For this work, the supervised learning paradigm described in section \ref{sec:SupervisedLearning} will be employed.  We use 90\% of the data for training and the remaining 10\% for testing. The first 90\% of data contains data from the fiscal years 1963-2011, and the last 10\% of data is from 2011-2016.  Given the objective to predict the year-to-year change, we cannot predict using features for firms in the fiscal year 2016 because the fiscal year 2017 is not in the sample. Given the time-series nature of the data, we use blocked K-fold cross-validation as described in \cite{cerqueira2019evaluating}. The difference between blocked \(k\)-fold cross-validation and \(k\)-fold cross-validation is that the observations are not randomly shuffled and then divided into k folds. Instead, the observations are split into K blocks of contiguous observations. 
+For this work, the supervised learning paradigm described in section \ref{sec:SupervisedLearning} will be employed.  We use 90\% of the data for training and the remaining 10\% for testing. The first 90\% of data contains data from the fiscal years 1963-2011, and the last 10\% of data is from 2011-2016.  Given the objective to predict the year-to-year change, we cannot predict using features for firms in the fiscal year 2016 because the fiscal year 2017 is not in the sample. Given the time-series nature of the data, we use blocked \(k\)-fold cross-validation as described in \cite{cerqueira2019evaluating}. The difference between blocked \(k\)-fold cross-validation and \(k\)-fold cross-validation is that the observations are not randomly shuffled and then divided into k folds. Instead, the observations are split into \(k\) blocks of contiguous observations. 
 
-%The natural order of observations is preserved within blocks but not across them. A machine learning model will learn to predict year to year price change for a particular profitability measure. For the first iteration blocked \(k\)- fold cross validation the model will have access to features from the \(1^{st}\) block of observations in the data set and predict how the profitability measure will change for the \(2^{nd}\) block of data  . For the \(2^{nd}\) iteration the model will have access to features from the  \(1^{st}\) and \(2^{nd}\)  chunks of data to predict how the profitability measure will change for the next chunk.  This process will repeat  \(k-1\) times (see figure \ref{} for a detailed explanation).
+%The natural order of observations is preserved within blocks but not across them. A machine learning model will learn to predict year to year price change for a particular profitability measure. For the first iteration blocked \(k\)- fold cross validation the model will have access to features from the \(1^{st}\) block of observations in the data set and predict how the profitability measure will change for the \(2^{nd}\) block of data  . For the \(2^{nd}\) iteration the model will have access to features from the  \(1^{st}\) and \(2^{nd}\)  chunks of data to predict how the profitability measure will change for the next chunk.  This process will repeat  \(k-1\) times (see Figure \ref{} for a detailed explanation).
 
 \subsection{Tree based Machine Learning Methods}
 
@@ -77,7 +79,7 @@ The rationale behind selecting only a subset of features is to decorrelate trees
 
 \section{Random Forest Implementation to Predict Directional Profitability}
 
-For this research, annual profitability changes (ROE, ROA, RNOA, CFO, and FCF) are coded as +1 for an increase and -1 for a decrease for individual firms in the dataset described in section \ref{sec:ABIS:Data}. The features used are described in section \ref{sec:CAnalyses}. With data sorted by fiscal year, for a change in a specific profitability measure that feature set (see tables \ref{tab:ROECorr},  \ref{tab:ROACorr},  \ref{tab:RNOACorr},  \ref{tab:FCFCorr}, and \ref{tab:CFOCorr}) will be partitioned into training and testing sets. The first 90\% of observations (fiscal years between 1963-2011) are used to train and build \(B\) trees.  The remaining 10\% of observations (2012-2015) are used to make predictions out of sample. 
+For this research, annual profitability changes (ROE, ROA, RNOA, CFO, and FCF) are coded as +1 for an increase and -1 for a decrease for individual firms in the dataset described in section \ref{sec:ABIS:Data}. The features used are described in section \ref{sec:CAnalyses}. With data sorted by fiscal year, for a change in a specific profitability measure that feature set (see Tables \ref{tab:ROECorr},  \ref{tab:ROACorr},  \ref{tab:RNOACorr},  \ref{tab:FCFCorr}, and \ref{tab:CFOCorr}) will be partitioned into training and testing sets. The first 90\% of observations (fiscal years between 1963-2011) are used to train and build \(B\) trees.  The remaining 10\% of observations (2012-2015) are used to make predictions out of sample. 
 
 While building \(B\) decision trees,  cross-validation, as described in \ref{sec:CV-TS}, is employed. The training data will have \(k\) folds (where \(k=5\)) grouped by fiscal year.  Each particular fold will consist of observations for particular firm-years.  Each decision tree in the forest will bootstrap from each fold and select random features. The decision tree will then train and build a tree based on the methodology outlined in \ref{sec:DecisionTrees}. The random forest of trees will make predictions on the validation sets with the process outlined in section \ref{sec:RandomForest}. Finally, the trained random forest will  make predictions out-of-sample on observations from the test set.
 
@@ -90,9 +92,9 @@ The random walk is a model of a stochastic process.  \cite{Campbell1997} (hereaf
 P_t = \mu + P_{t-1} + \epsilon_t 
 \end{equation}
 
-\noindent In eq. \ref{eq:RW1}, \(P_t\) is the value of some state variable at time \(t, \mu\) is a drift term that we will assume is 0, and \(\epsilon_t\) is a disturbance, or increment.  CLM note that a common assumption is that the disturbance term is independent and identically distributed, with mean zero and variance \(\sigma^2\),  i.e.  \( \epsilon_t \sim IID(o,\sigma^2)\). 
+\noindent In Equation \ref{eq:RW1}, \(P_t\) is the value of some state variable at time \(t, \mu\) is a drift term that we will assume is 0, and \(\epsilon_t\) is a disturbance, or increment.  CLM note that a common assumption is that the disturbance term is independent and identically distributed, with mean zero and variance \(\sigma^2\),  i.e.  \( \epsilon_t \sim IID(o,\sigma^2)\). 
 
-The random walk is a mathematical description of a process, not a forecasting tool. However, some papers (i.e.  \cite{Bradshaw}) that wish to use the random walk as a benchmark for their results treat it as a forecasting tool by taking the expected value of both sides of eq.  \ref{eq:RW1}. That yields the following:
+The random walk is a mathematical description of a process, not a forecasting tool. However, some papers (i.e.  \cite{Bradshaw}) that wish to use the random walk as a benchmark for their results treat it as a forecasting tool by taking the expected value of both sides of Equation  \ref{eq:RW1}. That yields the following:
 
 \begin{equation}
 \label{eq:RW2}
@@ -105,7 +107,7 @@ To be consistent with prior literature, we treat the random walk model as a fore
 
 \subsection{Random Walk: Benchmark 1}
 
-Rearranging equation \ref{eq:RW1} and setting the drift term to zero yields \(P_t - P_{t-1} = \epsilon_t\). Thus, the change in profitability is exactly equal to the disturbance term. That implies that the sign of the change in profitability is equal to the sign of the disturbance term. By assumption,  \(\epsilon_t \sim IID(0,\sigma^2)\), and CLM (p.32) state that “perhaps the most common distributional assumption for the innovations or increments \(\epsilon_t\) is normality.” Normality implies a 50-50 chance of an up or down movement since the normal distribution is symmetric. Therefore, our first random walk prediction should be that profitability is equally likely to increase or decrease.
+Rearranging Equation \ref{eq:RW1} and setting the drift term to zero yields \(P_t - P_{t-1} = \epsilon_t\). Thus, the change in profitability is exactly equal to the disturbance term. That implies that the sign of the change in profitability is equal to the sign of the disturbance term. By assumption,  \(\epsilon_t \sim IID(0,\sigma^2)\), and CLM (p.32) state that “perhaps the most common distributional assumption for the innovations or increments \(\epsilon_t\) is normality.” Normality implies a 50-50 chance of an up or down movement since the normal distribution is symmetric. Therefore, our first random walk prediction should be that profitability is equally likely to increase or decrease.
 
 Under the assumption that the error term is equally likely to increase or decrease, we find that the random walk model has an expected accuracy of 50\%. To see this, assume the testing subsample contains \(N\) observations, and  \(0 \leq p \leq 1\) is the fraction of increases. Then \(p\) of those observations increases, and \((1-p)N\) decreases. For any observation, the random walk will predict an increase 50\% of the time and a decrease 50\% of the time. Thus, of the \(p\) increases, on average 0.5\(pN\) will be classified accurately.  Similarly, of the \((1-p)N\) decreases, \(0.5(1-p)N\) will be classified accurately.  For the overall sample, the fraction that will be accurately classified is:
 
@@ -129,23 +131,23 @@ As an alternative interpretation of applying the random walk model to forecastin
 	P_{t-1} &= P_{t-2} + \epsilon_{t-1} \label{eq:RW4}
 \end{align}
 
-\noindent Subtracting eq. \ref{eq:RW4} from eq. \ref{eq:RW3} yields:
+\noindent Subtracting Equation \ref{eq:RW4} from Equation \ref{eq:RW3} yields:
 
 \begin{align}
 (P_t - P_{t-1}) = (P_{t-1} - P_{t-2}) + (\epsilon_t - \epsilon_{t-1}) \nonumber \\
 \Delta P_t = \Delta P_{t-1} + (\epsilon_t - \epsilon_{t-1}) \label{eq:RW5}
 \end{align}
 
-If we take the expected value of both sides, equation \ref{eq:RW5} reduces to  \(\Delta P_t = \Delta P_{t-1}\) since, by assumption, \(E[\epsilon_t] = 0, \forall t \). Under this interpretation, in expectation, an increase in a profitability measure in period \(t-1\) will persist into period \(t\). Thus, our second random walk prediction is that the sign of the change in a measure in one period will persist into the subsequent period.
+If we take the expected value of both sides,  Equation \ref{eq:RW5} reduces to  \(\Delta P_t = \Delta P_{t-1}\) since, by assumption, \(E[\epsilon_t] = 0, \forall t \). Under this interpretation, in expectation, an increase in a profitability measure in period \(t-1\) will persist into period \(t\). Thus, our second random walk prediction is that the sign of the change in a measure in one period will persist into the subsequent period.
 
 
 \section{Comparative Analyses} \label{sec:CAnalyses}
 
 To answer the research objective,  we conduct comparative analyses between the benchmark random walk models (described in \ref{sec:RWModel}) and the random forest models (described in \ref{sec:RandomForest}). We employ multiple random forests to predict specific profitability measures and add additional features to each random forest for each subsequent analysis. These analyses provide insight as to whether specific features are informative and yield more accurate estimates.
 
-We perform the analyses in two phases.  In the first phase, we test whether Random Forests performs better with winsorized or un-winsorized data. In the second phase, we employ multiple random forests to learn the incremental value of additional variables used in fundamental analysis. 
+We perform the analyses in two phases.  In the first phase,  we test whether Random Forests performs better with winsorized or unwinsorized data \footnote{See \cite{winsor} for a detailed explanation and review of winsorization.}.  In the second phase, we employ multiple random forests to learn the incremental value of additional variables used in fundamental analysis. 
 
-\RC{Do you think you should define winsorization?}
+%\RC{Do you think you should define winsorization?}
 
 \subsection{Phase 1: Effect of Winsorization}
 
@@ -161,7 +163,7 @@ Analysis 2-3 repeats analysis 2-2 while including the lag of the profitability m
 \subsection{Phase 1 Results and Discussion}
 Phase 1 tests the predictive power of random forests with minimal information. It also tests the effect of winsorizing the input data, a common practice in accounting research.  In phase 1, we create three random forests per profitability measure and use a minimal set of features. For each random forest, the only predictors (features) in each observation are a firm identifier (PERMNO),  fiscal year, and the contemporaneous value of the profitability measure. The label is a categorical variable that indicates whether profitability increased or decreased in the subsequent year. The input data's non-categorical measures are winsorized at three levels, 0\%, 1\%, and 2.5\% on each side. Analysis 1-1 uses a random forest to make predictions on the non-winsorized data, 1-2 uses the 1\% winsorized data, and 1-3 uses the 2.5\% winsorized data.
 
-We begin with the default values for model parameters in sci-kit learn version 0.22 (see \cite{scikit-learn}). We varied the number of trees used in a forest for each measure to predict the change in profitability. We found for all measures that there was no significant improvement in performance after using 30 decision trees in a random forest, see Figure \ref{fig:ValidationCurve-A1-Trees}. In figure \ref{fig:ValidationCurve-A1-Trees}, all subplots share the same x-axis, which represents the number of trees used in a forest. The y-axis for each subplot represents the accuracy score for a particular measure.
+We begin with the default values for model parameters in sci-kit learn version 0.22 (see \cite{scikit-learn}). We varied the number of trees used in a forest for each measure to predict the change in profitability. We found for all measures that there was no significant improvement in performance after using 30 decision trees in a random forest, see Figure \ref{fig:ValidationCurve-A1-Trees}. In Figure \ref{fig:ValidationCurve-A1-Trees}, all subplots share the same x-axis, which represents the number of trees used in a forest. The y-axis for each subplot represents the accuracy score for a particular measure.
 
 In each subplot, the dashed line with the circle markers represents the mean training scores during cross-validation. The shaded region surrounding the dashed line with circle markers represents the variance of the training accuracy scores during cross-validation.  This shaded region is not visible because the variance of the \(k-1\) training scores is very small. The solid line with star markers represents the mean cross-validation accuracy score, and the shaded-in region represents the variance of the cross-validation scores for each fold.
 
@@ -203,6 +205,16 @@ The results shown in the paper are promising since  we outperform a random walk 
     %\captionof{figure}{This figure shows validation curves for each measure in Analysis 1-1 varying the amount of trees. }
 %    \label{fig:ValidationCurve-A1-Trees}
 %\end{minipage}
+
+\begin{figure*}[!htb]
+    \centering
+      \includegraphics[width=\textwidth]{figures/ppt/DecisionTree.png}
+
+    \caption{
+	This figure shows an example of a Decision Tree. This is essentially a graph with no cycles.  Each circle represents a node (the label of the node is a letter inside of the node) and the arrows represent directional edges (branches) to another node. Node \(A\) is the root node of this tree and is where the decision tree begins. Potential outcomes from the root node lead to different states that are represented in nodes \(B\) and \(C\). \(B\) and \(C\) are the children of \(A\).  Nodes \(B\) and \(C\) have children and their children has children. Nodes \(H, I, E, J, K,\) and \(L\) are the leaf nodes of this tree because they have no children.
+     }
+      \label{fig:DecisionTree}
+  \end{figure*}
 
 \begin{figure*}[htb!]
     \centering
@@ -267,10 +279,10 @@ Interest Expense                                                           & XIN
 \hline
 \textbf{Variable} & \textbf{Definition}                           \\ \hline
 $ROE_t$           & $\frac{IB_t}{0.5(CEQ_t + CEQ_{t-1})}$         \\ \hline
-$ROA_t$           & $\frac{IB_t + XINT_t}{0.5(A_t + A_{t-1})}$    \\ \hline
+$ROA_t$           & $\frac{IB_t + XINT_t}{0.5(AT_t + AT_{t-1})}$    \\ \hline
 $RNOA_t$          & $\frac{OI_t}{0.5 \times (NOA_t + NOA_{t-1})}$ \\ \hline
-$CFO_t$           & $\frac{OANCF_t}{0.5(A_t + A_{t-1})}$          \\ \hline
-$FCF_t$           & $\frac{OANCF_t - CAPX_t}{0.5(A_t + A_{t-1})}$ \\ \hline
+$CFO_t$           & $\frac{OANCF_t}{0.5(AT_t + AT_{t-1})}$          \\ \hline
+$FCF_t$           & $\frac{OANCF_t - CAPX_t}{0.5(AT_t + AT_{t-1})}$ \\ \hline
 \end{tabular}
 \caption{Table showing the profitability measure definitions.}
 \label{tab:ProfitMeasures} 
@@ -322,7 +334,7 @@ $FCF_t$           & $\frac{OANCF_t - CAPX_t}{0.5(A_t + A_{t-1})}$ \\ \hline
 2014                  & 46.6\%       & 45.5\%       & 44.7\%        & 49.1\%       & 51.5\%       \\ \hline
 2015                  & 48.4\%       & 51.0\%       & 50.2\%        & 50.8\%       & 53.6\%       \\ \hline
 \end{tabular}}
-\caption{This table shows the percentage increases of annual profitability in our sample.}
+\caption{This table shows the percentage increases of annual profitability in our test sample.}
 \label{tab:TargetPercentIncreases}
 \end{table}
 
@@ -411,20 +423,20 @@ $FCF_t$           & $\frac{OANCF_t - CAPX_t}{0.5(A_t + A_{t-1})}$ \\ \hline
 \label{tab:CFOCorr}
 \end{table}
 
-\begin{table}[htb!]
-\centering
-\begin{tabular}{|l|l|l|}
-\hline
-     & 1 Lag & 2 Lags \\ \hline
-ROE  & 0.16  & 0.15   \\ \hline
-ROA  & 0.28  & 0.27   \\ \hline
-RNOA & 0.06  & 0.04   \\ \hline
-FCF  & 0.22  & 0.21   \\ \hline
-CFO  & 0.23  & 0.23   \\ \hline
-\end{tabular}
-\caption{This table shows the Autocorrelations in profitability measures.}
-\label{tab:AutCorrProfitability}
-\end{table}
+%\begin{table}[htb!]
+%\centering
+%\begin{tabular}{|l|l|l|}
+%\hline
+ %    & 1 Lag & 2 Lags \\ \hline
+%ROE  & 0.16  & 0.15   \\ \hline
+%ROA  & 0.28  & 0.27   \\ \hline
+%RNOA & 0.06  & 0.04   \\ \hline
+%FCF  & 0.22  & 0.21   \\ \hline
+%CFO  & 0.23  & 0.23   \\ \hline
+%\end{tabular}
+%\caption{This table shows the Autocorrelations in profitability measures.}
+%\label{tab:AutCorrProfitability}
+%\end{table}
 
 \begin{table}[htb!]
 \centering
