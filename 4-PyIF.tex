@@ -41,7 +41,7 @@ Prior research has developed a few approaches for estimating TE. There is a requ
 \setlength{\arraycolsep}{1pt}
 
 %\begin{equation} \hat{H}(X) = - \frac{1}{n} \sum^n_{i=1} \psi(n_x(i)) - \frac{1}{k} + \psi(n) + ln (c_{d_x}) + \frac{d_x}{n} \sum^n_{i=1} ln (\epsilon(i)) \end{equation},
-\noindent where n are the number of data points, k is a parameter to select the number of nearest neighbors,  \(d_x\) is the dimension of x, and \(c_{d_x}\) is the volume of the \(d_x\)-dimensional unit ball. For two random variables X and Y, let \( \frac{\epsilon(i)}{2} \) be the distance between (\(x_i,y_i\)) and it's k\textsuperscript{th} neighbor be denoted by (\(kx_i,ky_i\)). Let \(\frac{\epsilon_x(i)}{2}\) and  \(\frac{\epsilon_y(i)}{2}\) be defined as \( ||x_i-kx_i ||\) and \( ||y_i-ky_i || \) respectively. \(n_x(i)\) is the number of points \(x_j\) such that \(||x_i - x_j  || \leq \epsilon_x(i)/2\), \(\psi(x)\) is the digamma function where:
+\noindent where n are the number of data points, k is a parameter to select the number of nearest neighbors,  \(d_x\) is the dimension of x, and \(c_{d_x}\) is the volume of the \(d_x\)-dimensional unit ball. For two random variables X and Y, let \( \frac{\epsilon(i)}{2} \) be the distance between (\(x_i,y_i\)) and it's k\textsuperscript{th} neighbor be denoted by (\(kx_i,ky_i\)). Let \(\frac{\epsilon_x(i)}{2}\) and  \(\frac{\epsilon_y(i)}{2}\) be defined as \( ||x_i-kx_i ||\) and \( ||y_i-ky_i || \) respectively where,  \(||\ \ldots\ ||\) is the max-norm distance between the \(i^{th}\) data point and \(k^{th}\) nearest neighbor data point.  \(n_x(i)\) is the number of points \(x_j\) such that \(||x_i - x_j  || \leq \epsilon_x(i)/2\), \(\psi(x)\) is the digamma function where:
 
 \begin{equation}
 \psi(x) = \Gamma(x)^{-1} \frac{d\Gamma(x)} {dx}
@@ -264,7 +264,7 @@ PyIF (GPU)                  & 40.231                          & 0.16            
  			\hline
  			PyIF (CPU)   & 16.049 & 1.00\\ \hline
  			Transfer Entropy Toolbox & 2.5012 & 0.15 \\ \hline
- 			\multicolumn{3}{|c|}{Small Dataset Results (10,000 Obs.)} \\
+ 			\multicolumn{3}{|c|}{Small Dataset Results (10,000 Obs.)} \\ \hline
  			PyIF (CPU)   & 4.989 & 1.00\\ \hline
 			 Transfer Entropy Toolbox & 21.6880 & 4.347 \\ \hline
  			\multicolumn{3}{|c|}{Medium Dataset Results (100,000 Obs.)} \\
