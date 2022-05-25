@@ -166,17 +166,17 @@ TE considers the shared history between two processes via conditional mutual inf
 T_{Y \rightarrow X} (t) \equiv I(X_t: Y_{t-k} |  X_{t-k})
 \end{equation}
 
-\noindent \cite{kraskovEstimator} shows that transfer entropy can be expressed as the difference between two conditional mutual information computations: 
+\noindent \cite{Kaiser2002} shows that transfer entropy can be expressed as the difference between two conditional mutual information computations: 
 
 \begin{equation}  \label{eq:TE-MI-Diff}
-T_{Y \rightarrow X}(t) = I(X_t | X_{t-k}, Y_{t-k}) -  I(X_t | X_{t-k}) 
+T_{Y \rightarrow X}(t) = I(X_t | X_{t-k}, Y_{t-k}) -  I(X_t,  X_{t-k}) 
  \end{equation} 
 
 The intuition of this definition is that TE measures the amount of information in \(Y_{t-k}\) about \(X_t\) after  considering the information in \(X_{t-k}\) about \(X_t\). Put differently, TE quantifies the reduction in uncertainty about \(X_t\) from knowing \(Y_{t-k}\) after considering the reduction in uncertainty about \(X_t\) from knowing \(X_{t-k}\).
 
 \clearpage
 
-\section{Figures and Tables}
+\section{Figures and Table}
 
 \begin{figure*}[!htb]
     \centering

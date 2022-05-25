@@ -1,10 +1,11 @@
 \chapter{Cross-Firm Information Transfers During Earnings Season: A Network Approach} \label{Chapter:EATE}
 \blfootnote{
-	This chapter contains material from the following working paper: 
-	\nobibliography{thesisbib}
-	\begin{itemize}
-		\item\bibentry{EA-TE}
-	\end{itemize}
+	This chapter contains material from the following working paper:  Robert Brunner, Kelechi Ikegwu, Bryce Schonberger, and Jeff McMullin. Cross-firm information transfers during earnings season: A network approach, April 2021 
+	
+	%\nobibliography{thesisbib}
+	%\begin{itemize}
+	%	\item\bibentry{EA-TE}
+	%\end{itemize}
 }
 
 \section{Introduction}
@@ -144,7 +145,28 @@ In network science literature,  a standard definition of a community is having m
 
 The density in our information transfer networks are \(1\), whereas \cite{Clauset2005} benchmark network had a density of \(0.0000125\). Another way to think of this is that the ratio of edges to nodes in our network is 100 times greater than their benchmark network.  While we would ideally employ a community detection algorithm able to scale to the size of these information transfer networks, we are unaware of an such an algorithm.  Thus, we take an alternative approach by reducing the nodes-to-edges ratios for our information transfer networks. This allows us to use standard community detection algorithms.  
 
-To use the Clauset-Newman-Moore algorithm we combat the density issue,  by reducing the density (or the node to edges ratio).  We apply a disparity filter (see \cite{Serrano}) to three information transfer networks to identify the "network backbone".  This method locally identifies statistically relevant weighted edges and can filter out relevant connections across all scales of interactions between firms.  Specifically this method removes any edge that is weaker than a statistical cutoff designed to measure the importance of a given connection to each node.  As a result, the key input for the disparity filter is a researcher-selected value for \(\alpha \) used to identify sufficiently strong connections between nodes
+
+To use the Clauset-Newman-Moore algorithm, we combat the density issue by reducing the density (or the node to edges ratio).  \cite{Serrano} introduced the concept of disparity filters for weighted networks.  In this paper, they outline the algorithm to apply a disparity filter to networks.  \cite{Serrano} measures the strength of a node \(i\) as:
+
+\begin{equation}
+s_i = \sum_j w_{ij}.
+\end{equation}
+
+\noindent \(w_{ij}\) is the weight of the edge or transfer entropy value in the information transfer networks.  Each of the outgoing edges is scaled by \(s_i\): 
+
+\begin{equation}
+p_{ij} = \frac{w_{ij}}{s_i}.
+\end{equation}
+
+\noindent The disparity filter algorithm is based on the p-value statistical significance test of the null model of an information transfer network. \cite{Serrano} shows that the null model for a given network with a node of degree \(k\) is:
+
+\begin{equation}
+\alpha_{ij} = (1 - p_{ij})^{k-1}
+\end{equation}
+
+\noindent Meaning that \(\alpha_{ij}\) is the probability of having a normalized weight larger or equal to \(p_{ij}\) in the null model.  Selecting an \(\alpha\) will filter out all \(\alpha_{ij}\)'s larger than it resulting in the "network backbone" that contains significant edges between nodes.
+
+We apply a disparity filter (see \cite{Serrano}) to three information transfer networks to identify the network backbone.  Stated differently,  the disparity filter locally identifies statistically relevant weighted edges and can filter out relevant connections across all scales of interactions between firms.  Specifically, this method removes any edge that is weaker than a statistical cutoff designed to measure the importance of a given connection to each node.  As a result, the key input for the disparity filter is a researcher-selected value for \(\alpha \) used to identify sufficiently strong connections between nodes. 
 
 Our procedure is as follows. We first take the average information transfer across 1 – 6 second sampling rates for the morning trading windows for the three dates and reconstruct the information transfer networks.  Next, we apply the disparity filter to find the network backbone, which requires a value for \(\alpha\). The selection of \(\alpha\) requires fine tuning.  Table \ref{tab:backBoneSizes} shows the amount of nodes and edges remaining in a filtered network at a particular  \(\alpha\) value.  A smaller \(\alpha\) will yield an information transfer network that is too sparse to detect communities. A large \(\alpha\) will yield an information transfer network that is too dense to detect communities. 
 

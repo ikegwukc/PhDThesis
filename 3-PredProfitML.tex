@@ -3,11 +3,13 @@
 
 \section{Introduction}
 \blfootnote{
-	This chapter contains material from the following working paper: 
-	\nobibliography{thesisbib}
-	\begin{itemize}
-		\item\bibentry{ABIS}
-	\end{itemize}
+This chapter contains material from the following working paper: Vic Anand, Robert Brunner, Kelechi Ikegwu, and Theodore Sougiannis. Predicting profitability using machine learning. SSRN, Oct 2019. URL \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id= 3466478 }
+
+	%\nobibliography{thesisbib}
+	%\begin{itemize}
+	%	\item\bibentry{ABIS}
+	%\end{itemize}
+	
 }
 
 
@@ -24,15 +26,19 @@ Our stated research objective is to determine if a machine learning model can be
 
 \section{Data} \label{sec:ABIS:Data}
 
-We follow the data selection process described in \cite{HOU2012504} in this research. We use all observations from the fiscal years 1963 - 2016 from the Compustat fundamentals annual file. We merge this data set with the CRSP monthly returns file, which includes all securities listed on the NYSE,  Amex,  and Nasdaq markets. The securities selected have share codes 10 or 11, indicating that they are ordinary common shares of US companies and exclude ADR's and REITs. We remove observations if total assets, common equity, dividends, income before extraordinary items,  or accruals are missing, resulting in 194,172 observations.  Given the objective to predict the future direction of profitability for firms, each firm must have at least three observations; the rationale behind this choice is to compute two price changes for a firm. Excluding firms with fewer than four years of observations, the final dataset consists of 160,653 observations. 
+We follow the data selection process described in \cite{HOU2012504} in this research. We use all observations from the fiscal years 1963 - 2016 from the Compustat fundamentals annual file. We merge this data set with the CRSP monthly returns file, which includes all securities listed on the NYSE,  Amex,  and Nasdaq markets. The securities selected have share codes 10 or 11, indicating that they are ordinary common shares of US companies and exclude ADR's and REITs. We remove observations if total assets, common equity, dividends, income before extraordinary items,  or accruals are missing, resulting in 194,172 observations.  Given the objective to predict the future direction of profitability for firms, each firm must have at least three observations; the rationale behind this choice is to compute two price changes for a firm. Excluding firms with fewer than four years of observations, the final dataset consists of 160,653 observations.  
 
-The following variables were retrieved and computed for this research: Return on common equity (ROE),  Return on assets (ROA), return on net operating assets (RNOA), Cash flow from operations (CFO),  and free cash flow (FCF).  Table \ref{tab:CompustatVariables} contains more details about the variables used from Compustat and Table \ref{tab:ProfitMeasures} shows how the profitability measures are computed.   
+While we have 160,653 observations in our dataset the firm observations are significantly smaller. For example, in Figure \ref{fig:ABIS-DATA} we see the annual return on equity for firms in our sample. Some firms, such as International Paper, have a long history of reported profitability. However, most firms in our sample do not have a long history. For example, in Figure \ref{fig:ABIS-DATA} Smiths Transfer Corp Staunton Va was acquired by another firm and stopped reporting earnings. A W Computer Systems Inc ceased operations and liquidated its assets. Figure \ref{fig:FirmObs} shows the distribution of firm observations in our sample. We can observe that there are more firms with a short history than firms with a long history. This  observation influenced our decision to predict directional changes for initial research.
+
+The following variables were retrieved and computed for this research: Return on common equity (ROE),  Return on assets (ROA), return on net operating assets (RNOA), Cash flow from operations (CFO),  and free cash flow (FCF).  Tables \ref{tab:CompustatVariables} and \ref{tab:ComputstatCompute} contains more details about the variables used from Compustat and Table \ref{tab:ProfitMeasures} shows how the profitability measures are computed.   
+
+
 
 %ROE, ROA, RNOA, CFO, and FCF are selected as the labels for separate machine learning models.   To state this differently a machine learning model will use a features to predict  the change in ROE, ROA, RNOA, CFO, or FCF.  Year to year change is computed with each of the labels where +1 represents increase, -1 represents decrease, and 0 represents no change in the profitability measure.  Table \ref{} shows the percentage of profitability measures that increase, decrease, or have no change from year to year. 
 
 Table \ref{tab:CompustatDescribe} provides descriptive statistics on variables retrieved from Compustat. Outliers are present in most variables, and all of them have positively skewed distributions given that the mean is greater than the median. Table \ref{tab:ProfitDescribe} provides the descriptive statistics on profitability measures.  Since the raw variables construct the profitability measures, their values are also extreme.  However, unlike the raw variables, the distributions of the targets are negatively skewed (the mean is smaller than the median).  Table \ref{tab:TargetPercentIncreases} shows the percentage of times the target variables increase in the holdout period or testing data (2012-2015).   With the exception of CFO and FCF during 2013,  there are no relatively significant class imbalances for directional changes in profitability measures. 
 
-Tables \ref{tab:ROECorr},  \ref{tab:ROACorr},  \ref{tab:RNOACorr},  \ref{tab:FCFCorr}, and \ref{tab:CFOCorr} show the Pearson correlations between variables that will serve as the features in the random forest models.  Each table shows the correlations between the profitability measure, the mean industry profitability measure, the median industry profitability measure, the standard deviation of the industry profitability measure,  and the profitability measure at time \(t-1\),  and \(t-2\).  Since correlations of raw variables are extreme due to large outliers, we truncate each variable at 2.5\% on each side of its distribution.  Many of the features in these tables are correlated. Nevertheless, the proposed machine learning method performance is insensitive to multicollinearity.   %Table \ref{tab:AutCorrProfitability} shows the autocorrelations of truncated profitability features.  With the exception of CFO, the second-order autocorrelations are marginally smaller than the first-order autocorrelations for all profitability measures. 
+Tables \ref{tab:ROECorr},  \ref{tab:ROACorr},  \ref{tab:RNOACorr},  \ref{tab:FCFCorr}, and \ref{tab:CFOCorr} show the Pearson correlations between variables that will serve as the features in the random forest models.  Each table shows the correlations between the profitability measure, the mean industry profitability measure, the median industry profitability measure, the standard deviation of the industry profitability measure,  and the profitability measure at time \(t-1\),  and \(t-2\).  We note that we can incorporate additional features that can increase the performance of our models; however, as an initial step we examine whether we can outperform the random walk with a minimal feature set.  Since correlations of raw variables are extreme due to large outliers, we truncate each variable at 2.5\% on each side of its distribution.  Many of the features in these tables are correlated. Nevertheless, the proposed machine learning method performance is insensitive to multicollinearity.   %Table \ref{tab:AutCorrProfitability} shows the autocorrelations of truncated profitability features.  With the exception of CFO, the second-order autocorrelations are marginally smaller than the first-order autocorrelations for all profitability measures. 
 
 \section{Methods}
 
@@ -189,7 +195,7 @@ The RNOA, ROA, and ROE analyses still utilize \(RNOA_t\), \(ROA_t\), and \(ROE_t
 
 In this chapter, we explored the utility of random forest trees in a supervised learning paradigm to predict the annual direction of profitability for firms with minimal information. This study's motivation stems from the fact that the accounting literature shows that traditional regression methods cannot produce models superior to random walk models when predicting out of sample. We also explore the advantages of following a supervised learning paradigm to predict directional change. For example, random forests are insensitive to multicollinearity, and properly utilizing the supervised paradigm discovers a functional form that generalizes well to new data.
 
-We implement and train random forests in a classification setting using a large sample of US firms over the period 1963-2011.  We generate out-of-sample predictions of directional changes (increases or decreases) in five profitability measures: return on equity (ROE), return on assets (ROA), return on net operating assets (RNOA), cash flow from operations (CFO), and free cash flow (FCF) from 2011-2016. We found that the classification accuracy for each measure outperformed the random walk models.  The accuracy does not tend to decline with a four-year forecast horizon significantly for the out of sample predictions. In addition to these findings, models with a strong reliance on a profitability measure's current value provided more accurate estimates of the future directional change in profitability.  
+We implement and train random forests in a classification setting using a large sample of US firms over the period 1963-2011.  We generate out-of-sample predictions of directional changes (increases or decreases) in five profitability measures: return on equity (ROE), return on assets (ROA), return on net operating assets (RNOA), cash flow from operations (CFO), and free cash flow (FCF) from 2011-2016. We found that the classification accuracy for each measure outperformed the random walk models.  The accuracy does not tend to decline with a four-year forecast horizon significantly for the out of sample predictions. In addition to these findings, models with a strong reliance on a profitability measure's current value provided more accurate estimates of the future directional change in profitability.   The results also show that the random forest does not find the accrual profitability measures (ROE,  ROA,  and RNOA) at the year \(t\) as useful as the cash flow measures (CFO and FCF) in predicting the future.
 
 We can improve these results further by selecting a model that yields better performance but offers less interpretability. Given that we focus on a minimal set of features in this research, we can incorporate additional features for additional performance gains. Utilizing more data, we can extend the methodology outlined in this paper to a regression setting and make predictions about the magnitudes of profitability. 
 
@@ -215,6 +221,22 @@ The results shown in the paper are promising since  we outperform a random walk 
      }
       \label{fig:DecisionTree}
   \end{figure*}
+
+\begin{sidewaysfigure*}[htb!]
+    \centering
+    \includegraphics[width=\textwidth,height=0.87\textheight,keepaspectratio]{figures/ABIS/ABIS-DATA.png}
+   \caption{This figure shows the annual return on equity (ROE) for a random selection of firms.}
+      \label{fig:ABIS-DATA}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}[htb!]
+    \centering
+    \includegraphics[width=\textwidth,height=0.87\textheight,keepaspectratio]{figures/ABIS/FirmObs.png}
+
+   \caption{This figure shows the distribution of firm observations in our sample.}
+      \label{fig:FirmObs}
+\end{sidewaysfigure*}
+
 
 \begin{figure*}[htb!]
     \centering
@@ -270,6 +292,17 @@ Interest Expense                                                           & XIN
 \end{tabular}
 \caption{Table showing the Computstat variables used in this study.}
 \label{tab:CompustatVariables}
+\end{table}
+
+\begin{table}[]
+\begin{tabular}{|c|c|}
+\hline
+Variable             & Formula                                                     \\ \hline
+Net Operating Assets & $NOA_t = (AT_t - CHE_t - IVST_t) - (LT_t - DLC_t - DLTT_t)$ \\ \hline
+Operating Income     & $OI_t=IB_t + XINT_t - IDIT_t$                               \\ \hline
+\end{tabular}
+\caption{This table shows how we compute net operating assets and operating income  by following the procedure described in \citep{LiTuna2014}. }
+\label{tab:ComputstatCompute}
 \end{table}
 
 {\renewcommand{\arraystretch}{2}
